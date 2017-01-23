@@ -1,0 +1,109 @@
+@import "./font/sass/variables";
+@import "./font/sass/mixins";
+/* @import "./font/sass/Light";*/
+/* @import "./font/sass/LightItalic";*/
+@import "./font/sass/Regular";
+/* @import "./font/sass/Italic";*/
+/* @import "./font/sass/Semibold";*/
+/* @import "./font/sass/SemiboldItalic";*/
+/* @import "./font/sass/Bold";*/
+/* @import "./font/sass/BoldItalic";*/
+/* @import "./font/sass/ExtraBold";*/
+/* @import "./font/sass/ExtraBoldItalic";*/
+$regular-font: 'Open Sans';
+$text:#333;
+$navy-blue:#263237;
+$blueberry:#6b7a8f;
+$apple-core:#dcc7aa;
+
+body{
+	width:100%;
+	font-family: $regular-font;
+	margin:0;
+	position:absolute;
+	line-height: 1.2;
+}
+
+.container{
+display: -webkit-box;
+display: -ms-flexbox;
+display: flex;
+-webkit-box-orient: horizontal;
+-webkit-box-direction: normal;
+    -ms-flex-direction: row;
+        flex-direction: row;
+-webkit-box-pack: start;
+    -ms-flex-pack: start;
+        justify-content: flex-start;
+-webkit-box-align: start;
+    -ms-flex-align: start;
+        align-items: flex-start;
+}
+
+nav{
+position: relative;
+left:0;
+display: -webkit-box;
+display: -ms-flexbox;
+display: flex;
+-webkit-box-orient: vertical;
+-webkit-box-direction: normal;
+    -ms-flex-direction: column;
+        flex-direction: column;
+-webkit-box-pack: start;
+    -ms-flex-pack: start;
+        justify-content: flex-start;
+-webkit-box-align: center;
+    -ms-flex-align: center;
+        align-items: center;
+background-color: lighten($apple-core, 20% );
+height: 100vh;
+width:20vw;
+text-align: center;
+	&:after{
+		height: 100%;
+		width: 2px;
+		margin-left: 100%;
+		display: block;
+		content: '';
+		-webkit-box-flex: 0;
+		    -ms-flex: 0 1 auto;
+		        flex: 0 1 auto;
+		background: -webkit-linear-gradient(left, $blueberry 0%,rgba(255,255,255,0) 100%);
+		background: linear-gradient(to right, $blueberry 0%,rgba(255,255,255,0) 100%);
+	}
+	ul.navigation-list{
+		display: inline-block;
+		text-align: center;
+		padding:0;
+		position: fixed;  
+
+		li{
+			list-style-type: none;
+			margin: 15% 0;
+			a{
+				text-decoration: none;
+				color: $text;
+				line-height: 1.5;
+				font-weight: bold;
+				font-size: 1em;
+				&:hover{
+				cursor:pointer;
+				color:$blueberry;
+				-webkit-transition-property: all;
+				transition-property: all;
+				-webkit-transition-duration: 0.5s;
+				        transition-duration: 0.5s;
+				-webkit-transition-timing-function: ease-out;
+				        transition-timing-function: ease-out;
+				}
+			}
+		}
+	}
+}
+article.main{
+background-color:lighten($navy-blue, 50% );
+position: relative;
+width:80vw;
+
+}

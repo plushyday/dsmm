@@ -1,0 +1,100 @@
+/* @import "./font/sass/Light";*/
+/* @import "./font/sass/LightItalic";*/
+/* BEGIN Regular */
+@font-face {
+  font-family: 'Open Sans';
+  src: url("./font/fonts/Regular/OpenSans-Regular.eot?v=1.1.0");
+  src: url("./font/fonts/Regular/OpenSans-Regular.eot?#iefix&v=1.1.0") format("embedded-opentype"), url("./font/fonts/Regular/OpenSans-Regular.woff2?v=1.1.0") format("woff2"), url("./font/fonts/Regular/OpenSans-Regular.woff?v=1.1.0") format("woff"), url("./font/fonts/Regular/OpenSans-Regular.ttf?v=1.1.0") format("truetype"), url("./font/fonts/Regular/OpenSans-Regular.svg?v=1.1.0#Regular") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+/* END Regular */
+/* @import "./font/sass/Italic";*/
+/* @import "./font/sass/Semibold";*/
+/* @import "./font/sass/SemiboldItalic";*/
+/* @import "./font/sass/Bold";*/
+/* @import "./font/sass/BoldItalic";*/
+/* @import "./font/sass/ExtraBold";*/
+/* @import "./font/sass/ExtraBoldItalic";*/
+body {
+  width: 100%;
+  font-family: "Open Sans";
+  margin: 0;
+  position: absolute;
+  line-height: 1.2; }
+
+.container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+  -webkit-box-align: start;
+  -ms-flex-align: start;
+  align-items: flex-start; }
+
+nav {
+  position: relative;
+  left: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  background-color: #faf7f2;
+  height: 100vh;
+  width: 20vw;
+  text-align: center; }
+  nav:after {
+    height: 100%;
+    width: 2px;
+    margin-left: 100%;
+    display: block;
+    content: '';
+    -webkit-box-flex: 0;
+    -ms-flex: 0 1 auto;
+    flex: 0 1 auto;
+    background: -webkit-linear-gradient(left, #6b7a8f 0%, rgba(255, 255, 255, 0) 100%);
+    background: linear-gradient(to right, #6b7a8f 0%, rgba(255, 255, 255, 0) 100%); }
+  nav ul.navigation-list {
+    display: inline-block;
+    text-align: center;
+    padding: 0;
+    position: fixed; }
+    nav ul.navigation-list li {
+      list-style-type: none;
+      margin: 15% 0; }
+      nav ul.navigation-list li a {
+        text-decoration: none;
+        color: #333;
+        line-height: 1.5;
+        font-weight: bold;
+        font-size: 1em; }
+        nav ul.navigation-list li a:hover {
+          cursor: pointer;
+          color: #6b7a8f;
+          -webkit-transition-property: all;
+          transition-property: all;
+          -webkit-transition-duration: 0.5s;
+          transition-duration: 0.5s;
+          -webkit-transition-timing-function: ease-out;
+          transition-timing-function: ease-out; }
+
+article.main {
+  background-color: #9fb4bd;
+  position: relative;
+  width: 80vw; }
+
+/*# sourceMappingURL=style.css.map */
