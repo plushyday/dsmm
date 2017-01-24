@@ -1,0 +1,97 @@
+.slider{
+    width: 60%;
+    margin-bottom: 0;
+    padding: 0;
+    border-right: 5px solid #1f390d;
+    display: inline-block;
+    height: 100%;
+    background: #000;
+    overflow: hidden;
+   position: relative;
+    line-height: 0;
+      .img{
+          width: 100%;
+          left: 0;
+          position: relative;  
+          }
+    }
+
+
+#first{ 
+   animation: cycle 25s linear infinite;
+}
+
+#second {
+    top: 0px;
+    position: absolute;
+    animation: cycletwo 25s linear infinite;
+}
+
+#third {
+   top: 0px;
+    position: absolute;
+   animation: cyclethree 25s linear infinite;
+}
+
+#fourth {
+    top: 0px;
+    position: absolute;
+   animation: cyclefour 25s linear infinite;
+}
+
+#fifth {
+    top: 0px;
+    position: absolute;
+   animation: cyclefive 25s linear infinite;
+}
+@keyframes cycle {
+   0%  { left: 0px; } /* При запуске слайдера, первое изображение уже видимо */
+   4%  { left: 0px; } /* Стартовая позиция */
+   16% { left: 0px; opacity:1; z-index:0; } /* С 4% до 16 % (3 секунды) изображение видимо */
+   20% { left: 100%; opacity: 0; z-index: 0; } /* с 16% до 20% (1 секунды)выход изображения*/
+   21% { left: -100%; opacity: 0; z-index: -1; } /* Возвращение на исходную позицию за пределами маски */
+   92% { left: -100%; opacity: 0; z-index: 0; }
+   96% { left: -100%; opacity: 0; } /* С 96% до 100% (1 секунда) – вход */
+   100%{ left: 0px; opacity: 1; }
+}
+
+@keyframes cycletwo {
+   0%  { left: -100%; opacity: 0; } /* Исходная позиция за пределами маски */
+   16% { left: -100%; opacity: 0; }/* Начало движения с 16% */
+   20% { left: 0px; opacity: 1; }
+   24% { left: 0px; opacity: 1; }  /* С 20% до 24% (в течении 1 секунды) — вход*/
+   36% { left: 0px; opacity: 1; z-index: 0; }   /* С 24% до 36 % (3 секунды) изображение видимо */
+   40% { left: 100%; opacity: 0; z-index: 0; } /* С 36% до 40% (1 секунда)— выход */
+   41% { left: 100%; opacity: 0; z-index: -1; }   /* Возврат на исходную позицию */
+   100%{ left: -100%; opacity: 0; z-index: -1; }
+}
+
+@keyframes cyclethree {
+   0%  { left: -100%; opacity: 0; }
+   36% { left: -100%; opacity: 0; }
+   40% { left: 0px; opacity: 1; }
+   44% { left: 0px; opacity: 1; }
+   56% { left: 0px; opacity: 1; }
+   60% { left: 100%; opacity: 0; z-index: 0; }
+   61% { left: -100%; opacity: 0; z-index: -1; }
+   100%{ left: -100%; opacity: 0; z-index: -1; }
+}
+
+@keyframes cyclefour {
+   0%  { left: -100%; opacity: 0; }
+   56% { left: -100%; opacity: 0; }
+   60% { left: 0px; opacity: 1; }
+   64% { left: 0px; opacity: 1; }
+   76% { left: 0px; opacity: 1; z-index: 0; }
+   80% { left: 100%; opacity: 0; z-index: 0; }
+   81% { left: -100%; opacity: 0; z-index: -1; }
+   100%{ left: -100%; opacity: 0; z-index: -1; }
+}
+@keyframes cyclefive {
+   0%  { left: -100%; opacity: 0; }
+   76% { left: -100%; opacity: 0; }
+   80% { left: 0px; opacity: 1; }
+   84% { left: 0px; opacity: 1; }
+   96% { left: 0px; opacity: 1; z-index: 0; }
+   100%{ left: 100%; opacity: 0; z-index: 0; }
+}

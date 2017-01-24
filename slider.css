@@ -1,0 +1,188 @@
+@charset "UTF-8";
+.slider {
+  width: 60%;
+  margin-bottom: 0;
+  padding: 0;
+  border-right: 5px solid #1f390d;
+  display: inline-block;
+  height: 100%;
+  background: #000;
+  overflow: hidden;
+  position: relative;
+  line-height: 0; }
+  .slider .img {
+    width: 100%;
+    left: 0;
+    position: relative; }
+
+#first {
+  animation: cycle 25s linear infinite; }
+
+#second {
+  top: 0px;
+  position: absolute;
+  animation: cycletwo 25s linear infinite; }
+
+#third {
+  top: 0px;
+  position: absolute;
+  animation: cyclethree 25s linear infinite; }
+
+#fourth {
+  top: 0px;
+  position: absolute;
+  animation: cyclefour 25s linear infinite; }
+
+#fifth {
+  top: 0px;
+  position: absolute;
+  animation: cyclefive 25s linear infinite; }
+
+@keyframes cycle {
+  0% {
+    left: 0px; }
+  /* ╨Я╤А╨╕ ╨╖╨░╨┐╤Г╤Б╨║╨╡ ╤Б╨╗╨░╨╣╨┤╨╡╤А╨░, ╨┐╨╡╤А╨▓╨╛╨╡ ╨╕╨╖╨╛╨▒╤А╨░╨╢╨╡╨╜╨╕╨╡ ╤Г╨╢╨╡ ╨▓╨╕╨┤╨╕╨╝╨╛ */
+  4% {
+    left: 0px; }
+  /* ╨б╤В╨░╤А╤В╨╛╨▓╨░╤П ╨┐╨╛╨╖╨╕╤Ж╨╕╤П */
+  16% {
+    left: 0px;
+    opacity: 1;
+    z-index: 0; }
+  /* ╨б 4% ╨┤╨╛ 16 % (3 ╤Б╨╡╨║╤Г╨╜╨┤╤Л) ╨╕╨╖╨╛╨▒╤А╨░╨╢╨╡╨╜╨╕╨╡ ╨▓╨╕╨┤╨╕╨╝╨╛ */
+  20% {
+    left: 100%;
+    opacity: 0;
+    z-index: 0; }
+  /* ╤Б 16% ╨┤╨╛ 20% (1 ╤Б╨╡╨║╤Г╨╜╨┤╤Л)╨▓╤Л╤Е╨╛╨┤ ╨╕╨╖╨╛╨▒╤А╨░╨╢╨╡╨╜╨╕╤П*/
+  21% {
+    left: -100%;
+    opacity: 0;
+    z-index: -1; }
+  /* ╨Т╨╛╨╖╨▓╤А╨░╤Й╨╡╨╜╨╕╨╡ ╨╜╨░ ╨╕╤Б╤Е╨╛╨┤╨╜╤Г╤О ╨┐╨╛╨╖╨╕╤Ж╨╕╤О ╨╖╨░ ╨┐╤А╨╡╨┤╨╡╨╗╨░╨╝╨╕ ╨╝╨░╤Б╨║╨╕ */
+  92% {
+    left: -100%;
+    opacity: 0;
+    z-index: 0; }
+  96% {
+    left: -100%;
+    opacity: 0; }
+  /* ╨б 96% ╨┤╨╛ 100% (1 ╤Б╨╡╨║╤Г╨╜╨┤╨░) тАУ ╨▓╤Е╨╛╨┤ */
+  100% {
+    left: 0px;
+    opacity: 1; } }
+@keyframes cycletwo {
+  0% {
+    left: -100%;
+    opacity: 0; }
+  /* ╨Ш╤Б╤Е╨╛╨┤╨╜╨░╤П ╨┐╨╛╨╖╨╕╤Ж╨╕╤П ╨╖╨░ ╨┐╤А╨╡╨┤╨╡╨╗╨░╨╝╨╕ ╨╝╨░╤Б╨║╨╕ */
+  16% {
+    left: -100%;
+    opacity: 0; }
+  /* ╨Э╨░╤З╨░╨╗╨╛ ╨┤╨▓╨╕╨╢╨╡╨╜╨╕╤П ╤Б 16% */
+  20% {
+    left: 0px;
+    opacity: 1; }
+  24% {
+    left: 0px;
+    opacity: 1; }
+  /* ╨б 20% ╨┤╨╛ 24% (╨▓ ╤В╨╡╤З╨╡╨╜╨╕╨╕ 1 ╤Б╨╡╨║╤Г╨╜╨┤╤Л) тАФ ╨▓╤Е╨╛╨┤*/
+  36% {
+    left: 0px;
+    opacity: 1;
+    z-index: 0; }
+  /* ╨б 24% ╨┤╨╛ 36 % (3 ╤Б╨╡╨║╤Г╨╜╨┤╤Л) ╨╕╨╖╨╛╨▒╤А╨░╨╢╨╡╨╜╨╕╨╡ ╨▓╨╕╨┤╨╕╨╝╨╛ */
+  40% {
+    left: 100%;
+    opacity: 0;
+    z-index: 0; }
+  /* ╨б 36% ╨┤╨╛ 40% (1 ╤Б╨╡╨║╤Г╨╜╨┤╨░)тАФ ╨▓╤Л╤Е╨╛╨┤ */
+  41% {
+    left: 100%;
+    opacity: 0;
+    z-index: -1; }
+  /* ╨Т╨╛╨╖╨▓╤А╨░╤В ╨╜╨░ ╨╕╤Б╤Е╨╛╨┤╨╜╤Г╤О ╨┐╨╛╨╖╨╕╤Ж╨╕╤О */
+  100% {
+    left: -100%;
+    opacity: 0;
+    z-index: -1; } }
+@keyframes cyclethree {
+  0% {
+    left: -100%;
+    opacity: 0; }
+  36% {
+    left: -100%;
+    opacity: 0; }
+  40% {
+    left: 0px;
+    opacity: 1; }
+  44% {
+    left: 0px;
+    opacity: 1; }
+  56% {
+    left: 0px;
+    opacity: 1; }
+  60% {
+    left: 100%;
+    opacity: 0;
+    z-index: 0; }
+  61% {
+    left: -100%;
+    opacity: 0;
+    z-index: -1; }
+  100% {
+    left: -100%;
+    opacity: 0;
+    z-index: -1; } }
+@keyframes cyclefour {
+  0% {
+    left: -100%;
+    opacity: 0; }
+  56% {
+    left: -100%;
+    opacity: 0; }
+  60% {
+    left: 0px;
+    opacity: 1; }
+  64% {
+    left: 0px;
+    opacity: 1; }
+  76% {
+    left: 0px;
+    opacity: 1;
+    z-index: 0; }
+  80% {
+    left: 100%;
+    opacity: 0;
+    z-index: 0; }
+  81% {
+    left: -100%;
+    opacity: 0;
+    z-index: -1; }
+  100% {
+    left: -100%;
+    opacity: 0;
+    z-index: -1; } }
+@keyframes cyclefive {
+  0% {
+    left: -100%;
+    opacity: 0; }
+  76% {
+    left: -100%;
+    opacity: 0; }
+  80% {
+    left: 0px;
+    opacity: 1; }
+  84% {
+    left: 0px;
+    opacity: 1; }
+  96% {
+    left: 0px;
+    opacity: 1;
+    z-index: 0; }
+  100% {
+    left: 100%;
+    opacity: 0;
+    z-index: 0; } }
+
+/*# sourceMappingURL=slider.css.map */
