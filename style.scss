@@ -1,24 +1,21 @@
+
 @import "./font/sass/variables";
 @import "./font/sass/mixins";
-/* @import "./font/sass/Light";*/
-/* @import "./font/sass/LightItalic";*/
 @import "./font/sass/Regular";
-/* @import "./font/sass/Italic";*/
-/* @import "./font/sass/Semibold";*/
-/* @import "./font/sass/SemiboldItalic";*/
-/* @import "./font/sass/Bold";*/
-/* @import "./font/sass/BoldItalic";*/
-/* @import "./font/sass/ExtraBold";*/
-/* @import "./font/sass/ExtraBoldItalic";*/
-$regular-font: 'Open Sans';
+
+
+
+$sans-font: 'Open Sans';
 $text:#333;
 $navy-blue:#263237;
+$newy:#87B6A7;
 $blueberry:#6b7a8f;
 $apple-core:#dcc7aa;
-
+@import "_slider.scss";
 body{
 	width:100%;
-	font-family: $regular-font;
+	font-family: "MyriadPro";
+	background-color: lighten($apple-core, 20% );
 	margin:0;
 	position:absolute;
 	line-height: 1.2;
@@ -56,27 +53,34 @@ display: flex;
 -webkit-box-align: center;
     -ms-flex-align: center;
         align-items: center;
-background-color: lighten($apple-core, 20% );
 height: 100vh;
-width:20vw;
+width:15vw;
 text-align: center;
-	&:after{
-		height: 100%;
-		width: 2px;
-		margin-left: 100%;
-		display: block;
-		content: '';
-		-webkit-box-flex: 0;
-		    -ms-flex: 0 1 auto;
-		        flex: 0 1 auto;
-		background: -webkit-linear-gradient(left, $blueberry 0%,rgba(255,255,255,0) 100%);
-		background: linear-gradient(to right, $blueberry 0%,rgba(255,255,255,0) 100%);
-	}
 	ul.navigation-list{
 		display: inline-block;
 		text-align: center;
 		padding:0;
-		position: fixed;  
+		position: fixed; 
+		background-color: lighten($apple-core, 20% );
+		 // для медиа-ссылок &:after{
+			// 	height: 80%;
+			// 	width: 80%;
+			// 	margin-left: 10%;
+			// 	display: block;
+			// 	content: url('img/dsmm.svg');
+			// 	-webkit-box-flex: 0;
+			// 	    -ms-flex: 0 1 auto;
+			// 	        flex: 0 1 auto;
+			// }
+			iframe#logo{
+				height: 6vh;
+				width: 40%;
+				margin:0.5% 0 -3vh 0;
+				padding:0;
+				-webkit-box-flex: 0;
+				    -ms-flex: 0 2 auto;
+			 	        flex: 0 2 auto;
+			}
 		li{
 			list-style-type: none;
 			margin: 15% 0;
@@ -84,7 +88,7 @@ text-align: center;
 				text-decoration: none;
 				color: $text;
 				line-height: 1.5;
-				font-weight: bold;
+				font-weight: lighter;
 				font-size: 1em;
 				&:hover{
 				cursor:pointer;
@@ -101,8 +105,48 @@ text-align: center;
 	}
 }
 article.main{
-background-color:lighten($navy-blue, 50% );
+background-color:lighten($apple-core, 8%);
 position: relative;
-width:80vw;
-
+width:85vw;
+}
+.header{
+	font-family: Palatino, "Palatino Linotype", "Palatino LT STD";
+	width:85vw;
+	padding: 0.5% 0 0.5% 0;
+	text-align: center;;
+	font-size: 1.5em;
+	color: darken($blueberry, 15%);
+	background-color: lighten($apple-core,17%);
+	span{
+		font-size: 1.05em;
+	}
+}
+.content{
+	margin: 0;
+	padding: 0;
+	font-family: 'MyriadPro';
+    font-size: 1em;
+    line-height: 2.1;
+    font-weight: lighter;
+	h1{
+		margin-top:0;
+		padding-top: 1%;
+		text-align: right;
+		font-weight: lighter;
+		font-size: 1.2em;
+		line-height: 1;
+		margin-right: 2%;
+		letter-spacing: 0.2em;
+		text-decoration: underline;
+	}
+}
+.logo_evo{
+	width:40%;
+	height:40%;
+	float: left;
+	background-color: lighten($apple-core, 12%);
+}
+.cat:hover{
+	width: 150%;
+	height: 150%;
 }
