@@ -11,7 +11,7 @@ $navy-blue:#263237;
 $newy:#87B6A7;
 $blueberry:#6b7a8f;
 $apple-core:#dcc7aa;
-@import "_slider.scss";
+ @import "_slider.scss";
 body{
 	width:100%;
 	font-family: "MyriadPro";
@@ -62,16 +62,16 @@ text-align: center;
 		padding:0;
 		position: fixed; 
 		background-color: lighten($apple-core, 20% );
-		 // для медиа-ссылок &:after{
-			// 	height: 80%;
-			// 	width: 80%;
-			// 	margin-left: 10%;
-			// 	display: block;
-			// 	content: url('img/dsmm.svg');
-			// 	-webkit-box-flex: 0;
-			// 	    -ms-flex: 0 1 auto;
-			// 	        flex: 0 1 auto;
-			// }
+		 /* для медиа-ссылок &:after{*/
+			/* 	height: 80%;*/
+			/* 	width: 80%;*/
+			/* 	margin-left: 10%;*/
+			/* 	display: block;*/
+			/* 	content: url('img/dsmm.svg');*/
+			/* 	-webkit-box-flex: 0;*/
+			/* 	    -ms-flex: 0 1 auto;*/
+			/* 	        flex: 0 1 auto;*/
+			/* }*/
 			iframe#logo{
 				height: 6vh;
 				width: 40%;
@@ -131,7 +131,7 @@ width:85vw;
 	h1{
 		margin-top:0;
 		padding-top: 1%;
-		text-align: right;
+		text-align: left;
 		font-weight: lighter;
 		font-size: 1.2em;
 		line-height: 1;
