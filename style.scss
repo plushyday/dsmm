@@ -38,30 +38,27 @@ display: flex;
 }
 
 nav{
-position: relative;
-left:0;
-display: -webkit-box;
-display: -ms-flexbox;
-display: flex;
--webkit-box-orient: vertical;
--webkit-box-direction: normal;
-    -ms-flex-direction: column;
-        flex-direction: column;
--webkit-box-pack: start;
-    -ms-flex-pack: start;
-        justify-content: flex-start;
--webkit-box-align: center;
-    -ms-flex-align: center;
-        align-items: center;
-height: 100vh;
-width:15vw;
-text-align: center;
-	ul.navigation-list{
-		display: inline-block;
-		text-align: center;
 		padding:0;
-		position: fixed; 
-		background-color: lighten($apple-core, 20% );
+		top:0;
+		width: 15vw;
+		height:100%;
+		margin: 0 auto;
+		text-align: center;
+		position: relative; 
+		.nav-fixed{
+			padding:0;
+			top:0;
+			width: 15vw;
+			height: 100%;
+			margin: 0 auto;
+			text-align: center;
+			position: fixed; 
+			background-color: lighten($apple-core, 20% );
+		
+	ul.navigation-list{
+		padding:0;
+		margin: 0 auto;
+		text-align: center;
 		 /* для медиа-ссылок &:after{*/
 			/* 	height: 80%;*/
 			/* 	width: 80%;*/
@@ -71,19 +68,16 @@ text-align: center;
 			/* 	-webkit-box-flex: 0;*/
 			/* 	    -ms-flex: 0 1 auto;*/
 			/* 	        flex: 0 1 auto;*/
-			/* }*/
-			iframe#logo{
-				height: 6vh;
-				width: 40%;
-				margin:0.5% 0 -3vh 0;
-				padding:0;
-				-webkit-box-flex: 0;
-				    -ms-flex: 0 2 auto;
-			 	        flex: 0 2 auto;
-			}
+		#sdmm{
+			width: 50%;
+			margin: 8% 5% 0 auto;
+			padding: 0;
+
+		}
 		li{
 			list-style-type: none;
 			margin: 15% 0;
+			padding: 0;
 			a{
 				text-decoration: none;
 				color: $text;
@@ -101,6 +95,7 @@ text-align: center;
 				        transition-timing-function: ease-out;
 				}
 			}
+		}
 		}
 	}
 }

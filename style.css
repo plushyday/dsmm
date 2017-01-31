@@ -75,6 +75,9 @@
     width: 100%;
     text-align: center;
     line-height: 0.5; }
+    .slider .slider_dots div:hover {
+      background: #666;
+      z-index: 500; }
     .slider .slider_dots div:nth-child(1) {
       position: relative;
       width: 25px;
@@ -82,9 +85,8 @@
       display: inline-block;
       margin: 0;
       border-radius: 50%;
-      border: 2px solid #666; }
-      .slider .slider_dots div:nth-child(1):hover {
-        background: #666; }
+      border: 2px solid #666;
+      z-index: 500; }
       .slider .slider_dots div:nth-child(1) label {
         position: relative;
         width: 25px;
@@ -103,9 +105,8 @@
       display: inline-block;
       margin: 0;
       border-radius: 50%;
-      border: 2px solid #666; }
-      .slider .slider_dots div:nth-child(2):hover {
-        background: #666; }
+      border: 2px solid #666;
+      z-index: 500; }
       .slider .slider_dots div:nth-child(2) label {
         position: relative;
         width: 25px;
@@ -124,9 +125,8 @@
       display: inline-block;
       margin: 0;
       border-radius: 50%;
-      border: 2px solid #666; }
-      .slider .slider_dots div:nth-child(3):hover {
-        background: #666; }
+      border: 2px solid #666;
+      z-index: 500; }
       .slider .slider_dots div:nth-child(3) label {
         position: relative;
         width: 25px;
@@ -145,9 +145,8 @@
       display: inline-block;
       margin: 0;
       border-radius: 50%;
-      border: 2px solid #666; }
-      .slider .slider_dots div:nth-child(4):hover {
-        background: #666; }
+      border: 2px solid #666;
+      z-index: 500; }
       .slider .slider_dots div:nth-child(4) label {
         position: relative;
         width: 25px;
@@ -166,9 +165,8 @@
       display: inline-block;
       margin: 0;
       border-radius: 50%;
-      border: 2px solid #666; }
-      .slider .slider_dots div:nth-child(5):hover {
-        background: #666; }
+      border: 2px solid #666;
+      z-index: 500; }
       .slider .slider_dots div:nth-child(5) label {
         position: relative;
         width: 25px;
@@ -184,25 +182,25 @@
 @-webkit-keyframes cycle1 {
   0% {
     left: 0px; }
-  /* При запуске слайдера, первое изображение уже видимо */
+  /* ╨Я╤А╨╕ ╨╖╨░╨┐╤Г╤Б╨║╨╡ ╤Б╨╗╨░╨╣╨┤╨╡╤А╨░, ╨┐╨╡╤А╨▓╨╛╨╡ ╨╕╨╖╨╛╨▒╤А╨░╨╢╨╡╨╜╨╕╨╡ ╤Г╨╢╨╡ ╨▓╨╕╨┤╨╕╨╝╨╛ */
   4% {
     left: 0px; }
-  /* Стартовая позиция */
+  /* ╨б╤В╨░╤А╤В╨╛╨▓╨░╤П ╨┐╨╛╨╖╨╕╤Ж╨╕╤П */
   16% {
     left: 0px;
     opacity: 1;
     z-index: 0; }
-  /* С 4% до 16 % (3 секунды) изображение видимо */
+  /* ╨б 4% ╨┤╨╛ 16 % (3 ╤Б╨╡╨║╤Г╨╜╨┤╤Л) ╨╕╨╖╨╛╨▒╤А╨░╨╢╨╡╨╜╨╕╨╡ ╨▓╨╕╨┤╨╕╨╝╨╛ */
   20% {
     left: 100%;
     opacity: 0;
     z-index: 0; }
-  /* с 16% до 20% (1 секунды)выход изображения*/
+  /* ╤Б 16% ╨┤╨╛ 20% (1 ╤Б╨╡╨║╤Г╨╜╨┤╤Л)╨▓╤Л╤Е╨╛╨┤ ╨╕╨╖╨╛╨▒╤А╨░╨╢╨╡╨╜╨╕╤П*/
   21% {
     left: -100%;
     opacity: 0;
     z-index: -1; }
-  /* Возвращение на исходную позицию за пределами маски */
+  /* ╨Т╨╛╨╖╨▓╤А╨░╤Й╨╡╨╜╨╕╨╡ ╨╜╨░ ╨╕╤Б╤Е╨╛╨┤╨╜╤Г╤О ╨┐╨╛╨╖╨╕╤Ж╨╕╤О ╨╖╨░ ╨┐╤А╨╡╨┤╨╡╨╗╨░╨╝╨╕ ╨╝╨░╤Б╨║╨╕ */
   92% {
     left: -100%;
     opacity: 0;
@@ -210,32 +208,32 @@
   96% {
     left: -100%;
     opacity: 0; }
-  /* С 96% до 100% (1 секунда) – вход */
+  /* ╨б 96% ╨┤╨╛ 100% (1 ╤Б╨╡╨║╤Г╨╜╨┤╨░) тАУ ╨▓╤Е╨╛╨┤ */
   100% {
     left: 0px;
     opacity: 1; } }
 @keyframes cycle1 {
   0% {
     left: 0px; }
-  /* При запуске слайдера, первое изображение уже видимо */
+  /* ╨Я╤А╨╕ ╨╖╨░╨┐╤Г╤Б╨║╨╡ ╤Б╨╗╨░╨╣╨┤╨╡╤А╨░, ╨┐╨╡╤А╨▓╨╛╨╡ ╨╕╨╖╨╛╨▒╤А╨░╨╢╨╡╨╜╨╕╨╡ ╤Г╨╢╨╡ ╨▓╨╕╨┤╨╕╨╝╨╛ */
   4% {
     left: 0px; }
-  /* Стартовая позиция */
+  /* ╨б╤В╨░╤А╤В╨╛╨▓╨░╤П ╨┐╨╛╨╖╨╕╤Ж╨╕╤П */
   16% {
     left: 0px;
     opacity: 1;
     z-index: 0; }
-  /* С 4% до 16 % (3 секунды) изображение видимо */
+  /* ╨б 4% ╨┤╨╛ 16 % (3 ╤Б╨╡╨║╤Г╨╜╨┤╤Л) ╨╕╨╖╨╛╨▒╤А╨░╨╢╨╡╨╜╨╕╨╡ ╨▓╨╕╨┤╨╕╨╝╨╛ */
   20% {
     left: 100%;
     opacity: 0;
     z-index: 0; }
-  /* с 16% до 20% (1 секунды)выход изображения*/
+  /* ╤Б 16% ╨┤╨╛ 20% (1 ╤Б╨╡╨║╤Г╨╜╨┤╤Л)╨▓╤Л╤Е╨╛╨┤ ╨╕╨╖╨╛╨▒╤А╨░╨╢╨╡╨╜╨╕╤П*/
   21% {
     left: -100%;
     opacity: 0;
     z-index: -1; }
-  /* Возвращение на исходную позицию за пределами маски */
+  /* ╨Т╨╛╨╖╨▓╤А╨░╤Й╨╡╨╜╨╕╨╡ ╨╜╨░ ╨╕╤Б╤Е╨╛╨┤╨╜╤Г╤О ╨┐╨╛╨╖╨╕╤Ж╨╕╤О ╨╖╨░ ╨┐╤А╨╡╨┤╨╡╨╗╨░╨╝╨╕ ╨╝╨░╤Б╨║╨╕ */
   92% {
     left: -100%;
     opacity: 0;
@@ -243,7 +241,7 @@
   96% {
     left: -100%;
     opacity: 0; }
-  /* С 96% до 100% (1 секунда) – вход */
+  /* ╨б 96% ╨┤╨╛ 100% (1 ╤Б╨╡╨║╤Г╨╜╨┤╨░) тАУ ╨▓╤Е╨╛╨┤ */
   100% {
     left: 0px;
     opacity: 1; } }
@@ -251,33 +249,33 @@
   0% {
     left: -100%;
     opacity: 0; }
-  /* Исходная позиция за пределами маски */
+  /* ╨Ш╤Б╤Е╨╛╨┤╨╜╨░╤П ╨┐╨╛╨╖╨╕╤Ж╨╕╤П ╨╖╨░ ╨┐╤А╨╡╨┤╨╡╨╗╨░╨╝╨╕ ╨╝╨░╤Б╨║╨╕ */
   16% {
     left: -100%;
     opacity: 0; }
-  /* Начало движения с 16% */
+  /* ╨Э╨░╤З╨░╨╗╨╛ ╨┤╨▓╨╕╨╢╨╡╨╜╨╕╤П ╤Б 16% */
   20% {
     left: 0px;
     opacity: 1; }
   24% {
     left: 0px;
     opacity: 1; }
-  /* С 20% до 24% (в течении 1 секунды) — вход*/
+  /* ╨б 20% ╨┤╨╛ 24% (╨▓ ╤В╨╡╤З╨╡╨╜╨╕╨╕ 1 ╤Б╨╡╨║╤Г╨╜╨┤╤Л) тАФ ╨▓╤Е╨╛╨┤*/
   36% {
     left: 0px;
     opacity: 1;
     z-index: 0; }
-  /* С 24% до 36 % (3 секунды) изображение видимо */
+  /* ╨б 24% ╨┤╨╛ 36 % (3 ╤Б╨╡╨║╤Г╨╜╨┤╤Л) ╨╕╨╖╨╛╨▒╤А╨░╨╢╨╡╨╜╨╕╨╡ ╨▓╨╕╨┤╨╕╨╝╨╛ */
   40% {
     left: 100%;
     opacity: 0;
     z-index: 0; }
-  /* С 36% до 40% (1 секунда)— выход */
+  /* ╨б 36% ╨┤╨╛ 40% (1 ╤Б╨╡╨║╤Г╨╜╨┤╨░)тАФ ╨▓╤Л╤Е╨╛╨┤ */
   41% {
     left: 100%;
     opacity: 0;
     z-index: -1; }
-  /* Возврат на исходную позицию */
+  /* ╨Т╨╛╨╖╨▓╤А╨░╤В ╨╜╨░ ╨╕╤Б╤Е╨╛╨┤╨╜╤Г╤О ╨┐╨╛╨╖╨╕╤Ж╨╕╤О */
   100% {
     left: -100%;
     opacity: 0;
@@ -286,33 +284,33 @@
   0% {
     left: -100%;
     opacity: 0; }
-  /* Исходная позиция за пределами маски */
+  /* ╨Ш╤Б╤Е╨╛╨┤╨╜╨░╤П ╨┐╨╛╨╖╨╕╤Ж╨╕╤П ╨╖╨░ ╨┐╤А╨╡╨┤╨╡╨╗╨░╨╝╨╕ ╨╝╨░╤Б╨║╨╕ */
   16% {
     left: -100%;
     opacity: 0; }
-  /* Начало движения с 16% */
+  /* ╨Э╨░╤З╨░╨╗╨╛ ╨┤╨▓╨╕╨╢╨╡╨╜╨╕╤П ╤Б 16% */
   20% {
     left: 0px;
     opacity: 1; }
   24% {
     left: 0px;
     opacity: 1; }
-  /* С 20% до 24% (в течении 1 секунды) — вход*/
+  /* ╨б 20% ╨┤╨╛ 24% (╨▓ ╤В╨╡╤З╨╡╨╜╨╕╨╕ 1 ╤Б╨╡╨║╤Г╨╜╨┤╤Л) тАФ ╨▓╤Е╨╛╨┤*/
   36% {
     left: 0px;
     opacity: 1;
     z-index: 0; }
-  /* С 24% до 36 % (3 секунды) изображение видимо */
+  /* ╨б 24% ╨┤╨╛ 36 % (3 ╤Б╨╡╨║╤Г╨╜╨┤╤Л) ╨╕╨╖╨╛╨▒╤А╨░╨╢╨╡╨╜╨╕╨╡ ╨▓╨╕╨┤╨╕╨╝╨╛ */
   40% {
     left: 100%;
     opacity: 0;
     z-index: 0; }
-  /* С 36% до 40% (1 секунда)— выход */
+  /* ╨б 36% ╨┤╨╛ 40% (1 ╤Б╨╡╨║╤Г╨╜╨┤╨░)тАФ ╨▓╤Л╤Е╨╛╨┤ */
   41% {
     left: 100%;
     opacity: 0;
     z-index: -1; }
-  /* Возврат на исходную позицию */
+  /* ╨Т╨╛╨╖╨▓╤А╨░╤В ╨╜╨░ ╨╕╤Б╤Е╨╛╨┤╨╜╤Г╤О ╨┐╨╛╨╖╨╕╤Ж╨╕╤О */
   100% {
     left: -100%;
     opacity: 0;
@@ -497,66 +495,58 @@ body {
   align-items: flex-start; }
 
 nav {
-  position: relative;
-  left: 0;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -webkit-box-pack: start;
-  -ms-flex-pack: start;
-  justify-content: flex-start;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  height: 100vh;
+  padding: 0;
+  top: 0;
   width: 15vw;
-  text-align: center; }
-  nav ul.navigation-list {
-    display: inline-block;
-    text-align: center;
+  height: 100%;
+  margin: 0 auto;
+  text-align: center;
+  position: relative; }
+  nav .nav-fixed {
     padding: 0;
+    top: 0;
+    width: 15vw;
+    height: 100%;
+    margin: 0 auto;
+    text-align: center;
     position: fixed;
-    background-color: #faf7f2;
-    /* для медиа-ссылок &:after{*/
-    /* 	height: 80%;*/
-    /* 	width: 80%;*/
-    /* 	margin-left: 10%;*/
-    /* 	display: block;*/
-    /* 	content: url('img/dsmm.svg');*/
-    /* 	-webkit-box-flex: 0;*/
-    /* 	    -ms-flex: 0 1 auto;*/
-    /* 	        flex: 0 1 auto;*/
-    /* }*/ }
-    nav ul.navigation-list iframe#logo {
-      height: 6vh;
-      width: 40%;
-      margin: 0.5% 0 -3vh 0;
+    background-color: #faf7f2; }
+    nav .nav-fixed ul.navigation-list {
       padding: 0;
-      -webkit-box-flex: 0;
-      -ms-flex: 0 2 auto;
-      flex: 0 2 auto; }
-    nav ul.navigation-list li {
-      list-style-type: none;
-      margin: 15% 0; }
-      nav ul.navigation-list li a {
-        text-decoration: none;
-        color: #333;
-        line-height: 1.5;
-        font-weight: lighter;
-        font-size: 1em; }
-        nav ul.navigation-list li a:hover {
-          cursor: pointer;
-          color: #6b7a8f;
-          -webkit-transition-property: all;
-          transition-property: all;
-          -webkit-transition-duration: 0.5s;
-          transition-duration: 0.5s;
-          -webkit-transition-timing-function: ease-out;
-          transition-timing-function: ease-out; }
+      margin: 0 auto;
+      text-align: center;
+      /* ╨┤╨╗╤П ╨╝╨╡╨┤╨╕╨░-╤Б╤Б╤Л╨╗╨╛╨║ &:after{*/
+      /* 	height: 80%;*/
+      /* 	width: 80%;*/
+      /* 	margin-left: 10%;*/
+      /* 	display: block;*/
+      /* 	content: url('img/dsmm.svg');*/
+      /* 	-webkit-box-flex: 0;*/
+      /* 	    -ms-flex: 0 1 auto;*/
+      /* 	        flex: 0 1 auto;*/ }
+      nav .nav-fixed ul.navigation-list #sdmm {
+        width: 50%;
+        margin: 8% 5% 0 auto;
+        padding: 0; }
+      nav .nav-fixed ul.navigation-list li {
+        list-style-type: none;
+        margin: 15% 0;
+        padding: 0; }
+        nav .nav-fixed ul.navigation-list li a {
+          text-decoration: none;
+          color: #333;
+          line-height: 1.5;
+          font-weight: lighter;
+          font-size: 1em; }
+          nav .nav-fixed ul.navigation-list li a:hover {
+            cursor: pointer;
+            color: #6b7a8f;
+            -webkit-transition-property: all;
+            transition-property: all;
+            -webkit-transition-duration: 0.5s;
+            transition-duration: 0.5s;
+            -webkit-transition-timing-function: ease-out;
+            transition-timing-function: ease-out; }
 
 article.main {
   background-color: #e8dac7;

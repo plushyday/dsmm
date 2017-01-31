@@ -1,6 +1,6 @@
 function ready (){
-		var logo = document.getElementById("dsmm");
-		var path = $("#dsmm path");
+		var logo = document.getElementById("sdmm");
+		var path = $("#sdmm path");
 		var duration = 500;
 		logo.addEventListener('mouseover', function(){animate({duration: duration, path: path})} );
 	}
