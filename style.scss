@@ -112,6 +112,14 @@ width:85vw;
 	font-size: 1.5em;
 	color: darken($blueberry, 15%);
 	background-color: lighten($apple-core,17%);
+				&:before {
+                  @extend %shadow;
+                  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26); 
+                }
+                  &:after {
+                  @extend %shadow;
+                  box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.16);
+                }
 	span{
 		font-size: 1.05em;
 	}
@@ -137,17 +145,17 @@ width:85vw;
               align-items: stretch;
 @import "_slider.scss";
 
-.logo_evo{
-	-ms-flex-preferred-size:30%;
-	    flex-basis:30%;
-	-webkit-box-flex: 2;
-	    -ms-flex-positive: 2;
-	        flex-grow: 2;
-	height:40%;
-	p{
-			@extend %text-format;
-	}
-}
+/* .logo_evo{*/
+/* 	-ms-flex-preferred-size:30%;*/
+/* 	    flex-basis:30%;*/
+/* 	-webkit-box-flex: 2;*/
+/* 	    -ms-flex-positive: 2;*/
+/* 	        flex-grow: 2;*/
+/* 	height:40%;*/
+/* 	p{*/
+/* 			@extend %text-format;*/
+/* 	}*/
+/* }*/
 .blocks_2{
 	margin-left:1%;
 	margin-right:1%;
@@ -156,15 +164,26 @@ width:85vw;
 	-webkit-box-flex: 1;
 	    -ms-flex-positive: 1;
 	        flex-grow: 1;
-	background-color: lighten($apple-core, 10%);
 		h1{
 			@extend %caption;
 		}
 		p{
 			@extend %text-format;
 		}
+		#evolution{
+			float: left;
+			width:40%;
+		
+		}
 	}
-
+}
+%shadow{ 
+content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
 }
 %text-format{
 		text-indent: 1.1em;
