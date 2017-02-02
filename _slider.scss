@@ -46,8 +46,9 @@
                 opacity:0.9;
                 position: absolute;
                 font-style: italic;
-                background: -webkit-linear-gradient(top, rgba(245,239,231,0.7) 0%, rgba(232,218,199,1) 100%);
-                background: linear-gradient(to bottom, rgba(245,239,231,0.7) 0%, rgba(232,218,199,1) 100%);
+                background: lighten($apple-core, 10%);
+                /* background: -webkit-linear-gradient(top, lighten($apple-core,17%) 0%, lighten($apple-core, 8%) 100%);*/
+                /* background: linear-gradient(top, lighten($apple-core,17%) 0%, lighten($apple-core, 8%) 100%);*/
                   &:before {
                   @extend %shadow;
                   box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26); 
@@ -61,6 +62,7 @@
               margin-left:5%;
               cursor: text;
               z-index: 50;
+              color:darken($apple-core, 70%);
             }
             .invisible{
               @extend %text_in_slider;
@@ -86,7 +88,7 @@
           div{
             z-index: 500;
             &:hover{
-              background: $apple-core;
+              background: darken($apple-core, 50%);
             }
           }
         @for $i from 1 through 5{
@@ -97,18 +99,18 @@
             display: inline-block;
             margin:0;
             border-radius: 50%;
-            border: 2px solid $apple-core;
+            border: 2px solid darken($apple-core, 50%);
             z-index:500;
             
             span{
             position: relative;
             width:15px;
             height:15px;
-            box-shadow: 0px -1px 10px 1px $apple-core;
+            box-shadow: 0px -1px 10px 1px darken($apple-core, 50%);
             display: inline-block;
             margin:0;
             border-radius: 50%;
-             background: $apple-core;
+             background: darken($apple-core, 50%);
             -webkit-animation: cycle#{$i} 25s linear infinite;
               animation: cycle#{$i} 25s linear infinite;
               }   
@@ -126,7 +128,7 @@
       border-style: solid;
       height: 40px;
       width: 10px;
-      border-color:transparent darken($blueberry,30%) transparent darken($blueberry,30%);
+      border-color:transparent darken($apple-core, 50%) transparent darken($apple-core, 50%);
     }
    
     #pause-play:checked~.slider_item,
@@ -141,7 +143,7 @@
       height: 0;
       border-style: solid;
       border-width: 25px 0 25px 30px;
-      border-color: transparent transparent transparent darken($blueberry,40%);
+      border-color: transparent transparent transparent darken($apple-core, 50%);
     }
       &:hover{
 
