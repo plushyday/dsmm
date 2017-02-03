@@ -91,22 +91,34 @@ nav{
 		.icons{
 			position: absolute;
 			bottom: 0;
+			width: 88%;
+			text-align: center;
 			svg{
-				float: left;
-				margin:0;
-				width:40%;
+				width:45%;
+				margin: 0;
+				padding: 0;
+			&:hover{ 
+		.bntu_st0, .youtube_st0{
+				fill: $apple-core;
+					}
+		.youtube_st1{
+			fill: $blueberry;
+					}
+		.youtube_st2{
+			fill: lighten($apple-core, 30%);
+		}
 				}
 			}
 		}
+	}
 	}
 }
 article.main{
 background-color:lighten($apple-core, 8%);
 position: relative;
-width:85vw;
+width:70vw;
 	.header{
 	font-family: $palatino;
-	width:85vw;
 	padding: 0.5% 0 0.5% 0;
 	text-align: center;
 	font-size: 150%;
@@ -129,6 +141,7 @@ width:85vw;
 	padding: 0;
 	font-family: 'MyriadPro';
     font-size: 1em;
+	text-indent: 1.1em;
     line-height: 2.1;
     position: relative;
     font-weight: lighter;
@@ -166,9 +179,7 @@ width:85vw;
 		h1{
 			@extend %caption;
 		}
-		p{
-			@extend %text-format;
-		}
+		
 		#evolution{
 			float: left;
 			width:40%;
@@ -254,15 +265,18 @@ footer{
 	}
 }
 }
-
+aside{
+	width:15vw;
+}
 .tooltip{
+  position: absolute;
   width: 350px;
   font-family: Helvetica, Arial, sans-serif;
   font-weight: 100;
   font-size: 20px;
   text-align: center;
   padding: 50px;
-  margin: 100px auto;
+  // margin: 100px auto;
   background: white;
   position: absolute;
   border-radius: 5px;
@@ -316,15 +330,7 @@ content: "";
   top: 0;
   bottom: 0;
 }
-%text-format{
-		text-indent: 1.1em;
-		color: darken($apple-core, 70%); 
-		font-family: $palatino;  
-		font-size: 1.2em; 
-		font-weight: lighter; 
-		line-height: 30px; 
-		margin: 0 0 1%;
-		}
+
 %caption{
 		padding-top: 1%;
 		font-size: 2em;

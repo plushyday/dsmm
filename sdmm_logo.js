@@ -55,20 +55,34 @@ function ready (){
 	}
 ];
 
-function handler(event, array){
+function handler(event, gist){
 	var tooltip = document.createElement('div');
-	tooltip.classList.add('tooltip')
-			var target = event.target;
-			console.log(target);
-			if((target.tagName == 'g')&&(target.id)){
-				for (var i = 0; i <= array.length; i++) {
-					if (array[i].name===target.id) {
-					tooltip.setAttribute('data-description', array[i].quote);
- 					target.appendChild(tooltip);
+	tooltip.classList.add('tooltip');
+	var gist = gist;
+
+	var target = event.target;
+
+	// var svgtarget;
+
+	while ((target.tagName)&&(target.tagName != 'G')) {
+	    if((target.tagName)&&(target.tagName == 'g')&&(target.id)){
+			for (var i = 0; i <= gist.length; ++i) {
+				if ((gist[i])&&(gist[i].name===target.id)){
+					tooltip.setAttribute('data-description', gist[i].quote);
+					tooltip.style.left = event.pageX+'px';
+					tooltip.style.top = event.pageY+'px';
+					if(document.getElementsByClassName("tooltip")[0]){
+						var ttp = document.getElementsByClassName("tooltip")[0];
+						ttp.parentNode.removeChild(ttp);
+						
 					}
-				};
-			}
-		};
+					document.body.appendChild(tooltip);
+				}
+			};	
+		}
+		target = target.parentNode;
+	}
+};
 		var logo = document.getElementById("sdmm");
 		var path = $("#sdmm path");
 		var dots_js = document.querySelectorAll(".slider_dots");
@@ -76,8 +90,9 @@ function handler(event, array){
 		var svg = document.getElementById("evolution");
 		var duration = 500;
 		logo.addEventListener('mouseover', function(){animate({duration: duration, path: path})} );
-		svg.addEventListener('mouseover', function(){handler(event,gist)});
-	}
+		svg.addEventListener('mouseover', function(e){handler(e,gist)});
+}
+
 
 window.addEventListener("load", ready);
 
