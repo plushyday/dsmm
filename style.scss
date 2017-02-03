@@ -114,26 +114,23 @@ nav{
 	}
 }
 article.main{
-background-color:lighten($apple-core, 8%);
+background-color:lighten($apple-core, 2%);
 position: relative;
 width:70vw;
+background-color:rgba(lighten($apple-core, 2%), 0.7);
 	.header{
 	font-family: $palatino;
 	padding: 0.5% 0 0.5% 0;
 	text-align: center;
 	font-size: 150%;
 	color: darken($blueberry, 15%);
-	background: lighten($apple-core, 10%);
-				&:before {
-                  @extend %shadow;
-                  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26); 
-                }
-                  &:after {
-                  @extend %shadow;
-                  box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.16);
-                }
+	background-color:rgba(lighten($apple-core, 2%), 0.7);
+    div{
+    background-color:lighten($apple-core, 10%);
+	box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26); 
 	span{
 		font-size: 160%;
+	}
 	}
 }
 .content{
@@ -157,6 +154,7 @@ width:70vw;
       -webkit-box-align: stretch;
           -ms-flex-align: stretch;
               align-items: stretch;
+
 @import "_slider.scss";
 
 /* .logo_evo{*/
@@ -171,11 +169,14 @@ width:70vw;
 /* 	}*/
 /* }*/
 .blocks_2{
-	margin-left:1%;
-	margin-right:1%;
+	padding: 0 2%;
 	-webkit-box-flex: 1;
 	    -ms-flex-positive: 1;
 	        flex-grow: 1;
+            background-color:lighten($apple-core, 10%);
+
+	            box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26); 
+
 		h1{
 			@extend %caption;
 		}
@@ -276,7 +277,7 @@ aside{
   font-size: 20px;
   text-align: center;
   padding: 50px;
-  // margin: 100px auto;
+  /* margin: 100px auto;*/
   background: white;
   position: absolute;
   border-radius: 5px;

@@ -101,22 +101,22 @@ nav {
             fill: white; }
 
 article.main {
-  background-color: #e9e6e3;
+  background-color: #dbd7d2;
   position: relative;
-  width: 70vw; }
+  width: 70vw;
+  background-color: rgba(219, 215, 210, 0.7); }
   article.main .header {
     font-family: Palatino, "Palatino Linotype", "Palatino LT STD";
     padding: 0.5% 0 0.5% 0;
     text-align: center;
     font-size: 150%;
     color: #4a5563;
-    background: #edebe9; }
-    article.main .header:before {
+    background-color: rgba(219, 215, 210, 0.7); }
+    article.main .header div {
+      background-color: #edebe9;
       box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26); }
-    article.main .header:after {
-      box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.16); }
-    article.main .header span {
-      font-size: 160%; }
+      article.main .header div span {
+        font-size: 160%; }
   article.main .content {
     margin: 0;
     padding: 0;
@@ -150,8 +150,8 @@ article.main {
     /* 	}*/
     /* }*/ }
     article.main .content .slider {
-      margin-bottom: 0;
       padding: 0;
+      z-index: 50;
       display: inline-block;
       height: 35vh;
       width: 100%;
@@ -159,6 +159,7 @@ article.main {
       overflow: hidden;
       position: relative;
       background-color: white;
+      box-shadow: inset 0 7px 9px -9px rgba(0, 0, 0, 0.16), inset 0 -7px 9px -9px rgba(0, 0, 0, 0.16);
       /* #item_1:checked+div{*/
       /*   -webkit-animation: cycle1 25s linear infinite;*/
       /*         animation: cycle1 25s linear infinite;*/
@@ -257,14 +258,12 @@ article.main {
         margin: 0;
         height: 100%;
         padding: 1%;
-        opacity: 0.9;
+        z-index: 51;
         position: absolute;
         font-style: italic;
-        background: #edebe9;
+        background-color: rgba(219, 215, 210, 0.7);
         /* background: -webkit-linear-gradient(top, lighten($apple-core,17%) 0%, lighten($apple-core, 8%) 100%);*/
         /* background: linear-gradient(top, lighten($apple-core,17%) 0%, lighten($apple-core, 8%) 100%);*/ }
-        article.main .content .slider .slider_info:before {
-          box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26); }
         article.main .content .slider .slider_info:after {
           box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.16); }
         article.main .content .slider .slider_info .invisible, article.main .content .slider .slider_info div:nth-child(1), article.main .content .slider .slider_info div:nth-child(2), article.main .content .slider .slider_info div:nth-child(3), article.main .content .slider .slider_info div:nth-child(4), article.main .content .slider .slider_info div:nth-child(5) {
@@ -302,7 +301,8 @@ article.main {
         bottom: 0;
         width: 100%;
         text-align: center;
-        line-height: 0.5; }
+        line-height: 0.5;
+        text-indent: 0; }
         article.main .content .slider .slider_dots div {
           z-index: 500; }
           article.main .content .slider .slider_dots div:hover {
@@ -436,11 +436,12 @@ article.main {
         -webkit-transition-duration: 0.5s;
         transition-duration: 0.5s; }
     article.main .content .blocks_2 {
-      margin-left: 1%;
-      margin-right: 1%;
+      padding: 0 2%;
       -webkit-box-flex: 1;
       -ms-flex-positive: 1;
-      flex-grow: 1; }
+      flex-grow: 1;
+      background-color: #edebe9;
+      box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26); }
       article.main .content .blocks_2 #evolution {
         float: left;
         width: 40%;
@@ -524,6 +525,7 @@ aside {
   font-size: 20px;
   text-align: center;
   padding: 50px;
+  /* margin: 100px auto;*/
   background: white;
   position: absolute;
   border-radius: 5px;
@@ -563,7 +565,7 @@ aside {
     transition: .25s ease-in-out;
     opacity: 0; }
 
-article.main .header:before, article.main .header:after, article.main .content .slider .slider_info:before, article.main .content .slider .slider_info:after {
+article.main .content .slider .slider_info:after {
   content: "";
   position: absolute;
   left: 0;
@@ -588,25 +590,25 @@ article.main .content .blocks_2 h1 {
 @-webkit-keyframes cycle1 {
   0% {
     left: 0px; }
-  /* ╨Я╤А╨╕ ╨╖╨░╨┐╤Г╤Б╨║╨╡ ╤Б╨╗╨░╨╣╨┤╨╡╤А╨░, ╨┐╨╡╤А╨▓╨╛╨╡ ╨╕╨╖╨╛╨▒╤А╨░╨╢╨╡╨╜╨╕╨╡ ╤Г╨╢╨╡ ╨▓╨╕╨┤╨╕╨╝╨╛ */
+  /* При запуске слайдера, первое изображение уже видимо */
   4% {
     left: 0px; }
-  /* ╨б╤В╨░╤А╤В╨╛╨▓╨░╤П ╨┐╨╛╨╖╨╕╤Ж╨╕╤П */
+  /* Стартовая позиция */
   16% {
     left: 0px;
     opacity: 1;
     z-index: 0; }
-  /* ╨б 4% ╨┤╨╛ 16 % (3 ╤Б╨╡╨║╤Г╨╜╨┤╤Л) ╨╕╨╖╨╛╨▒╤А╨░╨╢╨╡╨╜╨╕╨╡ ╨▓╨╕╨┤╨╕╨╝╨╛ */
+  /* С 4% до 16 % (3 секунды) изображение видимо */
   20% {
     left: 100%;
     opacity: 0;
     z-index: 0; }
-  /* ╤Б 16% ╨┤╨╛ 20% (1 ╤Б╨╡╨║╤Г╨╜╨┤╤Л)╨▓╤Л╤Е╨╛╨┤ ╨╕╨╖╨╛╨▒╤А╨░╨╢╨╡╨╜╨╕╤П*/
+  /* с 16% до 20% (1 секунды)выход изображения*/
   21% {
     left: -100%;
     opacity: 0;
     z-index: -1; }
-  /* ╨Т╨╛╨╖╨▓╤А╨░╤Й╨╡╨╜╨╕╨╡ ╨╜╨░ ╨╕╤Б╤Е╨╛╨┤╨╜╤Г╤О ╨┐╨╛╨╖╨╕╤Ж╨╕╤О ╨╖╨░ ╨┐╤А╨╡╨┤╨╡╨╗╨░╨╝╨╕ ╨╝╨░╤Б╨║╨╕ */
+  /* Возвращение на исходную позицию за пределами маски */
   92% {
     left: -100%;
     opacity: 0;
@@ -614,32 +616,32 @@ article.main .content .blocks_2 h1 {
   96% {
     left: -100%;
     opacity: 0; }
-  /* ╨б 96% ╨┤╨╛ 100% (1 ╤Б╨╡╨║╤Г╨╜╨┤╨░) тАУ ╨▓╤Е╨╛╨┤ */
+  /* С 96% до 100% (1 секунда) – вход */
   100% {
     left: 0px;
     opacity: 1; } }
 @keyframes cycle1 {
   0% {
     left: 0px; }
-  /* ╨Я╤А╨╕ ╨╖╨░╨┐╤Г╤Б╨║╨╡ ╤Б╨╗╨░╨╣╨┤╨╡╤А╨░, ╨┐╨╡╤А╨▓╨╛╨╡ ╨╕╨╖╨╛╨▒╤А╨░╨╢╨╡╨╜╨╕╨╡ ╤Г╨╢╨╡ ╨▓╨╕╨┤╨╕╨╝╨╛ */
+  /* При запуске слайдера, первое изображение уже видимо */
   4% {
     left: 0px; }
-  /* ╨б╤В╨░╤А╤В╨╛╨▓╨░╤П ╨┐╨╛╨╖╨╕╤Ж╨╕╤П */
+  /* Стартовая позиция */
   16% {
     left: 0px;
     opacity: 1;
     z-index: 0; }
-  /* ╨б 4% ╨┤╨╛ 16 % (3 ╤Б╨╡╨║╤Г╨╜╨┤╤Л) ╨╕╨╖╨╛╨▒╤А╨░╨╢╨╡╨╜╨╕╨╡ ╨▓╨╕╨┤╨╕╨╝╨╛ */
+  /* С 4% до 16 % (3 секунды) изображение видимо */
   20% {
     left: 100%;
     opacity: 0;
     z-index: 0; }
-  /* ╤Б 16% ╨┤╨╛ 20% (1 ╤Б╨╡╨║╤Г╨╜╨┤╤Л)╨▓╤Л╤Е╨╛╨┤ ╨╕╨╖╨╛╨▒╤А╨░╨╢╨╡╨╜╨╕╤П*/
+  /* с 16% до 20% (1 секунды)выход изображения*/
   21% {
     left: -100%;
     opacity: 0;
     z-index: -1; }
-  /* ╨Т╨╛╨╖╨▓╤А╨░╤Й╨╡╨╜╨╕╨╡ ╨╜╨░ ╨╕╤Б╤Е╨╛╨┤╨╜╤Г╤О ╨┐╨╛╨╖╨╕╤Ж╨╕╤О ╨╖╨░ ╨┐╤А╨╡╨┤╨╡╨╗╨░╨╝╨╕ ╨╝╨░╤Б╨║╨╕ */
+  /* Возвращение на исходную позицию за пределами маски */
   92% {
     left: -100%;
     opacity: 0;
@@ -647,7 +649,7 @@ article.main .content .blocks_2 h1 {
   96% {
     left: -100%;
     opacity: 0; }
-  /* ╨б 96% ╨┤╨╛ 100% (1 ╤Б╨╡╨║╤Г╨╜╨┤╨░) тАУ ╨▓╤Е╨╛╨┤ */
+  /* С 96% до 100% (1 секунда) – вход */
   100% {
     left: 0px;
     opacity: 1; } }
@@ -655,33 +657,33 @@ article.main .content .blocks_2 h1 {
   0% {
     left: -100%;
     opacity: 0; }
-  /* ╨Ш╤Б╤Е╨╛╨┤╨╜╨░╤П ╨┐╨╛╨╖╨╕╤Ж╨╕╤П ╨╖╨░ ╨┐╤А╨╡╨┤╨╡╨╗╨░╨╝╨╕ ╨╝╨░╤Б╨║╨╕ */
+  /* Исходная позиция за пределами маски */
   16% {
     left: -100%;
     opacity: 0; }
-  /* ╨Э╨░╤З╨░╨╗╨╛ ╨┤╨▓╨╕╨╢╨╡╨╜╨╕╤П ╤Б 16% */
+  /* Начало движения с 16% */
   20% {
     left: 0px;
     opacity: 1; }
   24% {
     left: 0px;
     opacity: 1; }
-  /* ╨б 20% ╨┤╨╛ 24% (╨▓ ╤В╨╡╤З╨╡╨╜╨╕╨╕ 1 ╤Б╨╡╨║╤Г╨╜╨┤╤Л) тАФ ╨▓╤Е╨╛╨┤*/
+  /* С 20% до 24% (в течении 1 секунды) — вход*/
   36% {
     left: 0px;
     opacity: 1;
     z-index: 0; }
-  /* ╨б 24% ╨┤╨╛ 36 % (3 ╤Б╨╡╨║╤Г╨╜╨┤╤Л) ╨╕╨╖╨╛╨▒╤А╨░╨╢╨╡╨╜╨╕╨╡ ╨▓╨╕╨┤╨╕╨╝╨╛ */
+  /* С 24% до 36 % (3 секунды) изображение видимо */
   40% {
     left: 100%;
     opacity: 0;
     z-index: 0; }
-  /* ╨б 36% ╨┤╨╛ 40% (1 ╤Б╨╡╨║╤Г╨╜╨┤╨░)тАФ ╨▓╤Л╤Е╨╛╨┤ */
+  /* С 36% до 40% (1 секунда)— выход */
   41% {
     left: 100%;
     opacity: 0;
     z-index: -1; }
-  /* ╨Т╨╛╨╖╨▓╤А╨░╤В ╨╜╨░ ╨╕╤Б╤Е╨╛╨┤╨╜╤Г╤О ╨┐╨╛╨╖╨╕╤Ж╨╕╤О */
+  /* Возврат на исходную позицию */
   100% {
     left: -100%;
     opacity: 0;
@@ -690,33 +692,33 @@ article.main .content .blocks_2 h1 {
   0% {
     left: -100%;
     opacity: 0; }
-  /* ╨Ш╤Б╤Е╨╛╨┤╨╜╨░╤П ╨┐╨╛╨╖╨╕╤Ж╨╕╤П ╨╖╨░ ╨┐╤А╨╡╨┤╨╡╨╗╨░╨╝╨╕ ╨╝╨░╤Б╨║╨╕ */
+  /* Исходная позиция за пределами маски */
   16% {
     left: -100%;
     opacity: 0; }
-  /* ╨Э╨░╤З╨░╨╗╨╛ ╨┤╨▓╨╕╨╢╨╡╨╜╨╕╤П ╤Б 16% */
+  /* Начало движения с 16% */
   20% {
     left: 0px;
     opacity: 1; }
   24% {
     left: 0px;
     opacity: 1; }
-  /* ╨б 20% ╨┤╨╛ 24% (╨▓ ╤В╨╡╤З╨╡╨╜╨╕╨╕ 1 ╤Б╨╡╨║╤Г╨╜╨┤╤Л) тАФ ╨▓╤Е╨╛╨┤*/
+  /* С 20% до 24% (в течении 1 секунды) — вход*/
   36% {
     left: 0px;
     opacity: 1;
     z-index: 0; }
-  /* ╨б 24% ╨┤╨╛ 36 % (3 ╤Б╨╡╨║╤Г╨╜╨┤╤Л) ╨╕╨╖╨╛╨▒╤А╨░╨╢╨╡╨╜╨╕╨╡ ╨▓╨╕╨┤╨╕╨╝╨╛ */
+  /* С 24% до 36 % (3 секунды) изображение видимо */
   40% {
     left: 100%;
     opacity: 0;
     z-index: 0; }
-  /* ╨б 36% ╨┤╨╛ 40% (1 ╤Б╨╡╨║╤Г╨╜╨┤╨░)тАФ ╨▓╤Л╤Е╨╛╨┤ */
+  /* С 36% до 40% (1 секунда)— выход */
   41% {
     left: 100%;
     opacity: 0;
     z-index: -1; }
-  /* ╨Т╨╛╨╖╨▓╤А╨░╤В ╨╜╨░ ╨╕╤Б╤Е╨╛╨┤╨╜╤Г╤О ╨┐╨╛╨╖╨╕╤Ж╨╕╤О */
+  /* Возврат на исходную позицию */
   100% {
     left: -100%;
     opacity: 0;

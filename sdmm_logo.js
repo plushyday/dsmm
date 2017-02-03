@@ -54,35 +54,58 @@ function ready (){
 		quote: "earth quote"
 	}
 ];
+var returnedTooltip;
 
 function handler(event, gist){
 	var tooltip = document.createElement('div');
 	tooltip.classList.add('tooltip');
-	var gist = gist;
-
 	var target = event.target;
 
-	// var svgtarget;
+while((target.tagName != 'G')&&(target.tagName)){
+	for (var i = 0; i < gist.length; ++i) {
+	if((target.id!=='')&&(target.id==gist[i].name)){
+	var currentGistId = target.id;
+}
+}
+	if(currentGistId) break;
+	target = target.parentNode;
+}
+if(!currentGistId) return;
 
-	while ((target.tagName)&&(target.tagName != 'G')) {
-	    if((target.tagName)&&(target.tagName == 'g')&&(target.id)){
-			for (var i = 0; i <= gist.length; ++i) {
-				if ((gist[i])&&(gist[i].name===target.id)){
-					tooltip.setAttribute('data-description', gist[i].quote);
-					tooltip.style.left = event.pageX+'px';
-					tooltip.style.top = event.pageY+'px';
-					if(document.getElementsByClassName("tooltip")[0]){
-						var ttp = document.getElementsByClassName("tooltip")[0];
-						ttp.parentNode.removeChild(ttp);
+returnedTooltip = showTooltip(currentGistId, event, gist); 
+}
+	// while ((target.tagName)&&(target.tagName != 'G')) {
+	//     if((target.tagName)&&(target.tagName == 'g')&&(target.id)){
+	// 		for (var i = 0; i <= gist.length; ++i) {
+	// 			if ((gist[i])&&(gist[i].name===target.id)){
+// 					tooltip.innerHTML = gist[i].quote;
+// 					tooltip.style.left = event.pageX+'px';
+// 					tooltip.style.top = event.pageY+'px';
+// 					if(document.getElementsByClassName("tooltip")[0]){
+// 						var ttp = document.getElementsByClassName("tooltip")[0];
+// 						ttp.parentNode.removeChild(ttp);
 						
-					}
-					document.body.appendChild(tooltip);
-				}
-			};	
-		}
-		target = target.parentNode;
-	}
-};
+// 					}
+// 					document.body.appendChild(tooltip);
+// 				}
+// 			};	
+// 		}
+// 		target = target.parentNode;
+// 	}
+// };
+
+function showTooltip(currentGistId, event, gist){
+	var tooltip = document.createElement('div');
+	tooltip.classList.add('tooltip');
+	document.body.appendChild(tooltip);
+	for (var i = 0; i <= gist.length; i++) {
+		if((gist[i])&&(gist[i].name===currentGistId)) tooltip.innerHTML = gist[i].quote;
+	};
+	tooltip.style.left = event.pageX+'px';
+	tooltip.style.top = event.pageY+'px';
+
+	return tooltip;
+}
 		var logo = document.getElementById("sdmm");
 		var path = $("#sdmm path");
 		var dots_js = document.querySelectorAll(".slider_dots");
@@ -91,6 +114,12 @@ function handler(event, gist){
 		var duration = 500;
 		logo.addEventListener('mouseover', function(){animate({duration: duration, path: path})} );
 		svg.addEventListener('mouseover', function(e){handler(e,gist)});
+		svg.addEventListener('mouseout', function(){
+			if(returnedTooltip){
+				document.body.removeChild(returnedTooltip);
+				returnedTooltip = false; //WTFFF
+			}
+		})
 }
 
 
