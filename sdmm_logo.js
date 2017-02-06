@@ -38,8 +38,8 @@ function ready (){
 		quote: "nanotube quote"
 	},
 	{
-		name: "dnarocket",
-		quote: "dnarocket quote"
+		name: "dna",
+		quote: "dna quote"
 	},
 	{
 		name: "rocket",
@@ -74,25 +74,6 @@ if(!currentGistId) return;
 
 returnedTooltip = showTooltip(currentGistId, event, gist); 
 }
-	// while ((target.tagName)&&(target.tagName != 'G')) {
-	//     if((target.tagName)&&(target.tagName == 'g')&&(target.id)){
-	// 		for (var i = 0; i <= gist.length; ++i) {
-	// 			if ((gist[i])&&(gist[i].name===target.id)){
-// 					tooltip.innerHTML = gist[i].quote;
-// 					tooltip.style.left = event.pageX+'px';
-// 					tooltip.style.top = event.pageY+'px';
-// 					if(document.getElementsByClassName("tooltip")[0]){
-// 						var ttp = document.getElementsByClassName("tooltip")[0];
-// 						ttp.parentNode.removeChild(ttp);
-						
-// 					}
-// 					document.body.appendChild(tooltip);
-// 				}
-// 			};	
-// 		}
-// 		target = target.parentNode;
-// 	}
-// };
 
 function showTooltip(currentGistId, event, gist){
 	var tooltip = document.createElement('div');
@@ -119,7 +100,17 @@ function showTooltip(currentGistId, event, gist){
 				document.body.removeChild(returnedTooltip);
 				returnedTooltip = false; //WTFFF
 			}
-		})
+		});
+		  $('article[data-type="background"]').each(function(){
+        var $paralaxObj = $(this); // Назначаем объект
+        $(window).scroll(function() { //IE11 не работает
+            var yOffset = -window.pageYOffset / $paralaxObj.data('speed');
+            // Собираем значение координат фона вместе
+            var coords = '0%'+ yOffset + '%';
+            // Смещаем фон
+            $paralaxObj.css({ backgroundPosition: coords });
+        });
+    });
 }
 
 
