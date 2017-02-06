@@ -6,12 +6,14 @@
 
 function ready (){
 	///Menu media queries
-	$(".menu").click(function() {
+$(".menu").click(function() {
   $('.menu').toggleClass("pushed");
 });
 
+$(".menu").click(function(){$(".navigation-list").attr("id", $(".navigation-list").attr("id") === "list-animation"? '' : "list-animation")});
+
 	var $li= $("ul.navigation-list li");
-$("div.menu").on('click', function(){
+$(".menu").on('click', function(){
   $li.css("display", $li.css("display") === "none"? 'block' : "none");
 });
 	///Menu media queries end
