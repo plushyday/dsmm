@@ -3,7 +3,20 @@
 
 ///Ready function. Collect all.
 
+
 function ready (){
+	///Menu media queries
+	$(".menu").click(function() {
+  $('.menu').toggleClass("pushed");
+});
+
+	var $li= $("ul.navigation-list li");
+$("div.menu").on('click', function(){
+  $li.css("display", $li.css("display") === "none"? 'block' : "none");
+});
+	///Menu media queries end
+
+	//tooltip
 	var gist=[
 	{
 		name: "galaxy",
@@ -65,7 +78,7 @@ while((target.tagName != 'G')&&(target.tagName)){
 	for (var i = 0; i < gist.length; ++i) {
 	if((target.id!=='')&&(target.id==gist[i].name)){
 	var currentGistId = target.id;
-}
+	}
 }
 	if(currentGistId) break;
 	target = target.parentNode;
@@ -82,8 +95,8 @@ function showTooltip(currentGistId, event, gist){
 	for (var i = 0; i <= gist.length; i++) {
 		if((gist[i])&&(gist[i].name===currentGistId)) tooltip.innerHTML = gist[i].quote;
 	};
-	tooltip.style.left = event.pageX+'px';
-	tooltip.style.top = event.pageY+'px';
+	tooltip.style.left = event.pageX - (tooltip.offsetWidth/2) + 'px';
+	tooltip.style.top = event.pageY-10-tooltip.offsetHeight+'px';
 
 	return tooltip;
 }
@@ -94,25 +107,46 @@ function showTooltip(currentGistId, event, gist){
 		var svg = document.getElementById("evolution");
 		var duration = 500;
 		logo.addEventListener('mouseover', function(){animate({duration: duration, path: path})} );
+		// for(var i=0;i<gist.length;i++)
+		// {
+		// (function(gist,i) { 
+		//       $("#evolution").on('mouseenter', $("#gist[i].name"), function(event) {
+		//         var tooltip = document.createElement('div');
+		//         tooltip.classList.add('tooltip');
+		//         document.body.appendChild(tooltip);
+		//         tooltip.innerHTML = gist[i].quote;
+		//         tooltip.style.left = event.pageX - (tooltip.offsetWidth/2) + 'px';
+		//         tooltip.style.top = event.pageY-10-tooltip.offsetHeight+'px';
+		//       });
+		// })(gist,i); // <- (1)Здесь ты передаёшь параметры из внешнего окружения
+		// (function(gist,i) { 
+		//       $("#evolution").on('mouseleave', $("#gist[i].name"), function(event) {
+		//         $(".tooltip").remove();
+		//       });
+		// })(gist,i);
+		// }
 		svg.addEventListener('mouseover', function(e){handler(e,gist)});
 		svg.addEventListener('mouseout', function(){
 			if(returnedTooltip){
 				document.body.removeChild(returnedTooltip);
 				returnedTooltip = false; //WTFFF
 			}
-		});
+		}
+		);
+//tooltip end
+
+
+//parallax
 		  $('article[data-type="background"]').each(function(){
-        var $paralaxObj = $(this); // Назначаем объект
-        $(window).scroll(function() { //IE11 не работает
+        var $paralaxObj = $(this); 
+        $(window).scroll(function() { //IE11 didn't work
             var yOffset = -window.pageYOffset / $paralaxObj.data('speed');
-            // Собираем значение координат фона вместе
             var coords = '0%'+ yOffset + '%';
-            // Смещаем фон
             $paralaxObj.css({ backgroundPosition: coords });
         });
     });
 }
-
+//parallax end 
 
 window.addEventListener("load", ready);
 
@@ -153,6 +187,8 @@ window.addEventListener("load", ready);
 	function makeEaseOut(timing){return function(timeFraction){return 1 - timing(1 - timeFraction);}}
 
 	///SDMM logo end///
+
+
 
 	///Dots control
 
