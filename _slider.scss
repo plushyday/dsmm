@@ -134,7 +134,7 @@
       border-style: solid;
       height: 40px;
       width: 10px;
-      border-color:transparent darken($apple-core, 50%) transparent darken($apple-core, 50%);
+      border-color:transparent lighten($apple-core, 50%) transparent lighten($apple-core, 50%);
     }
    
     #pause-play:checked~.slider_item,
@@ -149,7 +149,7 @@
       height: 0;
       border-style: solid;
       border-width: 25px 0 25px 30px;
-      border-color: transparent transparent transparent darken($apple-core, 50%);
+      border-color: transparent transparent transparent lighten($apple-core, 50%);
     }
       &:hover{
 

@@ -17,6 +17,9 @@
   src: url("./font/fonts/PalatinoRoman-Light.eot") format("embedded-opentype"), url("./font/fonts/PalatinoRoman-Light.woff") format("woff"), url("./font/fonts/PalatinoRoman-Light.ttf") format("truetype"), url("./font/fonts/PalatinoRoman-Light.svg") format("svg");
   font-weight: normal;
   font-style: normal; }
+.animation-li {
+  /* opacity: */ }
+
 /* $blueberry:#AD5D4E;*/
 /* $apple-core:#98B7B2;*/
 /* $apple-core:#E5D4C0;*/
@@ -119,7 +122,7 @@ nav {
           width: 60%; }
           nav .nav-fixed ul.navigation-list #sdmm svg .sdmm0, nav .nav-fixed ul.navigation-list #sdmm svg .sdmm1, nav .nav-fixed ul.navigation-list #sdmm svg .sdmm2 {
             stroke: #253825;
-            stroke-width: 1.2; }
+            stroke-width: 1.7; }
       nav .nav-fixed ul.navigation-list li {
         list-style-type: none;
         margin: 0;
@@ -129,7 +132,9 @@ nav {
             padding: 7% 0;
             opacity: 0;
             display: none;
+            -webkit-transition-property: all;
             transition-property: all;
+            -webkit-transition-duration: 600ms;
             transition-duration: 600ms; } }
         nav .nav-fixed ul.navigation-list li:nth-child(1) {
           background-color: #819890; }
@@ -598,7 +603,7 @@ article.main {
         border-style: solid;
         height: 40px;
         width: 10px;
-        border-color: transparent #2e3838 transparent #2e3838; }
+        border-color: transparent white transparent white; }
       article.main .content .slider #pause-play:checked ~ .slider_item,
       article.main .content .slider #pause-play:checked ~ .slider_info div,
       article.main .content .slider #pause-play:checked ~ .slider_dots div span {
@@ -609,7 +614,7 @@ article.main {
         height: 0;
         border-style: solid;
         border-width: 25px 0 25px 30px;
-        border-color: transparent transparent transparent #2e3838; }
+        border-color: transparent transparent transparent white; }
       article.main .content .slider:hover .sign {
         opacity: 1;
         -webkit-transition-property: all;
@@ -795,25 +800,25 @@ article.main .content .blocks_2 h1 {
 @-webkit-keyframes cycle1 {
   0% {
     left: 0px; }
-  /* ╨Я╤А╨╕ ╨╖╨░╨┐╤Г╤Б╨║╨╡ ╤Б╨╗╨░╨╣╨┤╨╡╤А╨░, ╨┐╨╡╤А╨▓╨╛╨╡ ╨╕╨╖╨╛╨▒╤А╨░╨╢╨╡╨╜╨╕╨╡ ╤Г╨╢╨╡ ╨▓╨╕╨┤╨╕╨╝╨╛ */
+  /* При запуске слайдера, первое изображение уже видимо */
   4% {
     left: 0px; }
-  /* ╨б╤В╨░╤А╤В╨╛╨▓╨░╤П ╨┐╨╛╨╖╨╕╤Ж╨╕╤П */
+  /* Стартовая позиция */
   16% {
     left: 0px;
     opacity: 1;
     z-index: 0; }
-  /* ╨б 4% ╨┤╨╛ 16 % (3 ╤Б╨╡╨║╤Г╨╜╨┤╤Л) ╨╕╨╖╨╛╨▒╤А╨░╨╢╨╡╨╜╨╕╨╡ ╨▓╨╕╨┤╨╕╨╝╨╛ */
+  /* С 4% до 16 % (3 секунды) изображение видимо */
   20% {
     left: 100%;
     opacity: 0;
     z-index: 0; }
-  /* ╤Б 16% ╨┤╨╛ 20% (1 ╤Б╨╡╨║╤Г╨╜╨┤╤Л)╨▓╤Л╤Е╨╛╨┤ ╨╕╨╖╨╛╨▒╤А╨░╨╢╨╡╨╜╨╕╤П*/
+  /* с 16% до 20% (1 секунды)выход изображения*/
   21% {
     left: -100%;
     opacity: 0;
     z-index: -1; }
-  /* ╨Т╨╛╨╖╨▓╤А╨░╤Й╨╡╨╜╨╕╨╡ ╨╜╨░ ╨╕╤Б╤Е╨╛╨┤╨╜╤Г╤О ╨┐╨╛╨╖╨╕╤Ж╨╕╤О ╨╖╨░ ╨┐╤А╨╡╨┤╨╡╨╗╨░╨╝╨╕ ╨╝╨░╤Б╨║╨╕ */
+  /* Возвращение на исходную позицию за пределами маски */
   92% {
     left: -100%;
     opacity: 0;
@@ -821,32 +826,32 @@ article.main .content .blocks_2 h1 {
   96% {
     left: -100%;
     opacity: 0; }
-  /* ╨б 96% ╨┤╨╛ 100% (1 ╤Б╨╡╨║╤Г╨╜╨┤╨░) тАУ ╨▓╤Е╨╛╨┤ */
+  /* С 96% до 100% (1 секунда) – вход */
   100% {
     left: 0px;
     opacity: 1; } }
 @keyframes cycle1 {
   0% {
     left: 0px; }
-  /* ╨Я╤А╨╕ ╨╖╨░╨┐╤Г╤Б╨║╨╡ ╤Б╨╗╨░╨╣╨┤╨╡╤А╨░, ╨┐╨╡╤А╨▓╨╛╨╡ ╨╕╨╖╨╛╨▒╤А╨░╨╢╨╡╨╜╨╕╨╡ ╤Г╨╢╨╡ ╨▓╨╕╨┤╨╕╨╝╨╛ */
+  /* При запуске слайдера, первое изображение уже видимо */
   4% {
     left: 0px; }
-  /* ╨б╤В╨░╤А╤В╨╛╨▓╨░╤П ╨┐╨╛╨╖╨╕╤Ж╨╕╤П */
+  /* Стартовая позиция */
   16% {
     left: 0px;
     opacity: 1;
     z-index: 0; }
-  /* ╨б 4% ╨┤╨╛ 16 % (3 ╤Б╨╡╨║╤Г╨╜╨┤╤Л) ╨╕╨╖╨╛╨▒╤А╨░╨╢╨╡╨╜╨╕╨╡ ╨▓╨╕╨┤╨╕╨╝╨╛ */
+  /* С 4% до 16 % (3 секунды) изображение видимо */
   20% {
     left: 100%;
     opacity: 0;
     z-index: 0; }
-  /* ╤Б 16% ╨┤╨╛ 20% (1 ╤Б╨╡╨║╤Г╨╜╨┤╤Л)╨▓╤Л╤Е╨╛╨┤ ╨╕╨╖╨╛╨▒╤А╨░╨╢╨╡╨╜╨╕╤П*/
+  /* с 16% до 20% (1 секунды)выход изображения*/
   21% {
     left: -100%;
     opacity: 0;
     z-index: -1; }
-  /* ╨Т╨╛╨╖╨▓╤А╨░╤Й╨╡╨╜╨╕╨╡ ╨╜╨░ ╨╕╤Б╤Е╨╛╨┤╨╜╤Г╤О ╨┐╨╛╨╖╨╕╤Ж╨╕╤О ╨╖╨░ ╨┐╤А╨╡╨┤╨╡╨╗╨░╨╝╨╕ ╨╝╨░╤Б╨║╨╕ */
+  /* Возвращение на исходную позицию за пределами маски */
   92% {
     left: -100%;
     opacity: 0;
@@ -854,7 +859,7 @@ article.main .content .blocks_2 h1 {
   96% {
     left: -100%;
     opacity: 0; }
-  /* ╨б 96% ╨┤╨╛ 100% (1 ╤Б╨╡╨║╤Г╨╜╨┤╨░) тАУ ╨▓╤Е╨╛╨┤ */
+  /* С 96% до 100% (1 секунда) – вход */
   100% {
     left: 0px;
     opacity: 1; } }
@@ -862,33 +867,33 @@ article.main .content .blocks_2 h1 {
   0% {
     left: -100%;
     opacity: 0; }
-  /* ╨Ш╤Б╤Е╨╛╨┤╨╜╨░╤П ╨┐╨╛╨╖╨╕╤Ж╨╕╤П ╨╖╨░ ╨┐╤А╨╡╨┤╨╡╨╗╨░╨╝╨╕ ╨╝╨░╤Б╨║╨╕ */
+  /* Исходная позиция за пределами маски */
   16% {
     left: -100%;
     opacity: 0; }
-  /* ╨Э╨░╤З╨░╨╗╨╛ ╨┤╨▓╨╕╨╢╨╡╨╜╨╕╤П ╤Б 16% */
+  /* Начало движения с 16% */
   20% {
     left: 0px;
     opacity: 1; }
   24% {
     left: 0px;
     opacity: 1; }
-  /* ╨б 20% ╨┤╨╛ 24% (╨▓ ╤В╨╡╤З╨╡╨╜╨╕╨╕ 1 ╤Б╨╡╨║╤Г╨╜╨┤╤Л) тАФ ╨▓╤Е╨╛╨┤*/
+  /* С 20% до 24% (в течении 1 секунды) — вход*/
   36% {
     left: 0px;
     opacity: 1;
     z-index: 0; }
-  /* ╨б 24% ╨┤╨╛ 36 % (3 ╤Б╨╡╨║╤Г╨╜╨┤╤Л) ╨╕╨╖╨╛╨▒╤А╨░╨╢╨╡╨╜╨╕╨╡ ╨▓╨╕╨┤╨╕╨╝╨╛ */
+  /* С 24% до 36 % (3 секунды) изображение видимо */
   40% {
     left: 100%;
     opacity: 0;
     z-index: 0; }
-  /* ╨б 36% ╨┤╨╛ 40% (1 ╤Б╨╡╨║╤Г╨╜╨┤╨░)тАФ ╨▓╤Л╤Е╨╛╨┤ */
+  /* С 36% до 40% (1 секунда)— выход */
   41% {
     left: 100%;
     opacity: 0;
     z-index: -1; }
-  /* ╨Т╨╛╨╖╨▓╤А╨░╤В ╨╜╨░ ╨╕╤Б╤Е╨╛╨┤╨╜╤Г╤О ╨┐╨╛╨╖╨╕╤Ж╨╕╤О */
+  /* Возврат на исходную позицию */
   100% {
     left: -100%;
     opacity: 0;
@@ -897,33 +902,33 @@ article.main .content .blocks_2 h1 {
   0% {
     left: -100%;
     opacity: 0; }
-  /* ╨Ш╤Б╤Е╨╛╨┤╨╜╨░╤П ╨┐╨╛╨╖╨╕╤Ж╨╕╤П ╨╖╨░ ╨┐╤А╨╡╨┤╨╡╨╗╨░╨╝╨╕ ╨╝╨░╤Б╨║╨╕ */
+  /* Исходная позиция за пределами маски */
   16% {
     left: -100%;
     opacity: 0; }
-  /* ╨Э╨░╤З╨░╨╗╨╛ ╨┤╨▓╨╕╨╢╨╡╨╜╨╕╤П ╤Б 16% */
+  /* Начало движения с 16% */
   20% {
     left: 0px;
     opacity: 1; }
   24% {
     left: 0px;
     opacity: 1; }
-  /* ╨б 20% ╨┤╨╛ 24% (╨▓ ╤В╨╡╤З╨╡╨╜╨╕╨╕ 1 ╤Б╨╡╨║╤Г╨╜╨┤╤Л) тАФ ╨▓╤Е╨╛╨┤*/
+  /* С 20% до 24% (в течении 1 секунды) — вход*/
   36% {
     left: 0px;
     opacity: 1;
     z-index: 0; }
-  /* ╨б 24% ╨┤╨╛ 36 % (3 ╤Б╨╡╨║╤Г╨╜╨┤╤Л) ╨╕╨╖╨╛╨▒╤А╨░╨╢╨╡╨╜╨╕╨╡ ╨▓╨╕╨┤╨╕╨╝╨╛ */
+  /* С 24% до 36 % (3 секунды) изображение видимо */
   40% {
     left: 100%;
     opacity: 0;
     z-index: 0; }
-  /* ╨б 36% ╨┤╨╛ 40% (1 ╤Б╨╡╨║╤Г╨╜╨┤╨░)тАФ ╨▓╤Л╤Е╨╛╨┤ */
+  /* С 36% до 40% (1 секунда)— выход */
   41% {
     left: 100%;
     opacity: 0;
     z-index: -1; }
-  /* ╨Т╨╛╨╖╨▓╤А╨░╤В ╨╜╨░ ╨╕╤Б╤Е╨╛╨┤╨╜╤Г╤О ╨┐╨╛╨╖╨╕╤Ж╨╕╤О */
+  /* Возврат на исходную позицию */
   100% {
     left: -100%;
     opacity: 0;
