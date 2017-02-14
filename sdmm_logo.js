@@ -12,10 +12,12 @@ $(".menu").click(function() {
 
 $(".menu").click(function(){$(".navigation-list").attr("id", $(".navigation-list").attr("id") === "list-animation"? '' : "list-animation")});
 
-	var $li= $("ul.navigation-list li");
-$(".menu").on('click', function(){
-  $li.css("display", $li.css("display") === "none"? 'block' : "none");
-});
+// 	var $li= $("ul.navigation-list li");
+// $(".menu").on('click', function(){
+//   $li.css("visibility", $li.css("visibility") === "hidden"? 'visible' : "hidden");
+//   $("ul.navigation-list").css("padding", "7% 0");
+//   $("ul.navigation-list").css("height", "auto");
+// });
 	///Menu media queries end
 
 	//tooltip

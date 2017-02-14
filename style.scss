@@ -103,7 +103,6 @@ nav{
 			margin: 0 auto;
 			text-align: center;
 			#sdmm{
-				height: 9vh;
 				display: -webkit-box;
 				display: -ms-flexbox;
 				display: flex;
@@ -120,11 +119,11 @@ nav{
 				margin: 0;
 				padding: 0;
 							svg{
+					height: 9vh;
 					width: 60%;
-				.sdmm0, .sdmm1, .sdmm2{
-					stroke: $blueberry;
-					stroke-width:1.7;
-				}
+			}
+			#stS, #stD, #stM{
+				stroke-width: 1.7;
 			}
 		}
 			
@@ -134,12 +133,13 @@ nav{
 				padding: 7% 0;
 
 			@include media(760){
-				padding: 7% 0;
+				padding: 0 0;
+				height: 0px;
+				visibility: hidden;
 				opacity: 0;
-				display: none;
-		-webkit-transition-property: all;
-		transition-property: all;
-        -webkit-transition-duration: 600ms;
+				-webkit-transition-property: all;
+				transition-property: all;
+        		-webkit-transition-duration: 600ms;
                 transition-duration: 600ms;
 				}
 
@@ -328,13 +328,24 @@ background-color:rgba(lighten($apple-core, 2%), 0.7);
 	background-color:lighten($apple-core, 35%);
 	font-family: $opensans;
 	box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26); 
-
+     @include media(760){
+     	padding: 0 3% 0 2%;
+		}
 	h1{
 		@extend %caption;
-	}
+		}
 
-	#evolution{
+	.picture:nth-child(odd){
 		float: left;
+		width:40%;
+		z-index: 500;
+		@include media(760){
+			float: none;
+			width: 100%;
+		}
+	}
+	.picture:nth-child(even){
+		float: right;
 		width:40%;
 		z-index: 500;
 		@include media(760){
@@ -432,6 +443,11 @@ footer{
 			color: lighten($newy,20%);
 			margin-left: 1%;
 			text-decoration: none;
+			}
+			div:nth-child(1){
+			@include media(760){
+		     	margin-left: 2%;
+				}
 			}		
 		div:nth-child(2){
 			@for $i from 1 through 4 {
@@ -439,8 +455,10 @@ footer{
 					color: hsl((hue(lighten($blueberry, 2%))-30*$i), 10%, 75%);
 				}
 			}
-			
-		}	
+			@include media(760){
+		     	margin-right: 3%;
+				}
+			}	
 		}
 	}
 }
