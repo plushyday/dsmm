@@ -93,6 +93,7 @@ nav {
       padding: 0;
       margin: 0 auto;
       text-align: center;
+      min-height: 54.89px;
       /* .active{*/
       /* 	box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);*/
       /* 		// background: darken($apple-core, 35%);*/
@@ -119,7 +120,11 @@ nav {
         padding: 0; }
         nav .nav-fixed ul.navigation-list #sdmm svg {
           height: 9vh;
-          width: 60%; }
+          min-height: 53.91px;
+          width: 70%; }
+          @media screen and (max-width: 940px) {
+            nav .nav-fixed ul.navigation-list #sdmm svg {
+              width: 100%; } }
         nav .nav-fixed ul.navigation-list #sdmm #stS, nav .nav-fixed ul.navigation-list #sdmm #stD, nav .nav-fixed ul.navigation-list #sdmm #stM {
           stroke-width: 1.7; }
       nav .nav-fixed ul.navigation-list li {
@@ -276,10 +281,9 @@ nav {
     text-decoration: none; }
 
 article.main {
-  /* background-color:lighten($apple-core, 2%);*/
   position: relative;
   width: 70vw;
-  background-color: rgba(177, 191, 191, 0.7); }
+  background-color: rgba(177, 191, 191, 0.3); }
   @media screen and (min-width: 1800px) {
     article.main {
       width: 76vw; } }
@@ -379,7 +383,10 @@ article.main {
       @media screen and (max-width: 760px) {
         article.main .content .slider {
           width: 100vw;
-          height: 20vh; } }
+          height: 35.7vw; } }
+      @media screen and (min-width: 1800px) {
+        article.main .content .slider {
+          width: 73vw; } }
       article.main .content .slider .slider_item:nth-child(2) {
         margin: 0;
         padding: 0;
@@ -389,7 +396,15 @@ article.main {
         animation: cycle1 25s linear infinite; }
         article.main .content .slider .slider_item:nth-child(2) img {
           height: 25vw;
-          width: 85vw; }
+          width: 70vw; }
+          @media screen and (max-width: 760px) {
+            article.main .content .slider .slider_item:nth-child(2) img {
+              width: 100vw;
+              height: 35.7vw; } }
+          @media screen and (min-width: 1800px) {
+            article.main .content .slider .slider_item:nth-child(2) img {
+              width: 73vw;
+              height: 26.07vw; } }
       article.main .content .slider .slider_item:nth-child(3) {
         margin: 0;
         padding: 0;
@@ -399,7 +414,15 @@ article.main {
         animation: cycle2 25s linear infinite; }
         article.main .content .slider .slider_item:nth-child(3) img {
           height: 25vw;
-          width: 85vw; }
+          width: 70vw; }
+          @media screen and (max-width: 760px) {
+            article.main .content .slider .slider_item:nth-child(3) img {
+              width: 100vw;
+              height: 35.7vw; } }
+          @media screen and (min-width: 1800px) {
+            article.main .content .slider .slider_item:nth-child(3) img {
+              width: 73vw;
+              height: 26.07vw; } }
       article.main .content .slider .slider_item:nth-child(4) {
         margin: 0;
         padding: 0;
@@ -409,7 +432,15 @@ article.main {
         animation: cycle3 25s linear infinite; }
         article.main .content .slider .slider_item:nth-child(4) img {
           height: 25vw;
-          width: 85vw; }
+          width: 70vw; }
+          @media screen and (max-width: 760px) {
+            article.main .content .slider .slider_item:nth-child(4) img {
+              width: 100vw;
+              height: 35.7vw; } }
+          @media screen and (min-width: 1800px) {
+            article.main .content .slider .slider_item:nth-child(4) img {
+              width: 73vw;
+              height: 26.07vw; } }
       article.main .content .slider .slider_item:nth-child(5) {
         margin: 0;
         padding: 0;
@@ -419,7 +450,15 @@ article.main {
         animation: cycle4 25s linear infinite; }
         article.main .content .slider .slider_item:nth-child(5) img {
           height: 25vw;
-          width: 85vw; }
+          width: 70vw; }
+          @media screen and (max-width: 760px) {
+            article.main .content .slider .slider_item:nth-child(5) img {
+              width: 100vw;
+              height: 35.7vw; } }
+          @media screen and (min-width: 1800px) {
+            article.main .content .slider .slider_item:nth-child(5) img {
+              width: 73vw;
+              height: 26.07vw; } }
       article.main .content .slider .slider_item:nth-child(6) {
         margin: 0;
         padding: 0;
@@ -429,7 +468,15 @@ article.main {
         animation: cycle5 25s linear infinite; }
         article.main .content .slider .slider_item:nth-child(6) img {
           height: 25vw;
-          width: 85vw; }
+          width: 70vw; }
+          @media screen and (max-width: 760px) {
+            article.main .content .slider .slider_item:nth-child(6) img {
+              width: 100vw;
+              height: 35.7vw; } }
+          @media screen and (min-width: 1800px) {
+            article.main .content .slider .slider_item:nth-child(6) img {
+              width: 73vw;
+              height: 26.07vw; } }
       article.main .content .slider input {
         display: none; }
       article.main .content .slider label {
@@ -604,6 +651,9 @@ article.main {
         height: 40px;
         width: 10px;
         border-color: transparent white transparent white; }
+        @media screen and (max-width: 760px) {
+          article.main .content .slider .sign {
+            top: 20%; } }
       article.main .content .slider #pause-play:checked ~ .slider_item,
       article.main .content .slider #pause-play:checked ~ .slider_info div,
       article.main .content .slider #pause-play:checked ~ .slider_dots div span {
@@ -696,6 +746,10 @@ article.main {
     vertical-align: bottom;
     bottom: 0;
     box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.5); }
+    @media screen and (max-width: 940px) {
+      article.main footer > p:last-child {
+        margin: 2% 1% 0 1%;
+        border-top: 1px solid #666; } }
     article.main footer p {
       color: #7faa7f;
       font-family: Palatino, "Palatino Linotype", "Palatino LT STD";
@@ -705,6 +759,10 @@ article.main {
       width: 100%;
       padding: 0;
       text-transform: uppercase; }
+      @media screen and (max-width: 940px) {
+        article.main footer p {
+          font-size: 0.6em;
+          line-height: 1.9; } }
     article.main footer div.menu_footer {
       display: -webkit-box;
       display: -ms-flexbox;
@@ -725,11 +783,17 @@ article.main {
         text-decoration: none; }
         article.main footer div.menu_footer a[href^="tel:"]:before {
           content: "\260e"; }
+        @media screen and (max-width: 940px) {
+          article.main footer div.menu_footer a[href^="tel:"] {
+            font-size: 0.9em;
+            line-height: 1.9;
+            display: block;
+            white-space: nowrap; } }
       article.main footer div.menu_footer a[href^="mailto"] {
         color: #567892;
         margin-left: 1%;
         text-decoration: none; }
-      @media screen and (max-width: 760px) {
+      @media screen and (max-width: 940px) {
         article.main footer div.menu_footer div:nth-child(1) {
           margin-left: 2%; } }
       article.main footer div.menu_footer div:nth-child(2) p:nth-child(1) {
@@ -740,7 +804,7 @@ article.main {
         color: #c6bfb9; }
       article.main footer div.menu_footer div:nth-child(2) p:nth-child(4) {
         color: #c6b9b9; }
-      @media screen and (max-width: 760px) {
+      @media screen and (max-width: 940px) {
         article.main footer div.menu_footer div:nth-child(2) {
           margin-right: 3%; } }
 
@@ -817,25 +881,25 @@ article.main .content .blocks_2 h1 {
 @-webkit-keyframes cycle1 {
   0% {
     left: 0px; }
-  /* ╨Я╤А╨╕ ╨╖╨░╨┐╤Г╤Б╨║╨╡ ╤Б╨╗╨░╨╣╨┤╨╡╤А╨░, ╨┐╨╡╤А╨▓╨╛╨╡ ╨╕╨╖╨╛╨▒╤А╨░╨╢╨╡╨╜╨╕╨╡ ╤Г╨╢╨╡ ╨▓╨╕╨┤╨╕╨╝╨╛ */
+  /* При запуске слайдера, первое изображение уже видимо */
   4% {
     left: 0px; }
-  /* ╨б╤В╨░╤А╤В╨╛╨▓╨░╤П ╨┐╨╛╨╖╨╕╤Ж╨╕╤П */
+  /* Стартовая позиция */
   16% {
     left: 0px;
     opacity: 1;
     z-index: 0; }
-  /* ╨б 4% ╨┤╨╛ 16 % (3 ╤Б╨╡╨║╤Г╨╜╨┤╤Л) ╨╕╨╖╨╛╨▒╤А╨░╨╢╨╡╨╜╨╕╨╡ ╨▓╨╕╨┤╨╕╨╝╨╛ */
+  /* С 4% до 16 % (3 секунды) изображение видимо */
   20% {
     left: 100%;
     opacity: 0;
     z-index: 0; }
-  /* ╤Б 16% ╨┤╨╛ 20% (1 ╤Б╨╡╨║╤Г╨╜╨┤╤Л)╨▓╤Л╤Е╨╛╨┤ ╨╕╨╖╨╛╨▒╤А╨░╨╢╨╡╨╜╨╕╤П*/
+  /* с 16% до 20% (1 секунды)выход изображения*/
   21% {
     left: -100%;
     opacity: 0;
     z-index: -1; }
-  /* ╨Т╨╛╨╖╨▓╤А╨░╤Й╨╡╨╜╨╕╨╡ ╨╜╨░ ╨╕╤Б╤Е╨╛╨┤╨╜╤Г╤О ╨┐╨╛╨╖╨╕╤Ж╨╕╤О ╨╖╨░ ╨┐╤А╨╡╨┤╨╡╨╗╨░╨╝╨╕ ╨╝╨░╤Б╨║╨╕ */
+  /* Возвращение на исходную позицию за пределами маски */
   92% {
     left: -100%;
     opacity: 0;
@@ -843,32 +907,32 @@ article.main .content .blocks_2 h1 {
   96% {
     left: -100%;
     opacity: 0; }
-  /* ╨б 96% ╨┤╨╛ 100% (1 ╤Б╨╡╨║╤Г╨╜╨┤╨░) тАУ ╨▓╤Е╨╛╨┤ */
+  /* С 96% до 100% (1 секунда) – вход */
   100% {
     left: 0px;
     opacity: 1; } }
 @keyframes cycle1 {
   0% {
     left: 0px; }
-  /* ╨Я╤А╨╕ ╨╖╨░╨┐╤Г╤Б╨║╨╡ ╤Б╨╗╨░╨╣╨┤╨╡╤А╨░, ╨┐╨╡╤А╨▓╨╛╨╡ ╨╕╨╖╨╛╨▒╤А╨░╨╢╨╡╨╜╨╕╨╡ ╤Г╨╢╨╡ ╨▓╨╕╨┤╨╕╨╝╨╛ */
+  /* При запуске слайдера, первое изображение уже видимо */
   4% {
     left: 0px; }
-  /* ╨б╤В╨░╤А╤В╨╛╨▓╨░╤П ╨┐╨╛╨╖╨╕╤Ж╨╕╤П */
+  /* Стартовая позиция */
   16% {
     left: 0px;
     opacity: 1;
     z-index: 0; }
-  /* ╨б 4% ╨┤╨╛ 16 % (3 ╤Б╨╡╨║╤Г╨╜╨┤╤Л) ╨╕╨╖╨╛╨▒╤А╨░╨╢╨╡╨╜╨╕╨╡ ╨▓╨╕╨┤╨╕╨╝╨╛ */
+  /* С 4% до 16 % (3 секунды) изображение видимо */
   20% {
     left: 100%;
     opacity: 0;
     z-index: 0; }
-  /* ╤Б 16% ╨┤╨╛ 20% (1 ╤Б╨╡╨║╤Г╨╜╨┤╤Л)╨▓╤Л╤Е╨╛╨┤ ╨╕╨╖╨╛╨▒╤А╨░╨╢╨╡╨╜╨╕╤П*/
+  /* с 16% до 20% (1 секунды)выход изображения*/
   21% {
     left: -100%;
     opacity: 0;
     z-index: -1; }
-  /* ╨Т╨╛╨╖╨▓╤А╨░╤Й╨╡╨╜╨╕╨╡ ╨╜╨░ ╨╕╤Б╤Е╨╛╨┤╨╜╤Г╤О ╨┐╨╛╨╖╨╕╤Ж╨╕╤О ╨╖╨░ ╨┐╤А╨╡╨┤╨╡╨╗╨░╨╝╨╕ ╨╝╨░╤Б╨║╨╕ */
+  /* Возвращение на исходную позицию за пределами маски */
   92% {
     left: -100%;
     opacity: 0;
@@ -876,7 +940,7 @@ article.main .content .blocks_2 h1 {
   96% {
     left: -100%;
     opacity: 0; }
-  /* ╨б 96% ╨┤╨╛ 100% (1 ╤Б╨╡╨║╤Г╨╜╨┤╨░) тАУ ╨▓╤Е╨╛╨┤ */
+  /* С 96% до 100% (1 секунда) – вход */
   100% {
     left: 0px;
     opacity: 1; } }
@@ -884,33 +948,33 @@ article.main .content .blocks_2 h1 {
   0% {
     left: -100%;
     opacity: 0; }
-  /* ╨Ш╤Б╤Е╨╛╨┤╨╜╨░╤П ╨┐╨╛╨╖╨╕╤Ж╨╕╤П ╨╖╨░ ╨┐╤А╨╡╨┤╨╡╨╗╨░╨╝╨╕ ╨╝╨░╤Б╨║╨╕ */
+  /* Исходная позиция за пределами маски */
   16% {
     left: -100%;
     opacity: 0; }
-  /* ╨Э╨░╤З╨░╨╗╨╛ ╨┤╨▓╨╕╨╢╨╡╨╜╨╕╤П ╤Б 16% */
+  /* Начало движения с 16% */
   20% {
     left: 0px;
     opacity: 1; }
   24% {
     left: 0px;
     opacity: 1; }
-  /* ╨б 20% ╨┤╨╛ 24% (╨▓ ╤В╨╡╤З╨╡╨╜╨╕╨╕ 1 ╤Б╨╡╨║╤Г╨╜╨┤╤Л) тАФ ╨▓╤Е╨╛╨┤*/
+  /* С 20% до 24% (в течении 1 секунды) — вход*/
   36% {
     left: 0px;
     opacity: 1;
     z-index: 0; }
-  /* ╨б 24% ╨┤╨╛ 36 % (3 ╤Б╨╡╨║╤Г╨╜╨┤╤Л) ╨╕╨╖╨╛╨▒╤А╨░╨╢╨╡╨╜╨╕╨╡ ╨▓╨╕╨┤╨╕╨╝╨╛ */
+  /* С 24% до 36 % (3 секунды) изображение видимо */
   40% {
     left: 100%;
     opacity: 0;
     z-index: 0; }
-  /* ╨б 36% ╨┤╨╛ 40% (1 ╤Б╨╡╨║╤Г╨╜╨┤╨░)тАФ ╨▓╤Л╤Е╨╛╨┤ */
+  /* С 36% до 40% (1 секунда)— выход */
   41% {
     left: 100%;
     opacity: 0;
     z-index: -1; }
-  /* ╨Т╨╛╨╖╨▓╤А╨░╤В ╨╜╨░ ╨╕╤Б╤Е╨╛╨┤╨╜╤Г╤О ╨┐╨╛╨╖╨╕╤Ж╨╕╤О */
+  /* Возврат на исходную позицию */
   100% {
     left: -100%;
     opacity: 0;
@@ -919,33 +983,33 @@ article.main .content .blocks_2 h1 {
   0% {
     left: -100%;
     opacity: 0; }
-  /* ╨Ш╤Б╤Е╨╛╨┤╨╜╨░╤П ╨┐╨╛╨╖╨╕╤Ж╨╕╤П ╨╖╨░ ╨┐╤А╨╡╨┤╨╡╨╗╨░╨╝╨╕ ╨╝╨░╤Б╨║╨╕ */
+  /* Исходная позиция за пределами маски */
   16% {
     left: -100%;
     opacity: 0; }
-  /* ╨Э╨░╤З╨░╨╗╨╛ ╨┤╨▓╨╕╨╢╨╡╨╜╨╕╤П ╤Б 16% */
+  /* Начало движения с 16% */
   20% {
     left: 0px;
     opacity: 1; }
   24% {
     left: 0px;
     opacity: 1; }
-  /* ╨б 20% ╨┤╨╛ 24% (╨▓ ╤В╨╡╤З╨╡╨╜╨╕╨╕ 1 ╤Б╨╡╨║╤Г╨╜╨┤╤Л) тАФ ╨▓╤Е╨╛╨┤*/
+  /* С 20% до 24% (в течении 1 секунды) — вход*/
   36% {
     left: 0px;
     opacity: 1;
     z-index: 0; }
-  /* ╨б 24% ╨┤╨╛ 36 % (3 ╤Б╨╡╨║╤Г╨╜╨┤╤Л) ╨╕╨╖╨╛╨▒╤А╨░╨╢╨╡╨╜╨╕╨╡ ╨▓╨╕╨┤╨╕╨╝╨╛ */
+  /* С 24% до 36 % (3 секунды) изображение видимо */
   40% {
     left: 100%;
     opacity: 0;
     z-index: 0; }
-  /* ╨б 36% ╨┤╨╛ 40% (1 ╤Б╨╡╨║╤Г╨╜╨┤╨░)тАФ ╨▓╤Л╤Е╨╛╨┤ */
+  /* С 36% до 40% (1 секунда)— выход */
   41% {
     left: 100%;
     opacity: 0;
     z-index: -1; }
-  /* ╨Т╨╛╨╖╨▓╤А╨░╤В ╨╜╨░ ╨╕╤Б╤Е╨╛╨┤╨╜╤Г╤О ╨┐╨╛╨╖╨╕╤Ж╨╕╤О */
+  /* Возврат на исходную позицию */
   100% {
     left: -100%;
     opacity: 0;

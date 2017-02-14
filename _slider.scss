@@ -7,12 +7,14 @@
     text-indent: 0;
     overflow: hidden;
     position: relative;
-    box-shadow:        inset  0  7px 9px -9px rgba(0,0,0,0.16), 
-                        inset  0 -7px 9px -9px rgba(0,0,0,0.16);
-
+    box-shadow: inset  0  7px 9px -9px rgba(0,0,0,0.16), 
+                inset  0 -7px 9px -9px rgba(0,0,0,0.16);
     @include media(760){
     width:100vw;
-    height: 20vh;
+    height: 35.7vw;
+  }
+  @include media(1800){
+    width:73vw;
   }
          @for $i from 1 through 5{
       $counter_slider:$i+1;
@@ -25,7 +27,15 @@
               animation: cycle#{$i} 25s linear infinite;
               img{
                 height: 25vw;
-                width: 85vw;
+                width: 70vw;
+                    @include media(760){
+                    width:100vw;
+                    height: 35.7vw;
+                  }
+                  @include media(1800){
+                  width:73vw;
+                  height: 26.07vw;
+                }
               }
        
       }
@@ -135,6 +145,9 @@
       height: 40px;
       width: 10px;
       border-color:transparent lighten($apple-core, 50%) transparent lighten($apple-core, 50%);
+          @include media(760){
+              top: 20%;
+          }    
     }
    
     #pause-play:checked~.slider_item,
