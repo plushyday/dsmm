@@ -64,7 +64,7 @@ body{
 
 nav{
 	
-	width: 15vw;
+	width: 15.8vw;
 	position: relative; 
 	div.menu{
 		display: none;
@@ -79,7 +79,7 @@ nav{
 		}
 	}
 	@include media(1800){
-		width:12vw;
+		width:12.6vw;
 	}
 	
 	.nav-fixed{
@@ -148,19 +148,29 @@ nav{
 					transition-duration: 600ms;
 				}
 
-				@for $i from 1 through 8 {
+				@for $i from 1 through 6{
 					&:nth-child(#{$i}) {
-						background-color: darken(hsl((hue($apple-core)-20*$i), 10%, 75%), 20%);
-						&:hover:not(:last-of-type){
-							background-color: darken(hsl((hue($apple-core)-20*$i), 15%, 70%), 20%);
-						}
+						background-color: darken(hsl((hue($apple-core)-20*$i), 10%, 75%), 21%);
+						 &:hover:not(:last-of-type){
+						 	background-color: darken(hsl((hue($apple-core)-20*$i), 15%, 70%), 20%);
+						 }
 						&.active{
 							background-color: darken(hsl((hue($apple-core)-20*$i), 15%, 70%), 22%);
 						}
 					}
-					&.active{
-
+		}
+		$j:2;
+		@for $i from 7 through 9{
+					&:nth-child(#{$i}) {
+						background-color: darken(hsl((hue($apple-core)-20*($i - $j)), 10%, 75%), 21%);
+						&:hover:not(:last-of-type){
+							background-color: darken(hsl((hue($apple-core)-20*($i - $j)), 15%, 70%), 20%);
+						}
+						&.active{
+							background-color: darken(hsl((hue($apple-core)-20*($i - $j)), 15%, 70%), 22%);
+						}
 					}
+					$j:$j+2;
 				}
 
 				a{
@@ -261,14 +271,14 @@ nav{
 		}
 		article.main{
 			position: relative;
-			width:70vw;
+            width: 70vw;
 			background-color:rgba(lighten($apple-core, 2%), 0.3);
-			@include media(1800){
-				width:76vw;
-			}
-			@include media(760){
-				width:100vw;
-			}
+                    @include media(760){
+                    width:100vw;
+                  }
+                  @include media(1800){
+                  width:76vw;
+                }
 			.header{
 				font-family: $palatino;
 				/* padding: 2vh 0;*/
