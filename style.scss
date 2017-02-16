@@ -39,19 +39,13 @@ body{
 }
 
 .container{
-	display: -webkit-box;
-	display: -ms-flexbox;
+	
 	display: flex;
-	-webkit-box-orient: horizontal;
-	-webkit-box-direction: normal;
-	-ms-flex-direction: row;
+	
 	flex-direction: row;
-	-webkit-box-pack: start;
-	-ms-flex-pack: start;
-	justify-content: flex-start;
-	-webkit-box-align: start;
-	-ms-flex-align: start;
+	justify-content: center;
 	align-items: flex-start;
+	
 	@include media(760){
 		-webkit-box-orient: vertical;
 		-webkit-box-direction: normal;
@@ -63,8 +57,7 @@ body{
 
 
 nav{
-	
-	width: 15.8vw;
+	flex-basis: 15vw;
 	position: relative; 
 	div.menu{
 		display: none;
@@ -79,9 +72,11 @@ nav{
 		}
 	}
 	@include media(1800){
-		width:12.6vw;
+		flex-basis: 12vw;
 	}
-	
+	@include media(760){
+		flex-basis: 100vw;
+	}
 	.nav-fixed{
 		padding:0;
 		top:0;
@@ -350,21 +345,16 @@ nav{
 
 					.picture:nth-child(odd){
 						float: left;
-						width:40%;
 						z-index: 500;
-						@include media(760){
-							float: none;
-							width: 100%;
-						}
 					}
 					.picture:nth-child(even){
 						float: right;
-						width:40%;
 						z-index: 500;
-						@include media(760){
-							float: none;
-							width: 100%;
-						}
+					}
+					#evolution{
+						float: left;
+						z-index: 500;
+						width: 40%;
 					}
 				}
 				blockquote { 

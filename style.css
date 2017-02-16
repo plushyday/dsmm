@@ -35,18 +35,9 @@ body {
   line-height: 1.2; }
 
 .container {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-  -ms-flex-direction: row;
   flex-direction: row;
-  -webkit-box-pack: start;
-  -ms-flex-pack: start;
-  justify-content: flex-start;
-  -webkit-box-align: start;
-  -ms-flex-align: start;
+  justify-content: center;
   align-items: flex-start; }
   @media screen and (max-width: 760px) {
     .container {
@@ -57,7 +48,7 @@ body {
       overflow: hidden; } }
 
 nav {
-  width: 15.8vw;
+  flex-basis: 15vw;
   position: relative; }
   nav div.menu {
     display: none;
@@ -72,7 +63,10 @@ nav {
         height: 9vh; } }
   @media screen and (min-width: 1800px) {
     nav {
-      width: 12.6vw; } }
+      flex-basis: 12vw; } }
+  @media screen and (max-width: 760px) {
+    nav {
+      flex-basis: 100vw; } }
   nav .nav-fixed {
     padding: 0;
     top: 0;
@@ -691,20 +685,14 @@ article.main {
           padding: 0 3% 0 2%; } }
       article.main .content .blocks_2 .picture:nth-child(odd) {
         float: left;
-        width: 40%;
         z-index: 500; }
-        @media screen and (max-width: 760px) {
-          article.main .content .blocks_2 .picture:nth-child(odd) {
-            float: none;
-            width: 100%; } }
       article.main .content .blocks_2 .picture:nth-child(even) {
         float: right;
-        width: 40%;
         z-index: 500; }
-        @media screen and (max-width: 760px) {
-          article.main .content .blocks_2 .picture:nth-child(even) {
-            float: none;
-            width: 100%; } }
+      article.main .content .blocks_2 #evolution {
+        float: left;
+        z-index: 500;
+        width: 40%; }
     article.main .content blockquote {
       border-top: 1px dashed #3a4646;
       border-bottom: 1px dashed #3a4646;
@@ -888,25 +876,25 @@ article.main .content .blocks_2 h1 {
 @-webkit-keyframes cycle1 {
   0% {
     left: 0px; }
-  /* При запуске слайдера, первое изображение уже видимо */
+  /* ╨Я╤А╨╕ ╨╖╨░╨┐╤Г╤Б╨║╨╡ ╤Б╨╗╨░╨╣╨┤╨╡╤А╨░, ╨┐╨╡╤А╨▓╨╛╨╡ ╨╕╨╖╨╛╨▒╤А╨░╨╢╨╡╨╜╨╕╨╡ ╤Г╨╢╨╡ ╨▓╨╕╨┤╨╕╨╝╨╛ */
   4% {
     left: 0px; }
-  /* Стартовая позиция */
+  /* ╨б╤В╨░╤А╤В╨╛╨▓╨░╤П ╨┐╨╛╨╖╨╕╤Ж╨╕╤П */
   16% {
     left: 0px;
     opacity: 1;
     z-index: 0; }
-  /* С 4% до 16 % (3 секунды) изображение видимо */
+  /* ╨б 4% ╨┤╨╛ 16 % (3 ╤Б╨╡╨║╤Г╨╜╨┤╤Л) ╨╕╨╖╨╛╨▒╤А╨░╨╢╨╡╨╜╨╕╨╡ ╨▓╨╕╨┤╨╕╨╝╨╛ */
   20% {
     left: 100%;
     opacity: 0;
     z-index: 0; }
-  /* с 16% до 20% (1 секунды)выход изображения*/
+  /* ╤Б 16% ╨┤╨╛ 20% (1 ╤Б╨╡╨║╤Г╨╜╨┤╤Л)╨▓╤Л╤Е╨╛╨┤ ╨╕╨╖╨╛╨▒╤А╨░╨╢╨╡╨╜╨╕╤П*/
   21% {
     left: -100%;
     opacity: 0;
     z-index: -1; }
-  /* Возвращение на исходную позицию за пределами маски */
+  /* ╨Т╨╛╨╖╨▓╤А╨░╤Й╨╡╨╜╨╕╨╡ ╨╜╨░ ╨╕╤Б╤Е╨╛╨┤╨╜╤Г╤О ╨┐╨╛╨╖╨╕╤Ж╨╕╤О ╨╖╨░ ╨┐╤А╨╡╨┤╨╡╨╗╨░╨╝╨╕ ╨╝╨░╤Б╨║╨╕ */
   92% {
     left: -100%;
     opacity: 0;
@@ -914,32 +902,32 @@ article.main .content .blocks_2 h1 {
   96% {
     left: -100%;
     opacity: 0; }
-  /* С 96% до 100% (1 секунда) – вход */
+  /* ╨б 96% ╨┤╨╛ 100% (1 ╤Б╨╡╨║╤Г╨╜╨┤╨░) тАУ ╨▓╤Е╨╛╨┤ */
   100% {
     left: 0px;
     opacity: 1; } }
 @keyframes cycle1 {
   0% {
     left: 0px; }
-  /* При запуске слайдера, первое изображение уже видимо */
+  /* ╨Я╤А╨╕ ╨╖╨░╨┐╤Г╤Б╨║╨╡ ╤Б╨╗╨░╨╣╨┤╨╡╤А╨░, ╨┐╨╡╤А╨▓╨╛╨╡ ╨╕╨╖╨╛╨▒╤А╨░╨╢╨╡╨╜╨╕╨╡ ╤Г╨╢╨╡ ╨▓╨╕╨┤╨╕╨╝╨╛ */
   4% {
     left: 0px; }
-  /* Стартовая позиция */
+  /* ╨б╤В╨░╤А╤В╨╛╨▓╨░╤П ╨┐╨╛╨╖╨╕╤Ж╨╕╤П */
   16% {
     left: 0px;
     opacity: 1;
     z-index: 0; }
-  /* С 4% до 16 % (3 секунды) изображение видимо */
+  /* ╨б 4% ╨┤╨╛ 16 % (3 ╤Б╨╡╨║╤Г╨╜╨┤╤Л) ╨╕╨╖╨╛╨▒╤А╨░╨╢╨╡╨╜╨╕╨╡ ╨▓╨╕╨┤╨╕╨╝╨╛ */
   20% {
     left: 100%;
     opacity: 0;
     z-index: 0; }
-  /* с 16% до 20% (1 секунды)выход изображения*/
+  /* ╤Б 16% ╨┤╨╛ 20% (1 ╤Б╨╡╨║╤Г╨╜╨┤╤Л)╨▓╤Л╤Е╨╛╨┤ ╨╕╨╖╨╛╨▒╤А╨░╨╢╨╡╨╜╨╕╤П*/
   21% {
     left: -100%;
     opacity: 0;
     z-index: -1; }
-  /* Возвращение на исходную позицию за пределами маски */
+  /* ╨Т╨╛╨╖╨▓╤А╨░╤Й╨╡╨╜╨╕╨╡ ╨╜╨░ ╨╕╤Б╤Е╨╛╨┤╨╜╤Г╤О ╨┐╨╛╨╖╨╕╤Ж╨╕╤О ╨╖╨░ ╨┐╤А╨╡╨┤╨╡╨╗╨░╨╝╨╕ ╨╝╨░╤Б╨║╨╕ */
   92% {
     left: -100%;
     opacity: 0;
@@ -947,7 +935,7 @@ article.main .content .blocks_2 h1 {
   96% {
     left: -100%;
     opacity: 0; }
-  /* С 96% до 100% (1 секунда) – вход */
+  /* ╨б 96% ╨┤╨╛ 100% (1 ╤Б╨╡╨║╤Г╨╜╨┤╨░) тАУ ╨▓╤Е╨╛╨┤ */
   100% {
     left: 0px;
     opacity: 1; } }
@@ -955,33 +943,33 @@ article.main .content .blocks_2 h1 {
   0% {
     left: -100%;
     opacity: 0; }
-  /* Исходная позиция за пределами маски */
+  /* ╨Ш╤Б╤Е╨╛╨┤╨╜╨░╤П ╨┐╨╛╨╖╨╕╤Ж╨╕╤П ╨╖╨░ ╨┐╤А╨╡╨┤╨╡╨╗╨░╨╝╨╕ ╨╝╨░╤Б╨║╨╕ */
   16% {
     left: -100%;
     opacity: 0; }
-  /* Начало движения с 16% */
+  /* ╨Э╨░╤З╨░╨╗╨╛ ╨┤╨▓╨╕╨╢╨╡╨╜╨╕╤П ╤Б 16% */
   20% {
     left: 0px;
     opacity: 1; }
   24% {
     left: 0px;
     opacity: 1; }
-  /* С 20% до 24% (в течении 1 секунды) — вход*/
+  /* ╨б 20% ╨┤╨╛ 24% (╨▓ ╤В╨╡╤З╨╡╨╜╨╕╨╕ 1 ╤Б╨╡╨║╤Г╨╜╨┤╤Л) тАФ ╨▓╤Е╨╛╨┤*/
   36% {
     left: 0px;
     opacity: 1;
     z-index: 0; }
-  /* С 24% до 36 % (3 секунды) изображение видимо */
+  /* ╨б 24% ╨┤╨╛ 36 % (3 ╤Б╨╡╨║╤Г╨╜╨┤╤Л) ╨╕╨╖╨╛╨▒╤А╨░╨╢╨╡╨╜╨╕╨╡ ╨▓╨╕╨┤╨╕╨╝╨╛ */
   40% {
     left: 100%;
     opacity: 0;
     z-index: 0; }
-  /* С 36% до 40% (1 секунда)— выход */
+  /* ╨б 36% ╨┤╨╛ 40% (1 ╤Б╨╡╨║╤Г╨╜╨┤╨░)тАФ ╨▓╤Л╤Е╨╛╨┤ */
   41% {
     left: 100%;
     opacity: 0;
     z-index: -1; }
-  /* Возврат на исходную позицию */
+  /* ╨Т╨╛╨╖╨▓╤А╨░╤В ╨╜╨░ ╨╕╤Б╤Е╨╛╨┤╨╜╤Г╤О ╨┐╨╛╨╖╨╕╤Ж╨╕╤О */
   100% {
     left: -100%;
     opacity: 0;
@@ -990,33 +978,33 @@ article.main .content .blocks_2 h1 {
   0% {
     left: -100%;
     opacity: 0; }
-  /* Исходная позиция за пределами маски */
+  /* ╨Ш╤Б╤Е╨╛╨┤╨╜╨░╤П ╨┐╨╛╨╖╨╕╤Ж╨╕╤П ╨╖╨░ ╨┐╤А╨╡╨┤╨╡╨╗╨░╨╝╨╕ ╨╝╨░╤Б╨║╨╕ */
   16% {
     left: -100%;
     opacity: 0; }
-  /* Начало движения с 16% */
+  /* ╨Э╨░╤З╨░╨╗╨╛ ╨┤╨▓╨╕╨╢╨╡╨╜╨╕╤П ╤Б 16% */
   20% {
     left: 0px;
     opacity: 1; }
   24% {
     left: 0px;
     opacity: 1; }
-  /* С 20% до 24% (в течении 1 секунды) — вход*/
+  /* ╨б 20% ╨┤╨╛ 24% (╨▓ ╤В╨╡╤З╨╡╨╜╨╕╨╕ 1 ╤Б╨╡╨║╤Г╨╜╨┤╤Л) тАФ ╨▓╤Е╨╛╨┤*/
   36% {
     left: 0px;
     opacity: 1;
     z-index: 0; }
-  /* С 24% до 36 % (3 секунды) изображение видимо */
+  /* ╨б 24% ╨┤╨╛ 36 % (3 ╤Б╨╡╨║╤Г╨╜╨┤╤Л) ╨╕╨╖╨╛╨▒╤А╨░╨╢╨╡╨╜╨╕╨╡ ╨▓╨╕╨┤╨╕╨╝╨╛ */
   40% {
     left: 100%;
     opacity: 0;
     z-index: 0; }
-  /* С 36% до 40% (1 секунда)— выход */
+  /* ╨б 36% ╨┤╨╛ 40% (1 ╤Б╨╡╨║╤Г╨╜╨┤╨░)тАФ ╨▓╤Л╤Е╨╛╨┤ */
   41% {
     left: 100%;
     opacity: 0;
     z-index: -1; }
-  /* Возврат на исходную позицию */
+  /* ╨Т╨╛╨╖╨▓╤А╨░╤В ╨╜╨░ ╨╕╤Б╤Е╨╛╨┤╨╜╤Г╤О ╨┐╨╛╨╖╨╕╤Ж╨╕╤О */
   100% {
     left: -100%;
     opacity: 0;
