@@ -284,6 +284,9 @@ article.main {
   position: relative;
   width: 70vw;
   background-color: rgba(177, 191, 191, 0.3); }
+  article.main ul, article.main p {
+    margin: 0.75em 0;
+    padding: 0 1em; }
   @media screen and (max-width: 760px) {
     article.main {
       width: 100vw; } }
@@ -339,7 +342,8 @@ article.main {
     flex-wrap: wrap;
     -webkit-box-align: stretch;
     -ms-flex-align: stretch;
-    align-items: stretch; }
+    align-items: stretch;
+    background-color: #fff; }
     article.main .content .slider {
       padding: 0;
       z-index: 50;
@@ -685,10 +689,12 @@ article.main {
           padding: 0 3% 0 2%; } }
       article.main .content .blocks_2 .picture:nth-child(odd) {
         float: left;
-        z-index: 500; }
+        z-index: 500;
+        width: 30%; }
       article.main .content .blocks_2 .picture:nth-child(even) {
         float: right;
-        z-index: 500; }
+        z-index: 500;
+        width: 30%; }
       article.main .content .blocks_2 #evolution {
         float: left;
         z-index: 500;
@@ -1212,5 +1218,58 @@ article.main .content .blocks_2 h1 {
   transition-duration: 600ms; }
 #list-animation li:last-of-type {
   margin: 1.5% 3% 0 0; }
+
+.line {
+  border: 1px solid #8fa3a3;
+  padding: 0.1%;
+  margin: 0;
+  background: #abbab5; }
+
+.tags {
+  margin: 1% 0 0 0; }
+  .tags span {
+    margin: 0 1% 1% 1%;
+    display: inline-block;
+    cursor: pointer;
+    color: #171c1c;
+    border: 1px solid #8fa3a3;
+    padding: 6px 13px;
+    text-indent: 0;
+    text-decoration: none; }
+    .tags span:hover {
+      background: #abbaba; }
+    .tags span:active {
+      position: relative;
+      top: 1px; }
+
+.occupation {
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  width: 100%;
+  border-bottom: 2px solid #b6c9c2; }
+  .occupation .left-occupation {
+    font-style: italic;
+    font-family: "Open Sans";
+    font-size: 1.3em;
+    color: #5c7070;
+    flex-basis: 30%;
+    border-right: 1px solid #8fa3a3; }
+  .occupation .right-occupation {
+    flex-basis: 70%;
+    font-family: "Open Sans";
+    font-size: 1.1em; }
+    .occupation .right-occupation .college {
+      margin-bottom: 0;
+      padding-bottom: 0; }
+    .occupation .right-occupation .date {
+      font-size: 0.6em;
+      line-height: 0.5;
+      margin: 0;
+      padding: 0;
+      color: #5c7070; }
+    .occupation .right-occupation .college-info {
+      font-size: 0.8em;
+      font-style: italic; }
 
 /*# sourceMappingURL=style.css.map */

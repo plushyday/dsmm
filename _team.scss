@@ -1,0 +1,62 @@
+.line{
+	border: 1px solid darken($apple-core, 10%);
+	padding: 0.1%;
+	margin: 0;
+	background: darken(hsl((hue($apple-core)-20), 10%, 80%), 10%);
+}
+.tags{
+	margin: 1% 0 0 0;
+	span{
+	margin: 0 1% 1% 1%;
+	display:inline-block;
+	cursor:pointer;
+	color: darken($apple-core, 60%);
+	border: 1px solid darken($apple-core, 10%);
+	padding:6px 13px;
+	text-indent: 0;
+	text-decoration:none;
+&:hover {
+	background:rgba($apple-core, 30);
+
+}
+&:active {
+	position:relative;
+	top:1px;
+}
+}
+	}
+.occupation{
+	display: flex;
+	flex-direction: row;
+	align-items: stretch;
+	width: 100%;
+	border-bottom: 2px solid darken(hsl((hue($apple-core)-20), 15%, 85%), 10%);
+	.left-occupation{
+		font-style: italic;
+		font-family: $opensans;
+		font-size: 1.3em;
+		color: darken($apple-core, 30%);
+		flex-basis:30%;
+		border-right: 1px solid darken($apple-core, 10%);
+	}
+	.right-occupation{
+		flex-basis:70%;
+		font-family: $opensans;
+		font-size: 1.1em;
+		.college{
+			margin-bottom: 0;
+			padding-bottom: 0;
+		}
+		.date{
+			font-size: 0.6em;
+			line-height: 0.5;
+			margin: 0;
+			padding: 0;
+			color: darken($apple-core, 30%);
+		}
+		.college-info{
+			font-size: 0.8em;
+			font-style: italic;
+		}
+	}
+}
