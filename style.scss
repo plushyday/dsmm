@@ -285,6 +285,11 @@ nav{
 			position: relative;
             width: 70vw;
 			background-color:rgba(lighten($apple-core, 2%), 0.3);
+			ul, p {
+				  margin: 0.75em 0;
+				  padding: 0 1em;
+					}
+					
                     @include media(760){
                     width:100vw;
                   }
@@ -347,7 +352,7 @@ nav{
 				-webkit-box-align: stretch;
 				-ms-flex-align: stretch;
 				align-items: stretch;
-
+				background-color: #fff;
 				@import "_slider.scss";
 
 				.blocks_2{
@@ -368,10 +373,12 @@ nav{
 					.picture:nth-child(odd){
 						float: left;
 						z-index: 500;
+						width: 30%;
 					}
 					.picture:nth-child(even){
 						float: right;
 						z-index: 500;
+						width: 30%;
 					}
 					#evolution{
 						float: left;
@@ -583,3 +590,4 @@ nav{
 		}
 		@import "_keyframes.scss";
 		@import "_menu.scss";
+		@import "_team.scss";
