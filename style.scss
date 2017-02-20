@@ -40,11 +40,25 @@ body{
 
 .container{
 	
+	display: -webkit-box;
+	
+	display: -ms-flexbox;
+	
 	display: flex;
 	
-	flex-direction: row;
-	justify-content: center;
-	align-items: flex-start;
+	-webkit-box-orient: horizontal;
+	
+	-webkit-box-direction: normal;
+	
+	    -ms-flex-direction: row;
+	
+	        flex-direction: row;
+	-webkit-box-pack: center;
+	    -ms-flex-pack: center;
+	        justify-content: center;
+	-webkit-box-align: start;
+	    -ms-flex-align: start;
+	        align-items: flex-start;
 	
 	@include media(760){
 		-webkit-box-orient: vertical;
@@ -57,7 +71,8 @@ body{
 
 
 nav{
-	flex-basis: 15vw;
+	-ms-flex-preferred-size: 15vw;
+	    flex-basis: 15vw;
 	position: relative; 
 	div.menu{
 		display: none;
@@ -72,10 +87,12 @@ nav{
 		}
 	}
 	@include media(1800){
-		flex-basis: 12vw;
+		-ms-flex-preferred-size: 12vw;
+		    flex-basis: 12vw;
 	}
 	@include media(760){
-		flex-basis: 100vw;
+		-ms-flex-preferred-size: 100vw;
+		    flex-basis: 100vw;
 	}
 	.nav-fixed{
 		padding:0;
@@ -145,24 +162,24 @@ nav{
 
 				@for $i from 1 through 6{
 					&:nth-child(#{$i}) {
-						background-color: darken(hsl((hue($apple-core)-20*$i), 10%, 75%), 21%);
+						background-color: darken(hsl((hue($apple-core)-22*$i), 10%, 75%), 21%);
 						 &:hover:not(:last-of-type){
-						 	background-color: darken(hsl((hue($apple-core)-20*$i), 15%, 70%), 20%);
+						 	background-color: darken(hsl((hue($apple-core)-22*$i), 15%, 78%), 20%);
 						 }
 						&.active{
-							background-color: darken(hsl((hue($apple-core)-20*$i), 15%, 70%), 22%);
+							background-color: darken(hsl((hue($apple-core)-22*$i), 15%, 78%), 22%);
 						}
 					}
 		}
 		$j:2;
 		@for $i from 7 through 9{
 					&:nth-child(#{$i}) {
-						background-color: darken(hsl((hue($apple-core)-20*($i - $j)), 10%, 75%), 21%);
+						background-color: darken(hsl((hue($apple-core)-22*($i - $j)), 10%, 75%), 21%);
 						&:hover:not(:last-of-type){
-							background-color: darken(hsl((hue($apple-core)-20*($i - $j)), 15%, 70%), 20%);
+							background-color: darken(hsl((hue($apple-core)-22*($i - $j)), 15%, 78%), 20%);
 						}
 						&.active{
-							background-color: darken(hsl((hue($apple-core)-20*($i - $j)), 15%, 70%), 22%);
+							background-color: darken(hsl((hue($apple-core)-22*($i - $j)), 15%, 78%), 22%);
 						}
 					}
 					$j:$j+2;
@@ -294,6 +311,11 @@ nav{
 				color: lighten($apple-core, 65%);
 				background: -webkit-linear-gradient(left, darken(hsl((hue($apple-core)-20), 10%, 75%), 20%), darken($apple-core, 15% ));
 				background: linear-gradient(to right, darken(hsl((hue($apple-core)-20), 10%, 75%), 20%), darken($apple-core, 15% ));
+				p{
+				&>span{
+					font-style: italic;
+				}
+			}
 				@include media(1800){
 					font-size: 300%;
 				}
