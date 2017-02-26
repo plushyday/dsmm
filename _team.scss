@@ -17,12 +17,12 @@
 	text-decoration:none;
 &:hover {
 	background:rgba($apple-core, 30);
-
 }
+
 &:active {
 	position:relative;
 	top:1px;
-}
+	}
 }
 	}
 .occupation{
@@ -48,11 +48,7 @@
 			padding-bottom: 0;
 		}
 		.date{
-			font-size: 0.6em;
-			line-height: 0.5;
-			margin: 0;
-			padding: 0;
-			color: darken($apple-core, 30%);
+			@extend %under-text-small;
 		}
 		.college-info{
 			font-size: 0.8em;

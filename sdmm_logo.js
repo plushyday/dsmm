@@ -3,14 +3,20 @@
 
 
 function ready (){
-	///Menu media queries
+	///Onclick menu
 $(".menu").click(function() {
   $('.menu').toggleClass("pushed");
 });
-
 $(".menu").click(function(){$(".navigation-list").attr("id", $(".navigation-list").attr("id") === "list-animation"? '' : "list-animation")});
 
-	///Menu media queries end
+if($("#national-tag")){
+$("#national-tag").click(function(){$(".national-subtag").css("display", $(".national-subtag").css("display")==="none"? 'inline-block' : 'none')});
+}
+
+if($(".tag")){
+$(".tag").click(function(){$(this).toggleClass('tag-active')});
+}
+	///Onclick menu
 
 	//tooltip
 	var gist=[

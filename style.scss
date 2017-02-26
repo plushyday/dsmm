@@ -588,6 +588,14 @@ nav{
 			text-align: right;
 
 		}
+		%under-text-small{
+			font-size: 0.6em;
+			line-height: 0.5;
+			margin: 0;
+			padding: 0;
+			color: darken($apple-core, 30%);
+		}
 		@import "_keyframes.scss";
 		@import "_menu.scss";
 		@import "_team.scss";
+		@import "_projects.scss";

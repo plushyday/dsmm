@@ -1,0 +1,79 @@
+.blocks_2{
+	h2{
+		@extend %caption;
+		font-size: 1.5em;
+	}
+	.authors{
+		@extend %under-text-small;
+		float: right;
+	}
+	.read-more{
+		a{
+			border: 1px solid black;
+			padding: 3px 2%;
+			text-decoration: none;
+			color: $blueberry; 
+			font-family: $palatino; 
+			font-weight: 400; 
+			font-style: italic; 
+		}
+	}
+}
+.tag-group{
+	margin: 0 1%;
+	width: 100%;
+	.tag {
+		border-radius: 3px 0 0 3px;
+		color: #333;
+		display: inline-block;
+		height: 26px;
+		line-height: 26px;
+		padding: 0 20px 0 23px;
+		position: relative;
+		margin: 10px 1% 1% 0;
+		text-decoration: none;
+		-webkit-transition: color 0.2s;
+		@for $i from 1 through 4{
+			&:nth-child(#{$i}) {
+				background-color: darken(hsl((hue($apple-core)-22*$i), 10%, 75%), 21%);
+				&:after{
+					border-left: 10px solid darken(hsl((hue($apple-core)-22*$i), 10%, 75%), 21%);
+				}
+				&:hover{
+					background-color: darken(hsl((hue($apple-core)-30*$i), 10%, 90%), 25%);;
+				}
+				&:hover::after {
+					border-left-color: darken(hsl((hue($apple-core)-30*$i), 10%, 90%), 25%);; 
+				}
+				
+			}
+		}
+		
+		&:before {
+			background: #fff;
+			border-radius: 10px;
+			box-shadow: inset 0 1px rgba(0, 0, 0, 0.25);
+			content: '';
+			height: 6px;
+			left: 10px;
+			position: absolute;
+			width: 6px;
+			top: 10px;
+		}
+
+		&:after {
+			background: #fff;
+			border-bottom: 13px solid transparent;
+			border-top: 13px solid transparent;
+			content: '';
+			position: absolute;
+			right: 0;
+			top: 0;
+		}
+	}
+	.tag-active{
+					&:before{
+					background: $blueberry;
+				}
+		}
+}
