@@ -1,6 +1,4 @@
 
-
-
 ///Ready function. Collect all.
 
 
@@ -12,12 +10,6 @@ $(".menu").click(function() {
 
 $(".menu").click(function(){$(".navigation-list").attr("id", $(".navigation-list").attr("id") === "list-animation"? '' : "list-animation")});
 
-// 	var $li= $("ul.navigation-list li");
-// $(".menu").on('click', function(){
-//   $li.css("visibility", $li.css("visibility") === "hidden"? 'visible' : "hidden");
-//   $("ul.navigation-list").css("padding", "7% 0");
-//   $("ul.navigation-list").css("height", "auto");
-// });
 	///Menu media queries end
 
 	//tooltip
@@ -110,33 +102,22 @@ function showTooltip(currentGistId, event, gist){
 		var dots = $(".slider_dots div");
 		var svg = document.getElementById("evolution");
 		var duration = 500;
+		
+		function evolutionAnimate(){
+			if(svg&&logo){
 		logo.addEventListener('mouseover', function(){animate({duration: duration, path: path})} );
-		// for(var i=0;i<gist.length;i++)
-		// {
-		// (function(gist,i) { 
-		//       $("#evolution").on('mouseenter', $("#gist[i].name"), function(event) {
-		//         var tooltip = document.createElement('div');
-		//         tooltip.classList.add('tooltip');
-		//         document.body.appendChild(tooltip);
-		//         tooltip.innerHTML = gist[i].quote;
-		//         tooltip.style.left = event.pageX - (tooltip.offsetWidth/2) + 'px';
-		//         tooltip.style.top = event.pageY-10-tooltip.offsetHeight+'px';
-		//       });
-		// })(gist,i); // <- (1)Здесь ты передаёшь параметры из внешнего окружения
-		// (function(gist,i) { 
-		//       $("#evolution").on('mouseleave', $("#gist[i].name"), function(event) {
-		//         $(".tooltip").remove();
-		//       });
-		// })(gist,i);
-		// }
 		svg.addEventListener('mouseover', function(e){handler(e,gist)});
 		svg.addEventListener('mouseout', function(){
 			if(returnedTooltip){
 				document.body.removeChild(returnedTooltip);
 				returnedTooltip = false; //WTFFF
-			}
+				}
+			})
 		}
-		);
+	}
+
+		evolutionAnimate();
+		
 //tooltip end
 
 
