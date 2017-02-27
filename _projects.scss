@@ -16,24 +16,31 @@
 			font-family: $palatino; 
 			font-weight: 400; 
 			font-style: italic; 
+			&:hover{
+				background-color: hsla((hue(lighten($blueberry, 2%))-30), 10%, 75%, 50);
+			}
 		}
+	}
+	.tag-in-h{
+		text-indent: 0;
+		text-decoration: underline;
+		display: inline-block;
+		font-size: 0.5em;
+		font-style: normal;
+		letter-spacing: 0;
+		color: $blueberry;
 	}
 }
 .tag-group{
 	margin: 0 1%;
 	width: 100%;
+	span{
+		@extend %caption;
+		font-size: 1em;
+	}
 	.tag {
-		border-radius: 3px 0 0 3px;
-		color: #333;
-		display: inline-block;
-		height: 26px;
-		line-height: 26px;
-		padding: 0 20px 0 23px;
-		position: relative;
-		margin: 10px 1% 1% 0;
-		text-decoration: none;
-		-webkit-transition: color 0.2s;
-		@for $i from 1 through 4{
+		@extend %taggy;
+		@for $i from 1 through 5{
 			&:nth-child(#{$i}) {
 				background-color: darken(hsl((hue($apple-core)-22*$i), 10%, 75%), 21%);
 				&:after{
@@ -49,7 +56,26 @@
 			}
 		}
 		
-		&:before {
+	
+	}
+	.tag-active{
+					&:before{
+					background: $blueberry !important;
+				}
+		}
+}
+
+%taggy{
+		border-radius: 3px 0 0 3px;
+		color: #333;
+		display: inline-block;
+		height: 26px;
+		line-height: 26px;
+		padding: 0 20px 0 23px;
+		position: relative;
+		margin: 10px 1% 1% 0;
+		text-decoration: none;
+			&:before {
 			background: #fff;
 			border-radius: 10px;
 			box-shadow: inset 0 1px rgba(0, 0, 0, 0.25);
@@ -69,11 +95,5 @@
 			position: absolute;
 			right: 0;
 			top: 0;
-		}
-	}
-	.tag-active{
-					&:before{
-					background: $blueberry;
-				}
 		}
 }
