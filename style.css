@@ -32,6 +32,7 @@ body {
   background-color: #819898;
   margin: 0;
   position: absolute;
+  y-overflow: hidden;
   line-height: 1.2; }
 
 .container {
@@ -829,6 +830,7 @@ aside {
   -ms-grid-row-align: stretch;
   align-self: stretch;
   /*you CAN'T specify height here it will override align-self*/
+  min-height: 100vh;
   position: relative; }
   @media screen and (max-width: 760px) {
     aside {
@@ -842,10 +844,12 @@ aside {
     position: absolute;
     background: url("img/dots2-01.svg");
     background-repeat: repeat-y;
+    background-size: 100% auto;
     background-position: 0% 0%; }
   aside #lines_paralax {
     background: url("img/dots_without_dots-01.svg");
-    background-repeat: repeat-y; }
+    background-repeat: repeat-y;
+    background-size: 100% auto; }
   @media screen and (min-width: 1800px) {
     aside {
       width: 12vw; } }

@@ -108,10 +108,10 @@ function showTooltip(currentGistId, event, gist){
 		var dots = $(".slider_dots div");
 		var svg = document.getElementById("evolution");
 		var duration = 500;
+		logo.addEventListener('mouseover', function(){animate({duration: duration, path: path})} );
 		
 		function evolutionAnimate(){
 			if(svg&&logo){
-		logo.addEventListener('mouseover', function(){animate({duration: duration, path: path})} );
 		svg.addEventListener('mouseover', function(e){handler(e,gist)});
 		svg.addEventListener('mouseout', function(){
 			if(returnedTooltip){

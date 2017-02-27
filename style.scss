@@ -35,6 +35,7 @@ body{
 	background-color: darken($apple-core, 15% );
 	margin:0;
 	position:absolute;
+	y-overflow: hidden;
 	line-height: 1.2;
 }
 
@@ -517,6 +518,7 @@ nav{
 			-ms-flex-item-align:stretch;
 			-ms-grid-row-align:stretch;
 			align-self:stretch;/*you CAN'T specify height here it will override align-self*/
+			min-height: 100vh;
 			position: relative;
 			@include media(760){
 				display: none;
@@ -530,12 +532,14 @@ nav{
 				position: absolute;
 				background: url('img/dots2-01.svg');
 				background-repeat: repeat-y;
+				background-size: 100% auto;
 				background-position: 0% 0%;
 			}
 			#lines_paralax{
 				@extend #dots_paralax;
 				background: url('img/dots_without_dots-01.svg');
 				background-repeat: repeat-y;
+				background-size: 100% auto;
 			}
 			@include media(1800){
 				width:12vw;
