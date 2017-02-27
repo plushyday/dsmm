@@ -4,10 +4,13 @@
 	margin: 0;
 	background: darken(hsl((hue($apple-core)-20), 10%, 80%), 10%);
 }
-.tags{
-	margin: 1% 0 0 0;
+.pagination{
+	    -ms-grid-row-align: center;
+	    -ms-flex-item-align: center;
+	        align-self: center;
+	margin: 1.5% 0;
 	span{
-	margin: 0 1% 1% 1%;
+	margin: 0;
 	display:inline-block;
 	cursor:pointer;
 	color: darken($apple-core, 60%);
@@ -26,9 +29,16 @@
 }
 	}
 .occupation{
+	display: -webkit-box;
+	display: -ms-flexbox;
 	display: flex;
-	flex-direction: row;
-	align-items: stretch;
+	-webkit-box-orient: horizontal;
+	-webkit-box-direction: normal;
+	    -ms-flex-direction: row;
+	        flex-direction: row;
+	-webkit-box-align: stretch;
+	    -ms-flex-align: stretch;
+	        align-items: stretch;
 	width: 100%;
 	border-bottom: 2px solid darken(hsl((hue($apple-core)-20), 15%, 85%), 10%);
 	.left-occupation{
@@ -36,11 +46,13 @@
 		font-family: $opensans;
 		font-size: 1.3em;
 		color: darken($apple-core, 30%);
-		flex-basis:30%;
+		-ms-flex-preferred-size:30%;
+		    flex-basis:30%;
 		border-right: 1px solid darken($apple-core, 10%);
 	}
 	.right-occupation{
-		flex-basis:70%;
+		-ms-flex-preferred-size:70%;
+		    flex-basis:70%;
 		font-family: $opensans;
 		font-size: 1.1em;
 		.college{
