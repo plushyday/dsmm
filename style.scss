@@ -35,7 +35,6 @@ body{
 	background-color: darken($apple-core, 15% );
 	margin:0;
 	position:absolute;
-	y-overflow: hidden;
 	line-height: 1.2;
 }
 
@@ -91,10 +90,10 @@ nav{
 		-ms-flex-preferred-size: 12vw;
 		    flex-basis: 12vw;
 	}
-	@include media(760){
-		-ms-flex-preferred-size: 100vw;
-		    flex-basis: 100vw;
-	}
+	// @include media(760){
+	// 	-ms-flex-preferred-size: 100vw;
+	// 	    flex-basis: 100vw;
+	// }
 	.nav-fixed{
 		padding:0;
 		top:0;

@@ -19,6 +19,9 @@
 	padding:6px 13px;
 	text-indent: 0;
 	text-decoration:none;
+	@include media(760){
+			padding:6px 18px;
+		}
 	&.active{
 		background:rgba($apple-core, 35);
 	}
@@ -45,6 +48,10 @@
 	        align-items: stretch;
 	width: 100%;
 	border-bottom: 2px solid darken(hsl((hue($apple-core)-20), 15%, 85%), 10%);
+	@include media(760){
+			flex-direction: column;
+			border-bottom: none;
+		}
 	.left-occupation{
 		font-style: italic;
 		font-family: $opensans;
@@ -53,6 +60,16 @@
 		-ms-flex-preferred-size:30%;
 		    flex-basis:30%;
 		border-right: 1px solid darken($apple-core, 10%);
+		@include media(760){
+		border-right: none;
+	}
+		p{
+		@include media(760){
+			font-size: 1.4em;
+			margin: 0;
+			padding: 0;
+			}
+		}
 	}
 	.right-occupation{
 		-ms-flex-preferred-size:70%;
@@ -69,6 +86,9 @@
 		.college-info{
 			font-size: 0.8em;
 			font-style: italic;
+			&:not(:last-child){
+			border-bottom: 1px dashed darken($apple-core, 5%);
+			}
 		}
 	}
 }
