@@ -370,7 +370,7 @@ nav{
 					flex-grow: 1;
 					background-color:lighten($apple-core, 35%);
 					font-family: $opensans;
-					box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26); 
+					/* box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26); */
 					@include media(760){
 						padding: 0 3% 0 2%;
 					}

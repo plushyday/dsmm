@@ -1,3 +1,7 @@
+.blocks_3{
+	border-top: 3px solid rgba(lighten($apple-core, 2%), 0.3);
+}
+
 .blocks_2{
 	h2{
 		@extend %caption;
@@ -5,6 +9,12 @@
 	}
 	.authors{
 		@extend %under-text-small;
+		float: right;
+
+	}
+	.date{
+		@extend %under-text-small;
+		font-size: 1em;
 		float: right;
 	}
 	.read-more{

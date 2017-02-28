@@ -695,7 +695,7 @@ article.main {
       flex-grow: 1;
       background-color: white;
       font-family: "Open Sans";
-      box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26); }
+      /* box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26); */ }
       @media screen and (max-width: 760px) {
         article.main .content .blocks_2 {
           padding: 0 3% 0 2%; } }
@@ -894,7 +894,7 @@ article.main .content .blocks_2 h1, .blocks_2 h2, .tag-group span {
   margin: 0 1%;
   text-align: right; }
 
-.occupation .right-occupation .date, .blocks_2 .authors {
+.occupation .right-occupation .date, .blocks_2 .authors, .blocks_2 .date {
   font-size: 0.6em;
   line-height: 0.5;
   margin: 0;
@@ -904,25 +904,25 @@ article.main .content .blocks_2 h1, .blocks_2 h2, .tag-group span {
 @-webkit-keyframes cycle1 {
   0% {
     left: 0px; }
-  /* ╨Я╤А╨╕ ╨╖╨░╨┐╤Г╤Б╨║╨╡ ╤Б╨╗╨░╨╣╨┤╨╡╤А╨░, ╨┐╨╡╤А╨▓╨╛╨╡ ╨╕╨╖╨╛╨▒╤А╨░╨╢╨╡╨╜╨╕╨╡ ╤Г╨╢╨╡ ╨▓╨╕╨┤╨╕╨╝╨╛ */
+  /* При запуске слайдера, первое изображение уже видимо */
   4% {
     left: 0px; }
-  /* ╨б╤В╨░╤А╤В╨╛╨▓╨░╤П ╨┐╨╛╨╖╨╕╤Ж╨╕╤П */
+  /* Стартовая позиция */
   16% {
     left: 0px;
     opacity: 1;
     z-index: 0; }
-  /* ╨б 4% ╨┤╨╛ 16 % (3 ╤Б╨╡╨║╤Г╨╜╨┤╤Л) ╨╕╨╖╨╛╨▒╤А╨░╨╢╨╡╨╜╨╕╨╡ ╨▓╨╕╨┤╨╕╨╝╨╛ */
+  /* С 4% до 16 % (3 секунды) изображение видимо */
   20% {
     left: 100%;
     opacity: 0;
     z-index: 0; }
-  /* ╤Б 16% ╨┤╨╛ 20% (1 ╤Б╨╡╨║╤Г╨╜╨┤╤Л)╨▓╤Л╤Е╨╛╨┤ ╨╕╨╖╨╛╨▒╤А╨░╨╢╨╡╨╜╨╕╤П*/
+  /* с 16% до 20% (1 секунды)выход изображения*/
   21% {
     left: -100%;
     opacity: 0;
     z-index: -1; }
-  /* ╨Т╨╛╨╖╨▓╤А╨░╤Й╨╡╨╜╨╕╨╡ ╨╜╨░ ╨╕╤Б╤Е╨╛╨┤╨╜╤Г╤О ╨┐╨╛╨╖╨╕╤Ж╨╕╤О ╨╖╨░ ╨┐╤А╨╡╨┤╨╡╨╗╨░╨╝╨╕ ╨╝╨░╤Б╨║╨╕ */
+  /* Возвращение на исходную позицию за пределами маски */
   92% {
     left: -100%;
     opacity: 0;
@@ -930,32 +930,32 @@ article.main .content .blocks_2 h1, .blocks_2 h2, .tag-group span {
   96% {
     left: -100%;
     opacity: 0; }
-  /* ╨б 96% ╨┤╨╛ 100% (1 ╤Б╨╡╨║╤Г╨╜╨┤╨░) тАУ ╨▓╤Е╨╛╨┤ */
+  /* С 96% до 100% (1 секунда) – вход */
   100% {
     left: 0px;
     opacity: 1; } }
 @keyframes cycle1 {
   0% {
     left: 0px; }
-  /* ╨Я╤А╨╕ ╨╖╨░╨┐╤Г╤Б╨║╨╡ ╤Б╨╗╨░╨╣╨┤╨╡╤А╨░, ╨┐╨╡╤А╨▓╨╛╨╡ ╨╕╨╖╨╛╨▒╤А╨░╨╢╨╡╨╜╨╕╨╡ ╤Г╨╢╨╡ ╨▓╨╕╨┤╨╕╨╝╨╛ */
+  /* При запуске слайдера, первое изображение уже видимо */
   4% {
     left: 0px; }
-  /* ╨б╤В╨░╤А╤В╨╛╨▓╨░╤П ╨┐╨╛╨╖╨╕╤Ж╨╕╤П */
+  /* Стартовая позиция */
   16% {
     left: 0px;
     opacity: 1;
     z-index: 0; }
-  /* ╨б 4% ╨┤╨╛ 16 % (3 ╤Б╨╡╨║╤Г╨╜╨┤╤Л) ╨╕╨╖╨╛╨▒╤А╨░╨╢╨╡╨╜╨╕╨╡ ╨▓╨╕╨┤╨╕╨╝╨╛ */
+  /* С 4% до 16 % (3 секунды) изображение видимо */
   20% {
     left: 100%;
     opacity: 0;
     z-index: 0; }
-  /* ╤Б 16% ╨┤╨╛ 20% (1 ╤Б╨╡╨║╤Г╨╜╨┤╤Л)╨▓╤Л╤Е╨╛╨┤ ╨╕╨╖╨╛╨▒╤А╨░╨╢╨╡╨╜╨╕╤П*/
+  /* с 16% до 20% (1 секунды)выход изображения*/
   21% {
     left: -100%;
     opacity: 0;
     z-index: -1; }
-  /* ╨Т╨╛╨╖╨▓╤А╨░╤Й╨╡╨╜╨╕╨╡ ╨╜╨░ ╨╕╤Б╤Е╨╛╨┤╨╜╤Г╤О ╨┐╨╛╨╖╨╕╤Ж╨╕╤О ╨╖╨░ ╨┐╤А╨╡╨┤╨╡╨╗╨░╨╝╨╕ ╨╝╨░╤Б╨║╨╕ */
+  /* Возвращение на исходную позицию за пределами маски */
   92% {
     left: -100%;
     opacity: 0;
@@ -963,7 +963,7 @@ article.main .content .blocks_2 h1, .blocks_2 h2, .tag-group span {
   96% {
     left: -100%;
     opacity: 0; }
-  /* ╨б 96% ╨┤╨╛ 100% (1 ╤Б╨╡╨║╤Г╨╜╨┤╨░) тАУ ╨▓╤Е╨╛╨┤ */
+  /* С 96% до 100% (1 секунда) – вход */
   100% {
     left: 0px;
     opacity: 1; } }
@@ -971,33 +971,33 @@ article.main .content .blocks_2 h1, .blocks_2 h2, .tag-group span {
   0% {
     left: -100%;
     opacity: 0; }
-  /* ╨Ш╤Б╤Е╨╛╨┤╨╜╨░╤П ╨┐╨╛╨╖╨╕╤Ж╨╕╤П ╨╖╨░ ╨┐╤А╨╡╨┤╨╡╨╗╨░╨╝╨╕ ╨╝╨░╤Б╨║╨╕ */
+  /* Исходная позиция за пределами маски */
   16% {
     left: -100%;
     opacity: 0; }
-  /* ╨Э╨░╤З╨░╨╗╨╛ ╨┤╨▓╨╕╨╢╨╡╨╜╨╕╤П ╤Б 16% */
+  /* Начало движения с 16% */
   20% {
     left: 0px;
     opacity: 1; }
   24% {
     left: 0px;
     opacity: 1; }
-  /* ╨б 20% ╨┤╨╛ 24% (╨▓ ╤В╨╡╤З╨╡╨╜╨╕╨╕ 1 ╤Б╨╡╨║╤Г╨╜╨┤╤Л) тАФ ╨▓╤Е╨╛╨┤*/
+  /* С 20% до 24% (в течении 1 секунды) — вход*/
   36% {
     left: 0px;
     opacity: 1;
     z-index: 0; }
-  /* ╨б 24% ╨┤╨╛ 36 % (3 ╤Б╨╡╨║╤Г╨╜╨┤╤Л) ╨╕╨╖╨╛╨▒╤А╨░╨╢╨╡╨╜╨╕╨╡ ╨▓╨╕╨┤╨╕╨╝╨╛ */
+  /* С 24% до 36 % (3 секунды) изображение видимо */
   40% {
     left: 100%;
     opacity: 0;
     z-index: 0; }
-  /* ╨б 36% ╨┤╨╛ 40% (1 ╤Б╨╡╨║╤Г╨╜╨┤╨░)тАФ ╨▓╤Л╤Е╨╛╨┤ */
+  /* С 36% до 40% (1 секунда)— выход */
   41% {
     left: 100%;
     opacity: 0;
     z-index: -1; }
-  /* ╨Т╨╛╨╖╨▓╤А╨░╤В ╨╜╨░ ╨╕╤Б╤Е╨╛╨┤╨╜╤Г╤О ╨┐╨╛╨╖╨╕╤Ж╨╕╤О */
+  /* Возврат на исходную позицию */
   100% {
     left: -100%;
     opacity: 0;
@@ -1006,33 +1006,33 @@ article.main .content .blocks_2 h1, .blocks_2 h2, .tag-group span {
   0% {
     left: -100%;
     opacity: 0; }
-  /* ╨Ш╤Б╤Е╨╛╨┤╨╜╨░╤П ╨┐╨╛╨╖╨╕╤Ж╨╕╤П ╨╖╨░ ╨┐╤А╨╡╨┤╨╡╨╗╨░╨╝╨╕ ╨╝╨░╤Б╨║╨╕ */
+  /* Исходная позиция за пределами маски */
   16% {
     left: -100%;
     opacity: 0; }
-  /* ╨Э╨░╤З╨░╨╗╨╛ ╨┤╨▓╨╕╨╢╨╡╨╜╨╕╤П ╤Б 16% */
+  /* Начало движения с 16% */
   20% {
     left: 0px;
     opacity: 1; }
   24% {
     left: 0px;
     opacity: 1; }
-  /* ╨б 20% ╨┤╨╛ 24% (╨▓ ╤В╨╡╤З╨╡╨╜╨╕╨╕ 1 ╤Б╨╡╨║╤Г╨╜╨┤╤Л) тАФ ╨▓╤Е╨╛╨┤*/
+  /* С 20% до 24% (в течении 1 секунды) — вход*/
   36% {
     left: 0px;
     opacity: 1;
     z-index: 0; }
-  /* ╨б 24% ╨┤╨╛ 36 % (3 ╤Б╨╡╨║╤Г╨╜╨┤╤Л) ╨╕╨╖╨╛╨▒╤А╨░╨╢╨╡╨╜╨╕╨╡ ╨▓╨╕╨┤╨╕╨╝╨╛ */
+  /* С 24% до 36 % (3 секунды) изображение видимо */
   40% {
     left: 100%;
     opacity: 0;
     z-index: 0; }
-  /* ╨б 36% ╨┤╨╛ 40% (1 ╤Б╨╡╨║╤Г╨╜╨┤╨░)тАФ ╨▓╤Л╤Е╨╛╨┤ */
+  /* С 36% до 40% (1 секунда)— выход */
   41% {
     left: 100%;
     opacity: 0;
     z-index: -1; }
-  /* ╨Т╨╛╨╖╨▓╤А╨░╤В ╨╜╨░ ╨╕╤Б╤Е╨╛╨┤╨╜╤Г╤О ╨┐╨╛╨╖╨╕╤Ж╨╕╤О */
+  /* Возврат на исходную позицию */
   100% {
     left: -100%;
     opacity: 0;
@@ -1252,7 +1252,8 @@ article.main .content .blocks_2 h1, .blocks_2 h2, .tag-group span {
   -ms-flex-item-align: center;
   align-self: center;
   margin: 1.5% 0; }
-  .pagination span {
+  .pagination a {
+    text-decoration: none;
     margin: 0;
     display: inline-block;
     cursor: pointer;
@@ -1261,9 +1262,11 @@ article.main .content .blocks_2 h1, .blocks_2 h2, .tag-group span {
     padding: 6px 13px;
     text-indent: 0;
     text-decoration: none; }
-    .pagination span:hover {
+    .pagination a.active {
       background: #abbaba; }
-    .pagination span:active {
+    .pagination a:hover {
+      background: #abbaba; }
+    .pagination a:active {
       position: relative;
       top: 1px; }
 
@@ -1300,9 +1303,15 @@ article.main .content .blocks_2 h1, .blocks_2 h2, .tag-group span {
       font-size: 0.8em;
       font-style: italic; }
 
+.blocks_3 {
+  border-top: 3px solid rgba(177, 191, 191, 0.3); }
+
 .blocks_2 h2 {
   font-size: 1.5em; }
 .blocks_2 .authors {
+  float: right; }
+.blocks_2 .date {
+  font-size: 1em;
   float: right; }
 .blocks_2 .read-more a {
   border: 1px solid black;
