@@ -49,7 +49,10 @@
 	width: 100%;
 	border-bottom: 2px solid darken(hsl((hue($apple-core)-20), 15%, 85%), 10%);
 	@include media(760){
-			flex-direction: column;
+			-webkit-box-orient: vertical;
+			-webkit-box-direction: normal;
+			    -ms-flex-direction: column;
+			        flex-direction: column;
 			border-bottom: none;
 		}
 	.left-occupation{
@@ -86,8 +89,13 @@
 		.college-info{
 			font-size: 0.8em;
 			font-style: italic;
-			&:not(:last-child){
-			border-bottom: 1px dashed darken($apple-core, 5%);
+				&:not(:last-child){
+				border-bottom: 1px dashed darken($apple-core, 5%);
+				}
+				&:last-child{
+			@include media(760){
+					border-bottom: 1px dashed darken($apple-core, 5%);
+				}
 			}
 		}
 	}
