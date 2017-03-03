@@ -16,6 +16,13 @@ $("#national-tag").click(function(){$(".national-subtag").css("display", $(".nat
 if($(".tag")){
 $(".tag").click(function(){$(this).toggleClass('tag-active')});
 }
+
+if($("#date-button")){
+$("#date-button").click(function(){$(this).toggleClass('active');
+ var txt = $("#date-button").hasClass('active') ? 'From the very first' : 'Latest';
+     $("#date-button").text(txt);
+})
+}
 	///Onclick menu
 
 	//tooltip

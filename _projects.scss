@@ -19,16 +19,7 @@
 	}
 	.read-more{
 		a{
-			border: 1px solid black;
-			padding: 3px 2%;
-			text-decoration: none;
-			color: $blueberry; 
-			font-family: $palatino; 
-			font-weight: 400; 
-			font-style: italic; 
-			&:hover{
-				background-color: hsla((hue(lighten($blueberry, 2%))-30), 10%, 75%, 50);
-			}
+			@extend %button;
 		}
 	}
 	.tag-in-h{
@@ -44,34 +35,107 @@
 .tag-group{
 	margin: 0 1%;
 	width: 100%;
+	input[type="checkbox"]{
+		display: none;
+	}
 	span{
 		@extend %caption;
 		font-size: 1em;
 	}
 	.tag {
 		@extend %taggy;
-		@for $i from 1 through 5{
+		@for $i from 1 through 9{
 			&:nth-child(#{$i}) {
 				background-color: darken(hsl((hue($apple-core)-22*$i), 10%, 75%), 21%);
 				&:after{
 					border-left: 10px solid darken(hsl((hue($apple-core)-22*$i), 10%, 75%), 21%);
 				}
 				&:hover{
-					background-color: darken(hsl((hue($apple-core)-30*$i), 10%, 90%), 25%);;
+					background-color: darken(hsl((hue($apple-core)-30*$i), 10%, 90%), 25%);
 				}
 				&:hover::after {
-					border-left-color: darken(hsl((hue($apple-core)-30*$i), 10%, 90%), 25%);; 
-				}
-				
+					border-left-color: darken(hsl((hue($apple-core)-30*$i), 10%, 90%), 25%);
+				}		
 			}
 		}
-		
-	
 	}
 	.tag-active{
-					&:before{
+		&:before{
 					background: $blueberry !important;
 				}
+		}
+		button{
+				-webkit-font-smoothing: antialiased;
+				position: relative;
+				color: #fff;
+				line-height: 1em;
+				font-size: 1em;
+				font-family: $myriad;
+				display: inline-block;
+				height: 26px;
+				padding: 0 20px 0 23px;
+				padding-right: 4.7em;
+				background-color: darken(hsl((hue($apple-core)-30*11), 10%, 75%), 25%);
+				border: none;
+				-webkit-transition: .2s;
+				transition: .2s;
+				&:before,
+				&:after {
+					position: absolute;
+					top: 0;
+					bottom: 0;
+					right: 0;
+					padding-top: inherit;
+					padding-bottom: inherit;
+					width: 1.5em;
+					content: "\2191";
+					line-height: 1em;
+					font-size: 1.5em;
+					text-align: center;
+					-webkit-transition: .2s;
+					transition: .2s;
+					-webkit-transform-origin: 50% 60%;
+					        transform-origin: 50% 60%;
+				}
+				&:before {
+					background-color: darken(hsl((hue($apple-core)-30*11), 10%, 75%), 25%);
+				}
+				&:focus {outline:0 !important;}
+				&:active{
+					-webkit-transition: all .2s;
+					transition: all .2s;
+				}
+				&:hover {
+					background-color: darken(hsl((hue($apple-core)-30*11), 10%, 75%), 20%);
+					-webkit-transition: all .2s;
+					transition: all .2s;
+					&:after {
+					background-color: darken(hsl((hue($apple-core)-30*11), 10%, 75%), 20%);
+					}
+				}
+				
+			&.active{
+				background-color: darken(hsl((hue($apple-core)-30*11), 10%, 75%), 28%);
+					
+				&:focus {outline:0 !important;}
+				&:before,
+				&:after {
+					background-color: darken(hsl((hue($apple-core)-30*11), 10%, 75%), 28%);
+					content: "\2193";
+				}
+				&:active{
+					-webkit-transition: all .2s;
+					transition: all .2s;
+				}
+				&:hover {
+					background-color: darken(hsl((hue($apple-core)-30*11), 10%, 75%), 20%);
+					-webkit-transition: all .2s;
+					transition: all .2s;
+					&:after {
+					background-color: darken(hsl((hue($apple-core)-30*11), 10%, 75%), 20%);
+					}
+				}
+			}
 		}
 }
 
@@ -106,4 +170,16 @@
 			right: 0;
 			top: 0;
 		}
+}
+%button{
+	border: 1px solid black;
+			padding: 3px 2%;
+			text-decoration: none;
+			color: $blueberry; 
+			font-family: $palatino; 
+			font-weight: 400; 
+			font-style: italic; 
+			&:hover{
+				background-color: hsla((hue(lighten($blueberry, 2%))-30), 10%, 75%, 50);
+			}
 }
