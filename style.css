@@ -20,12 +20,6 @@
 .animation-li {
   /* opacity: */ }
 
-/* $blueberry:#AD5D4E;*/
-/* $apple-core:#98B7B2;*/
-/* $apple-core:#E5D4C0;*/
-/* $apple-core:#52796F;*/
-/* $apple-core:#F2E4CB;*/
-/* $apple-core:#F4F8FC;*/
 body {
   width: 100%;
   font-family: "MyriadPro";
@@ -1327,6 +1321,39 @@ article.main .content .blocks_2 h1, .blocks_2 h2, .tag-group span {
 
 .blocks_3 {
   border-top: 3px solid rgba(177, 191, 191, 0.3); }
+
+.ajax-filter-count {
+  text-align: center;
+  font-weight: normal;
+  width: 20%; }
+  @media screen and (max-width: 760px) {
+    .ajax-filter-count {
+      width: 100%; } }
+  .ajax-filter-count .ajax-more {
+    padding-top: 10px;
+    position: relative;
+    color: inherit;
+    text-decoration: none;
+    font-size: 1.5em;
+    color: #8fa3a3; }
+    .ajax-filter-count .ajax-more:before, .ajax-filter-count .ajax-more:after {
+      content: '';
+      position: absolute;
+      -webkit-transition: -webkit-transform .5s ease;
+      transition: -webkit-transform .5s ease;
+      transition: transform .5s ease;
+      transition: transform .5s ease, -webkit-transform .5s ease; }
+    .ajax-filter-count .ajax-more:before {
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      height: 2px;
+      background: #abbaba;
+      -webkit-transform: scaleX(0);
+      transform: scaleX(0); }
+    .ajax-filter-count .ajax-more:hover:before {
+      -webkit-transform: scaleX(1);
+      transform: scaleX(1); }
 
 .blocks_2 h2 {
   font-size: 1.5em; }

@@ -1,7 +1,43 @@
 .blocks_3{
 	border-top: 3px solid rgba(lighten($apple-core, 2%), 0.3);
 }
-
+.ajax-filter-count{
+  text-align: center;
+  font-weight: normal;	
+  width: 20%;
+  @include media(760){
+  	width: 100%;
+  }
+.ajax-more{
+  padding-top: 10px;
+  position: relative;
+  color: inherit;
+  text-decoration: none;
+  font-size: 1.5em;
+  color: darken($apple-core,10%);
+  &:before, &:after {
+    content: '';
+    position: absolute;
+    -webkit-transition: -webkit-transform .5s ease;
+    transition: -webkit-transform .5s ease;
+    transition: transform .5s ease;
+    transition: transform .5s ease, -webkit-transform .5s ease;
+  }
+  &:before {
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 2px;
+    background: $apple-core;
+    -webkit-transform:  scaleX(0);
+            transform:  scaleX(0);
+  }
+  &:hover:before {
+    -webkit-transform:  scaleX(1);
+            transform:  scaleX(1);
+  }
+}
+}
 .blocks_2{
 	h2{
 		@extend %caption;
