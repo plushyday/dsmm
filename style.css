@@ -887,7 +887,7 @@ article.main .content .blocks_2 h1, .blocks_2 h2, .tag-group span {
   margin: 0 1%;
   text-align: right; }
 
-.occupation .right-occupation .date, .blocks_2 .authors, .blocks_2 .date-projects {
+.occupation .right-occupation .date, .occupation .right-gallery .date, .gallery .right-occupation .date, .gallery .right-gallery .date, .blocks_2 .authors, .blocks_2 .date-projects {
   font-size: 0.6em;
   line-height: 0.5;
   margin: 0;
@@ -1234,7 +1234,7 @@ article.main .content .blocks_2 h1, .blocks_2 h2, .tag-group span {
 #list-animation li:last-of-type {
   margin: 1.5% 3% 0 0; }
 
-.line {
+.line, .line-albums:not(:first-of-type) {
   border: 1px solid #8fa3a3;
   padding: 0.1%;
   margin: 0;
@@ -1266,7 +1266,7 @@ article.main .content .blocks_2 h1, .blocks_2 h2, .tag-group span {
       position: relative;
       top: 1px; }
 
-.occupation {
+.occupation, .gallery {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1280,13 +1280,13 @@ article.main .content .blocks_2 h1, .blocks_2 h2, .tag-group span {
   width: 100%;
   border-bottom: 2px solid #b6c9c2; }
   @media screen and (max-width: 760px) {
-    .occupation {
+    .occupation, .gallery {
       -webkit-box-orient: vertical;
       -webkit-box-direction: normal;
       -ms-flex-direction: column;
       flex-direction: column;
       border-bottom: none; } }
-  .occupation .left-occupation {
+  .occupation .left-occupation, .occupation .left-gallery, .gallery .left-occupation, .gallery .left-gallery {
     font-style: italic;
     font-family: "Open Sans";
     font-size: 1.3em;
@@ -1295,29 +1295,43 @@ article.main .content .blocks_2 h1, .blocks_2 h2, .tag-group span {
     flex-basis: 30%;
     border-right: 1px solid #8fa3a3; }
     @media screen and (max-width: 760px) {
-      .occupation .left-occupation {
+      .occupation .left-occupation, .occupation .left-gallery, .gallery .left-occupation, .gallery .left-gallery {
         border-right: none; } }
     @media screen and (max-width: 760px) {
-      .occupation .left-occupation p {
+      .occupation .left-occupation p, .occupation .left-gallery p, .gallery .left-occupation p, .gallery .left-gallery p {
         font-size: 1.4em;
         margin: 0;
         padding: 0; } }
-  .occupation .right-occupation {
+  .occupation .right-occupation, .occupation .right-gallery, .gallery .right-occupation, .gallery .right-gallery {
     -ms-flex-preferred-size: 70%;
     flex-basis: 70%;
     font-family: "Open Sans";
     font-size: 1.1em; }
-    .occupation .right-occupation .college {
+    .occupation .right-occupation .college, .occupation .right-gallery .college, .gallery .right-occupation .college, .gallery .right-gallery .college {
       margin-bottom: 0;
       padding-bottom: 0; }
-    .occupation .right-occupation .college-info {
+    .occupation .right-occupation .college-info, .occupation .right-gallery .college-info, .gallery .right-occupation .college-info, .gallery .right-gallery .college-info {
       font-size: 0.8em;
       font-style: italic; }
-      .occupation .right-occupation .college-info:not(:last-child) {
+      .occupation .right-occupation .college-info:not(:last-child), .occupation .right-gallery .college-info:not(:last-child), .gallery .right-occupation .college-info:not(:last-child), .gallery .right-gallery .college-info:not(:last-child) {
         border-bottom: 1px dashed #9dafaf; }
       @media screen and (max-width: 760px) {
-        .occupation .right-occupation .college-info:last-child {
+        .occupation .right-occupation .college-info:last-child, .occupation .right-gallery .college-info:last-child, .gallery .right-occupation .college-info:last-child, .gallery .right-gallery .college-info:last-child {
           border-bottom: 1px dashed #9dafaf; } }
+  .occupation .left-gallery, .gallery .left-gallery {
+    -ms-flex-preferred-size: 10%;
+    flex-basis: 10%;
+    text-indent: 0; }
+  .occupation .right-gallery, .gallery .right-gallery {
+    -ms-flex-preferred-size: 90%;
+    flex-basis: 90%;
+    text-indent: 0;
+    padding: 2% 0 1% 1%; }
+    .occupation .right-gallery a, .gallery .right-gallery a {
+      text-decoration: none; }
+
+.gallery {
+  border-bottom: none; }
 
 .blocks_3 {
   border-top: 3px solid rgba(177, 191, 191, 0.3); }

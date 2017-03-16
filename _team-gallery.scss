@@ -1,4 +1,4 @@
-.line{
+.line, .line-albums:not(:first-of-type){
 	border: 1px solid darken($apple-core, 10%);
 	padding: 0.1%;
 	margin: 0;
@@ -102,12 +102,19 @@
 	.left-gallery{
 		-ms-flex-preferred-size:10%;
 		    flex-basis:10%;
-		    text-indent: none;
+		    text-indent: 0;
 	}
 	.right-gallery{
 		-ms-flex-preferred-size: 90%;
 		    flex-basis: 90%;
-		text-indent: none;
-		padding: 5% 0 4% 1%;
+		text-indent: 0;
+		padding: 2% 0 1% 1%;
+		a{
+			text-decoration: none;
+			
+		}
 	}
+}
+.gallery{
+	border-bottom: none;
 }
