@@ -1,0 +1,85 @@
+.tag-group-contacts{
+	@extend .tag-group;
+	text-align: center;
+	span{
+		font-size: 1.5em;
+	}
+}
+.contacts-container{
+	text-indent: 0;
+
+	.contacts-rows{
+    background: lighten(hsl(hue($apple-core), 15%, 78%), 20%);
+
+	display: flex;
+	flex-direction:row;
+	justify-content:center;
+	@include media(760){
+		flex-direction:column;
+		align-items:center;
+	}
+	.pannel-left, .pannel-right{
+		flex-basis:40%;
+		
+	}
+
+	.pannel-right{
+		a[href^="tel:"] {
+	color: lighten($blueberry, 30%);
+	text-decoration: none;
+		&:before {
+	content: "\260e ";
+		}
+	}
+	a[href^="mailto"]{
+		color: lighten($newy,20%);
+		text-decoration: none;
+		}
+	}
+}
+.contact-form{
+	input, textarea{
+	width: 60%;
+	border: 1px solid #e5e5e5;
+    border-radius: 5px;
+    outline: 0;
+    padding: 15px 20px;
+    margin-bottom: 20px;
+    @include media(760){
+			width: 95%;
+			margin-left: 2%;
+		}
+	}
+	
+	.button-blue{
+		background: darken(hsl((hue($apple-core)-22*4), 15%, 78%), 20%);
+		background-image: -webkit-linear-gradient(left, darken(hsl((hue($apple-core)-22*4), 15%, 78%), 20%) 0%, darken(hsl((hue($apple-core)-22*15), 15%, 78%), 20%) 100%);
+	    background-image: -o-linear-gradient(left, darken(hsl((hue($apple-core)-22*4), 15%, 78%), 20%) 0%, darken(hsl((hue($apple-core)-22*15), 15%, 78%), 20%) 100%);
+	    background-image: linear-gradient(to right, darken(hsl((hue($apple-core)-22*4), 15%, 78%), 20%) 0%, darken(hsl((hue($apple-core)-22*15), 15%, 78%), 20%) 100%);
+	&:hover{
+		background: darken(hsl((hue($apple-core)-22*0.1), 10%, 78%), 10%);	
+	    background-image: -webkit-linear-gradient(left, darken(hsl((hue($apple-core)-22*0.1), 10%, 78%), 10%) 0%, darken(hsl((hue($apple-core)-22*15), 10%, 78%), 10%) 100%);
+	    background-image: -o-linear-gradient(left, darken(hsl((hue($apple-core)-22*0.1), 10%, 78%), 10%) 0%, darken(hsl((hue($apple-core)-22*15), 10%, 78%), 10%) 100%);
+	    background-image: linear-gradient(to right, darken(hsl((hue($apple-core)-22*0.1), 10%, 78%), 10%) 0%, darken(hsl((hue($apple-core)-22*15), 10%, 78%), 10%) 100%);
+			}
+		}
+	}
+}
+	.google_map{
+		width: 100%;
+		height: 300px;
+		overflow: hidden;
+		.in-map{
+			font-family: $palatino; 
+			font-weight: 400; 
+			font-style: italic;
+		}
+		#gmap_canvas{
+			width: 100%;
+			height: 100%;
+			img{
+			max-width:none!important;
+			background:none!important
+			}
+		}
+	}
