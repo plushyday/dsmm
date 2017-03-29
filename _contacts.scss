@@ -11,15 +11,30 @@
 	.contacts-rows{
     background: lighten(hsl(hue($apple-core), 15%, 78%), 20%);
 
+	display: -webkit-box;
+
+	display: -ms-flexbox;
+
 	display: flex;
-	flex-direction:row;
-	justify-content:center;
+	-webkit-box-orient:horizontal;
+	-webkit-box-direction:normal;
+	    -ms-flex-direction:row;
+	        flex-direction:row;
+	-webkit-box-pack:center;
+	    -ms-flex-pack:center;
+	        justify-content:center;
 	@include media(760){
-		flex-direction:column;
-		align-items:center;
+		-webkit-box-orient:vertical;
+		-webkit-box-direction:normal;
+		    -ms-flex-direction:column;
+		        flex-direction:column;
+		-webkit-box-align:center;
+		    -ms-flex-align:center;
+		        align-items:center;
 	}
 	.pannel-left, .pannel-right{
-		flex-basis:40%;
+		-ms-flex-preferred-size:40%;
+		    flex-basis:40%;
 		
 	}
 
@@ -54,12 +69,11 @@
 	.button-blue{
 		background: darken(hsl((hue($apple-core)-22*4), 15%, 78%), 20%);
 		background-image: -webkit-linear-gradient(left, darken(hsl((hue($apple-core)-22*4), 15%, 78%), 20%) 0%, darken(hsl((hue($apple-core)-22*15), 15%, 78%), 20%) 100%);
-	    background-image: -o-linear-gradient(left, darken(hsl((hue($apple-core)-22*4), 15%, 78%), 20%) 0%, darken(hsl((hue($apple-core)-22*15), 15%, 78%), 20%) 100%);
 	    background-image: linear-gradient(to right, darken(hsl((hue($apple-core)-22*4), 15%, 78%), 20%) 0%, darken(hsl((hue($apple-core)-22*15), 15%, 78%), 20%) 100%);
 	&:hover{
+		cursor: pointer;
 		background: darken(hsl((hue($apple-core)-22*0.1), 10%, 78%), 10%);	
 	    background-image: -webkit-linear-gradient(left, darken(hsl((hue($apple-core)-22*0.1), 10%, 78%), 10%) 0%, darken(hsl((hue($apple-core)-22*15), 10%, 78%), 10%) 100%);
-	    background-image: -o-linear-gradient(left, darken(hsl((hue($apple-core)-22*0.1), 10%, 78%), 10%) 0%, darken(hsl((hue($apple-core)-22*15), 10%, 78%), 10%) 100%);
 	    background-image: linear-gradient(to right, darken(hsl((hue($apple-core)-22*0.1), 10%, 78%), 10%) 0%, darken(hsl((hue($apple-core)-22*15), 10%, 78%), 10%) 100%);
 			}
 		}

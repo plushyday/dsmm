@@ -53,16 +53,22 @@
   cursor: pointer;
  }
  .slider_info{
+              position: relative;
               margin: 0;
+              text-indent: 0;
               height: 100%;
-              padding:1%;
+              margin-left:0;
               z-index: 51;
+              div{
               position: absolute;
               font-style: italic;
+              padding:1%;
+              height: 100%;
               background-color:rgba(0,0,0,0.6);
               overflow: hidden;
               /* background-color: $blueberry;*/
               /*rgba(lighten($apple-core, 1%), 0.7);*/
+            }
               @include media(670){
                   display: none;
                 }
@@ -73,19 +79,14 @@
           }
           %text_in_slider{
             white-space: nowrap;
-            margin-left:5%;
+            
             cursor: text;
             z-index: 50;
             font-size: 1em;
             /* color:darken($apple-core, 70%);*/
             color: #fff;
           }
-          .invisible{
-            @extend %text_in_slider;
-            opacity: 0;
-            visibility: hidden;
-            white-space: nowrap;
-          }
+          
       @for $i from 1 through 5{
        div:nth-child(#{$i}){
         @extend %text_in_slider;
@@ -175,4 +176,3 @@
       }
   }
 }
-
