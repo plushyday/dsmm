@@ -10,7 +10,7 @@
 	        align-self: center;
 	margin: 1.5% 0;
 	a{
-		text-decoration: none;
+	text-decoration: none;
 	margin: 0;
 	display:inline-block;
 	cursor:pointer;
@@ -111,10 +111,24 @@
 		padding: 2% 0 1% 1%;
 		a{
 			text-decoration: none;
-			
+		}
+		
+			.img-layout{
+			    border: 1px solid #e0e4e8;
+			    width: auto;
+			    margin: 2px 0 2px 0;
+			    padding: 0.5%;
+			    height: 100%;
+			    display: inline-block;
+			    transition: all 0.15s ease-in-out;
+			&:hover{
+				    background-color: #cbd2d2;
+    				border: 1px solid #d6dde4;
+				}
+			}
 		}
 	}
-}
 .gallery{
 	border-bottom: none;
 }
+

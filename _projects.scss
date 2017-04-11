@@ -39,24 +39,46 @@
 }
 }
 .blocks_2{
+	.authors-date-project{
+		   display: -ms-flexbox;
+		    display: -webkit-flex;
+		    display: flex;
+		    -webkit-flex-direction: column;
+		    -ms-flex-direction: column;
+		    flex-direction: column;
+		    -webkit-flex-wrap: nowrap;
+		    -ms-flex-wrap: nowrap;
+		    flex-wrap: nowrap;
+		    -webkit-justify-content: flex-start;
+		    -ms-flex-pack: start;
+		    justify-content: flex-start;
+		    -webkit-align-content: stretch;
+		    -ms-flex-line-pack: stretch;
+		    align-content: stretch;
+		    -webkit-align-items: flex-end;
+		    -ms-flex-align: end;
+		    align-items: flex-end;
+		    @include media(760){
+  			align-items: stretch;
+  			}
 	h2{
 		@extend %caption;
 		font-size: 1.5em;
+		@include media(760){
+		  	font-size: 1.3em;
+		  }
 	}
 	.authors{
 		@extend %under-text-small;
-		float: right;
 
 	}
 	.date-projects{
 		@extend %under-text-small;
 		font-size: 1em;
-		float: right;
-	}
-	.read-more{
-		a{
-			@extend %button;
-		}
+		margin-top: 1%;
+		@include media(760){
+	  	margin-top: 5%;
+	  }
 	}
 	.tag-in-h{
 		text-indent: 0;
@@ -66,6 +88,99 @@
 		font-style: normal;
 		letter-spacing: 0;
 		color: $blueberry;
+	}
+}
+	.read-more{
+	
+		a{
+			@extend %button;
+
+		}
+	}
+	
+	
+	.content-projects{
+		display: -ms-flexbox;
+	    display: -webkit-flex;
+	    display: flex;
+	    -webkit-flex-direction: row;
+	    -ms-flex-direction: row;
+	    flex-direction: row;
+	    -webkit-flex-wrap: nowrap;
+	    -ms-flex-wrap: nowrap;
+	    flex-wrap: nowrap;
+	    -webkit-justify-content: center;
+	    -ms-flex-pack: center;
+	    justify-content: center;
+	    -webkit-align-content: stretch;
+	    -ms-flex-line-pack: stretch;
+	    align-content: stretch;
+	    -webkit-align-items: flex-start;
+	    -ms-flex-align: start;
+	    align-items: flex-start;
+			@include media(760){
+				margin-top: 5%;
+				padding-top: 5%;
+
+				border-top: 3px solid rgba(lighten($apple-core, 2%), 0.3);
+  			-webkit-flex-direction: column;
+	    -ms-flex-direction: column;
+	    flex-direction: column;
+	    align-items: stretch;
+  			}
+		.image-projects{
+			position: relative;
+			display: -ms-flexbox;
+		    display: -webkit-flex;
+		    display: flex;
+		    -webkit-flex-direction: column;
+		    -ms-flex-direction: column;
+		    flex-direction: column;
+		    -webkit-flex-wrap: nowrap;
+		    -ms-flex-wrap: nowrap;
+		    flex-wrap: nowrap;
+		    -webkit-justify-content: flex-start;
+		    -ms-flex-pack: start;
+		    justify-content: flex-start;
+		    -webkit-align-content: stretch;
+		    -ms-flex-line-pack: stretch;
+		    align-content: stretch;
+		    -webkit-align-items: center;
+		    -ms-flex-align: center;
+		    align-items: center;
+		    padding: 0 1%;
+		    @include media(760){
+		    	width: 100%;
+		    }
+		img{
+			display: inblock;
+			@include media(760){
+				margin-bottom: 5%;
+
+				border: 3px solid rgba(lighten($apple-core, 2%), 0.3);
+			}
+		}
+		span{
+			transition: all 500ms ease-out;
+			display: block;
+			text-indent: 0;
+			background-color: rgba(115, 128, 140, 0.9);
+		    color: #fff;
+		    width: 100%;
+		    padding: 0 5%;
+		    font-style: italic;
+		    opacity: 0;
+			position: absolute;
+				}
+				&:hover{
+					span{
+						opacity: 1;
+		    			transform: translateY(-100%);
+					}
+				}
+			}
+		p{
+		}
 	}
 }
 .tag-group{
@@ -80,10 +195,14 @@
 	}
 	.tag {
 		@extend %taggy;
+					-webkit-transition: all .2s;
+					transition: all .2s;
 		@for $i from 1 through 9{
 			&:nth-child(#{$i}) {
 				background-color: darken(hsl((hue($apple-core)-22*$i), 10%, 75%), 21%);
 				&:after{
+								-webkit-transition: all .2s;
+					transition: all .2s;
 					border-left: 10px solid darken(hsl((hue($apple-core)-22*$i), 10%, 75%), 21%);
 				}
 				&:hover{
@@ -101,6 +220,8 @@
 				}
 		}
 		button{
+						-webkit-transition: all .2s;
+					transition: all .2s;
 				-webkit-font-smoothing: antialiased;
 				position: relative;
 				color: #fff;
@@ -208,7 +329,9 @@
 		}
 }
 %button{
-	border: 1px solid black;
+		-webkit-transition: all .2s;
+		transition: all .2s;
+		border: 1px solid black;
 			padding: 3px 2%;
 			text-decoration: none;
 			color: $blueberry; 
@@ -217,5 +340,9 @@
 			font-style: italic; 
 			&:hover{
 				background-color: hsla((hue(lighten($blueberry, 2%))-30), 10%, 75%, 50);
+			}
+			@include media(760){
+				font-size: 1.5em;
+				padding: 3px 10%;
 			}
 }
