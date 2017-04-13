@@ -58,19 +58,17 @@
 		    -webkit-align-items: flex-end;
 		    -ms-flex-align: end;
 		    align-items: flex-end;
-		    @include media(760){
-  			align-items: stretch;
-  			}
+		  
 	h2{
 		@extend %caption;
 		font-size: 1.5em;
 		@include media(760){
 		  	font-size: 1.3em;
+		  	text-align: left;
 		  }
 	}
 	.authors{
 		@extend %under-text-small;
-
 	}
 	.date-projects{
 		@extend %under-text-small;
@@ -100,34 +98,28 @@
 	
 	
 	.content-projects{
-		display: -ms-flexbox;
-	    display: -webkit-flex;
+		
 	    display: flex;
-	    -webkit-flex-direction: row;
-	    -ms-flex-direction: row;
+	    
 	    flex-direction: row;
-	    -webkit-flex-wrap: nowrap;
-	    -ms-flex-wrap: nowrap;
-	    flex-wrap: nowrap;
-	    -webkit-justify-content: center;
-	    -ms-flex-pack: center;
-	    justify-content: center;
-	    -webkit-align-content: stretch;
-	    -ms-flex-line-pack: stretch;
-	    align-content: stretch;
-	    -webkit-align-items: flex-start;
-	    -ms-flex-align: start;
-	    align-items: flex-start;
+	    
+	    flex-wrap: wrap;
+	    
+	    justify-content: flex-start;
+	    
+	    align-items: center;
 			@include media(760){
 				margin-top: 5%;
 				padding-top: 5%;
-
-				border-top: 3px solid rgba(lighten($apple-core, 2%), 0.3);
   			-webkit-flex-direction: column;
 	    -ms-flex-direction: column;
 	    flex-direction: column;
 	    align-items: stretch;
   			}
+  		.text-projects{
+  			flex: 1 0 50%; 
+  			display: inline-block;
+  		}
 		.image-projects{
 			position: relative;
 			display: -ms-flexbox;
@@ -153,12 +145,8 @@
 		    	width: 100%;
 		    }
 		img{
-			display: inblock;
-			@include media(760){
 				margin-bottom: 5%;
-
 				border: 3px solid rgba(lighten($apple-core, 2%), 0.3);
-			}
 		}
 		span{
 			transition: all 500ms ease-out;
@@ -166,7 +154,6 @@
 			text-indent: 0;
 			background-color: rgba(115, 128, 140, 0.9);
 		    color: #fff;
-		    width: 100%;
 		    padding: 0 5%;
 		    font-style: italic;
 		    opacity: 0;
@@ -186,12 +173,20 @@
 .tag-group{
 	margin: 0 1%;
 	width: 100%;
+	@include media(760){
+		text-align: center;
+		margin: 0;
+		padding-top: 10px;
+	}
 	input[type="checkbox"]{
 		display: none;
 	}
 	span{
-		@extend %caption;
 		font-size: 1.5em;
+		@include media(760){
+			font-size: 2em;
+		}
+		@extend %caption;
 	}
 	.tag {
 		@extend %taggy;
@@ -212,6 +207,10 @@
 					border-left-color: darken(hsl((hue($apple-core)-30*$i), 10%, 90%), 25%);
 				}		
 			}
+		}
+		@include media(760){
+			width: 70%;
+			margin: 1% 1% 10px 0;
 		}
 	}
 	.tag-active{
@@ -236,6 +235,13 @@
 				border: none;
 				-webkit-transition: .2s;
 				transition: .2s;
+				@include media(760){
+						width: 100%;
+						margin-top: 10px;
+						height: 50px;
+						font-size: 1.2em;
+						float: left;
+					}
 				&:before,
 				&:after {
 					position: absolute;
@@ -253,6 +259,9 @@
 					transition: .2s;
 					-webkit-transform-origin: 50% 60%;
 					        transform-origin: 50% 60%;
+					        	@include media(760) {
+								line-height: 50px;
+							}
 				}
 				&:before {
 					background-color: darken(hsl((hue($apple-core)-30*11), 10%, 75%), 25%);
@@ -269,6 +278,7 @@
 					&:after {
 					background-color: darken(hsl((hue($apple-core)-30*11), 10%, 75%), 20%);
 					}
+
 				}
 				
 			&.active{
@@ -306,6 +316,7 @@
 		position: relative;
 		margin: 10px 1% 1% 0;
 		text-decoration: none;
+		outline: none;
 			&:before {
 			background: #fff;
 			border-radius: 10px;
@@ -326,6 +337,23 @@
 			position: absolute;
 			right: 0;
 			top: 0;
+		}
+		@include media(760){
+			height: 50px;
+			line-height: 50px;
+			font-size: 18px;
+			&:before {
+			border-radius: 10px;
+			height: 16px;
+			left: 10px;
+			width: 16px;
+			top: 15.5px;
+		}
+			&:after {
+			background: #fff;
+			border-bottom: 25px solid transparent;
+			border-top: 25px solid transparent;
+			}
 		}
 }
 %button{

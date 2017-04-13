@@ -160,7 +160,7 @@ nav{
 					}
 		}
 		$j:2;
-		@for $i from 7 through 9{
+		@for $i from 7 through 8{
 					&:nth-child(#{$i}) {
 						background-color: darken(hsl((hue($apple-core)-22*($i - $j)), 10%, 75%), 21%);
 						&:hover:not(:last-of-type){
@@ -591,6 +591,10 @@ nav{
 			margin: 0;
 			padding: 0;
 			color: darken($apple-core, 30%);
+			@include media(760){
+		  	font-size: 1em;
+		  	line-height: 1;
+		  }
 		}
 		@import "_keyframes.scss";
 		@import "_menu.scss";

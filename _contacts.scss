@@ -35,7 +35,16 @@
 	.pannel-left, .pannel-right{
 		-ms-flex-preferred-size:40%;
 		    flex-basis:40%;
-		
+		@include media(760){
+			flex-basis: 100%;
+		}
+	}
+	.pannel-left{
+		h1{
+		@include media(760){
+			text-align: center;
+			}
+		}
 	}
 
 	.pannel-right{
@@ -45,12 +54,18 @@
 		&:before {
 	content: "\260e ";
 		}
+	
 	}
 	a[href^="mailto"]{
 		color: lighten($newy,20%);
 		text-decoration: none;
 		}
 	}
+		h3{
+		@include media(760){
+			display: none;
+			}
+		}
 }
 .contact-form{
 	input, textarea{
@@ -61,7 +76,7 @@
     padding: 15px 20px;
     margin-bottom: 20px;
     @include media(760){
-			width: 95%;
+			width: 84%;
 			margin-left: 2%;
 		}
 	}
