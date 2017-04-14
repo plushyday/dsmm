@@ -20,6 +20,9 @@
 .animation-li {
   /* opacity: */ }
 
+* {
+  outline: none; }
+
 body {
   width: 100%;
   font-family: "MyriadPro";
@@ -839,6 +842,8 @@ aside {
       width: 12vw; } }
 
 .tooltip {
+  max-width: 50%;
+  z-index: 500;
   border-radius: .25em;
   position: absolute;
   border-top: 1px dashed #3a4646;
@@ -850,15 +855,6 @@ aside {
   line-height: 2;
   color: #eaeff3;
   box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.5); }
-  .tooltip::after {
-    position: absolute;
-    content: '';
-    width: 0;
-    height: 0;
-    border: 10px solid transparent;
-    border-top-color: #516262;
-    left: calc(50% - 10px);
-    top: 100%; }
 
 article.main .content .slider .slider_info:after {
   content: "";
@@ -1405,7 +1401,8 @@ article.main .content .blocks_2 h1, .blocks_2 .authors-date-project h2, .tag-gro
         text-align: left; } }
   .blocks_2 .authors-date-project .date-projects {
     font-size: 1em;
-    margin-top: 1%; }
+    margin-top: 1%;
+    line-height: 1.5; }
     @media screen and (max-width: 760px) {
       .blocks_2 .authors-date-project .date-projects {
         margin-top: 5%; } }
@@ -1465,6 +1462,7 @@ article.main .content .blocks_2 h1, .blocks_2 .authors-date-project h2, .tag-gro
       transition: all 500ms ease-out;
       display: block;
       text-indent: 0;
+      top: 0;
       background-color: rgba(115, 128, 140, 0.9);
       color: #fff;
       padding: 0 5%;
@@ -1477,7 +1475,8 @@ article.main .content .blocks_2 h1, .blocks_2 .authors-date-project h2, .tag-gro
 
 .tag-group, .tag-group-contacts {
   margin: 0 1%;
-  width: 100%; }
+  width: 100%;
+  text-indent: 0; }
   @media screen and (max-width: 760px) {
     .tag-group, .tag-group-contacts {
       text-align: center;
@@ -1618,6 +1617,7 @@ article.main .content .blocks_2 h1, .blocks_2 .authors-date-project h2, .tag-gro
       top: 0;
       bottom: 0;
       right: 0;
+      padding-top: 2px;
       padding-top: inherit;
       padding-bottom: inherit;
       width: 1.5em;

@@ -26,56 +26,56 @@ $("#date-button").click(function(){$(this).toggleClass('active');
 	///Onclick menu
 
 	//tooltip
-	var gist=[
+	    	var gist=[
 	{
 		name: "galaxy",
-		quote: "galaxy quote"
+		quote: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris lobortis sodales tellus, sit amet iaculis ipsum sollicitudin vel. Proin blandit risus at ligula porta, id dignissim odio ornare. Proin egestas diam ac urna scelerisque, eget aliquam risus finibus. Duis fringilla tempus massa a eleifend. Aliquam erat volutpat. Nullam in urna eu sapien ornare efficitur maximus quis eros. Vestibulum enim diam, pharetra a elit id, vulputate bibendum sem. Aenean a egestas risus. Integer dignissim ex eu augue dignissim tincidunt non ac mauris. Sed nisi ipsum, suscipit sed dignissim quis, pulvinar id ipsum. Vivamus vel arcu id lorem mollis auctor ac et nulla. Nam bibendum eleifend libero, commodo condimentum dolor tristique sit amet. In tincidunt blandit bibendum. Nullam nibh urna, sodales nec euismod a, blandit sed justo. Maecenas dictum lectus vel urna tristique porttitor. Integer fermentum a augue ac mattis. Nam vitae tempor sapien, eget ultrices erat. Sed accumsan maximus justo, sit amet accumsan nisi ultricies non. Aenean scelerisque nulla leo, in lacinia nibh pellentesque sit amet. Integer lobortis, lorem id tincidunt venenatis, felis sapien elementum justo, nec hendrerit elit nisi a nunc."
 	},
 	{
 		name: "socio",
-		quote: "socio quote"
+		quote: "socio"
 	},
 	{
 		name: "atom",
-		quote: "atom quote"
+		quote: "[[*atomquote]]"
 	},
 	{
 		name: "boson",
-		quote: "boson quote"
+		quote: "[[*bosonquote]]"
 	},
 	{
 		name: "cat",
-		quote: "cat quote"
+		quote: "[[*catquote]]"
 	},
 	{
 		name: "carving",
-		quote: "carving quote"
+		quote: "[[*carvingquote]]"
 	},
 	{
 		name: "axe",
-		quote: "axe quote"
+		quote: "[[*axequote]]"
 	},
 	{
 		name: "nanotube",
-		quote: "nanotube quote"
+		quote: "[[*nanotubequote]]"
 	},
 	{
 		name: "dna",
-		quote: "dna quote"
+		quote: "[[*dnaquote]]"
 	},
 	{
 		name: "rocket",
-		quote: "rocket quote"
+		quote: "[[*rocketquote]]"
 	},
 	{
 		name: "cell",
-		quote: "cell quote"
+		quote: "[[*cellquote]]"
 	},
 	{
 		name: "earth",
-		quote: "earth quote"
+		quote: "[[*earthquote]]"
 	}
-];
+]; 
 var returnedTooltip;
 
 function handler(event, gist){
@@ -104,18 +104,35 @@ function showTooltip(currentGistId, event, gist){
 	for (var i = 0; i <= gist.length; i++) {
 		if((gist[i])&&(gist[i].name===currentGistId)) tooltip.innerHTML = gist[i].quote;
 	};
-	tooltip.style.left = event.pageX - (tooltip.offsetWidth/2) + 'px';
-	tooltip.style.top = event.pageY-10-tooltip.offsetHeight+'px';
+	 if((tooltip.offsetWidth/2)>(event.pageX)){
+   	tooltip.style.left=event.pageX;
+  }	else if((tooltip.offsetWidth/2)>(window.innerWidth-event.pageX)){
+  	tooltip.style.right = event.pageX + 'px';
+  }else{
+  	tooltip.style.left = event.pageX - (tooltip.offsetWidth/2) + 'px';
+  }
+  	if(((tooltip.offsetHeight)+event.pageY)<window.innerHeight){
+  		tooltip.style.top = event.pageY-10-tooltip.offsetHeight+'px';
+  		console.log(event.pageY+"_1_"+(tooltip.offsetHeight));
+
+  	}
+  	else{
+  		tooltip.style.top = event.pageY + 'px';
+  		console.log(event.pageY+"_2_"+(tooltip.offsetHeight)+"_2_"+window.innerHeight);
+  	}
+  
+	// tooltip.style.left = event.pageX - (tooltip.offsetWidth/2) + 'px';
+	// tooltip.style.top = event.pageY-10-tooltip.offsetHeight+'px';
 
 	return tooltip;
 }
-		var logo = document.getElementById("sdmm");
+		var sdmm = document.getElementById("sdmm");
 		var path = $("#sdmm path");
 		var dots_js = document.querySelectorAll(".slider_dots");
 		var dots = $(".slider_dots div");
 		var svg = document.getElementById("evolution");
 		var duration = 500;
-		logo.addEventListener('mouseover', function(){animate({duration: duration, path: path})} );
+		sdmm.addEventListener('mouseover', function(){animate2({duration: duration, path: path})} );
 		
 		function evolutionAnimate(){
 			if(svg&&logo){
@@ -151,7 +168,7 @@ window.addEventListener("load", ready);
 	///SDMM logo start
 
 	
-	function animate(options){
+	function animate2(options){
 		var progress;
 		var reverse=0;
 		var start=performance.now(); 
@@ -171,11 +188,11 @@ window.addEventListener("load", ready);
 					break;
 			}
 			if (timeFraction<2) {
-			draw(progress, options.path); 
+			draw2(progress, options.path); 
 			requestAnimationFrame(animateCallback);}});
 	}
 	
-	function draw(progress, path) {
+	function draw2(progress, path) {
 		for (var i = 0; i < path.length; ++i) {
 			path[i].style.strokeDasharray = path[i].getTotalLength();
 			path[i].style.strokeDashoffset = path[i].getTotalLength() * (1 - progress);
