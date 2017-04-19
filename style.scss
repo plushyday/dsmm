@@ -12,9 +12,6 @@
 	}
 }
 
-.animation-li{
-	/* opacity: */
-}
 *{
 	outline: none;
 }
@@ -162,7 +159,7 @@ nav{
 					}
 		}
 		$j:2;
-		@for $i from 7 through 8{
+		@for $i from 7 through 9{
 					&:nth-child(#{$i}) {
 						background-color: darken(hsl((hue($apple-core)-22*($i - $j)), 10%, 75%), 21%);
 						&:hover:not(:last-of-type){
@@ -556,16 +553,16 @@ nav{
 			line-height: 2; 
 			color: lighten($newy, 68%);
 			box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.5);
-			// &::after {
-			// 	position: absolute;
-			// 	content: '';
-			// 	width: 0;
-			// 	height: 0;
-			// 	border: 10px solid transparent;
-			// 	border-top-color: darken($apple-core, 35%);
-			// 	left: calc(50% - 10px);
-			// 	top: 100%;
-			// }
+			/* &::after {*/
+			/* 	position: absolute;*/
+			/* 	content: '';*/
+			/* 	width: 0;*/
+			/* 	height: 0;*/
+			/* 	border: 10px solid transparent;*/
+			/* 	border-top-color: darken($apple-core, 35%);*/
+			/* 	left: calc(50% - 10px);*/
+			/* 	top: 100%;*/
+			/* }*/
 		}
 
 		%shadow{ 
@@ -605,3 +602,4 @@ nav{
 		@import "_team-gallery.scss";
 		@import "_projects.scss";
 		@import "_contacts.scss";
+		@import "_presentations.scss";
